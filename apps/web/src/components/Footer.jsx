@@ -59,9 +59,9 @@ const Footer = () => {
           <div>
             <span className="font-semibold mb-4 block">Categories</span>
             <ul className="space-y-2 text-sm">
-              {categories.slice(0, 5).map((category) => (
+              {categories.map((category) => (
                 <li key={category}>
-                  <Link to="/products" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">
+                  <Link to={`/products?category=${encodeURIComponent(category)}`} className="opacity-80 hover:opacity-100 hover:text-primary transition-all">
                     {category}
                   </Link>
                 </li>
