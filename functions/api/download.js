@@ -1,0 +1,139 @@
+// Product ID to filename mapping
+const PRODUCT_FILES = {
+  "mock-daily-planner": "premium-daily-planner.pdf",
+  "mock-digital-stickers": "digital-stickers-bundle.zip",
+  "mock-website-template": "website-template.zip",
+  "mock-childrens-book": "magical-forest-adventures.pdf",
+  "mock-tshirt-design": "streetwear-tshirt-vector-pack.zip",
+  "mock-figma-uikit": "auraui-glassmorphic-design-system.fig",
+  "mock-gallery-app": "artdisplay-gallery-app.zip",
+  "mock-software-tool": "codeswarm-markdown-editor.zip",
+  "mock-stock-photos": "warm-tone-stock-photo-pack.zip"
+};
+
+// Content types for different file extensions
+const CONTENT_TYPES = {
+  ".pdf": "application/pdf",
+  ".zip": "application/zip",
+  ".fig": "application/octet-stream",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".svg": "image/svg+xml"
+};
+
+function getContentType(filename) {
+  const ext = filename.substring(filename.lastIndexOf('.'));
+  return CONTENT_TYPES[ext] || 'application/octet-stream';
+}
+
+export async function onRequestGet(context) {
+  const { request, env } = context;
+  const url = new URL(request.url);
+  const token = url.searchParams.get('token');
+  const productId = url.searchParams.get('product');
+
+  if (!token || !productId) {
+    return new Response(JSON.stringify({ error: 'Missing token or product parameter' }), {
+      status: 400,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  // Verify the token
+  const { verifyDownloadToken } = await import('./download-token.js');
+  const verification = await verifyDownloadToken(token, env);
+
+  if (!verification.valid) {
+    return new Response(JSON.stringify({ error: verification.error }), {
+      status: 403,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  // Check that the token matches the requested product
+  if (verification.payload.productId !== productId) {
+    return new Response(JSON.stringify({ error: 'Token does not match product' }), {
+      status: 403,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  // Get the filename for this product
+  const filename = PRODUCT_FILES[productId];
+  if (!filename) {
+    return new Response(JSON.stringify({ error: 'Product not found' }), {
+      status: 404,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  // Fetch the file from the GitHub private repo
+  const githubToken = env?.GITHUB_TOKEN;
+  const repoUrl = env?.GITHUB_REPO_URL || 'https://github.com/Domino43/DigitalHub.imaginfounder';
+  
+  // Extract owner/repo from URL
+  const repoMatch = repoUrl.match(/github\.com\/([^/]+)\/([^/.]+)/);
+  if (!repoMatch) {
+    return new Response(JSON.stringify({ error: 'Invalid repo configuration' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  const owner = repoMatch[1];
+  const repo = repoMatch[2];
+  const branch = 'Web-server';
+  const filePath = `apps/web/downloads/${filename}`;
+
+  const githubApiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}?ref=${branch}`;
+
+  try {
+    const githubResp = await fetch(githubApiUrl, {
+      headers: {
+        'Authorization': `Bearer ${githubToken}`,
+        'Accept': 'application/vnd.github.v3.raw',
+        'User-Agent': 'DigitalHub-Storefront'
+      }
+    });
+
+    if (!githubResp.ok) {
+      return new Response(JSON.stringify({ 
+        error: 'File not found in repository',
+        details: `GitHub API returned ${githubResp.status}`
+      }), {
+        status: 404,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    const fileBuffer = await githubResp.arrayBuffer();
+    const contentType = getContentType(filename);
+
+    return new Response(fileBuffer, {
+      status: 200,
+      headers: {
+        'Content-Type': contentType,
+        'Content-Disposition': `attachment; filename="${filename}"`,
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        'Access-Control-Allow-Origin': '*'
+      }
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: 'Failed to fetch file', details: err.message }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+}
+
+// Handle OPTIONS for CORS preflight
+export async function onRequestOptions() {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    }
+  });
+}
