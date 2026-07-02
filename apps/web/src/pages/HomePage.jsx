@@ -170,7 +170,7 @@ const HomePage = ({ setIsCartOpen }) => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
               >
-                <Link to="/products">
+                <Link to={`/products?category=${encodeURIComponent(category.name)}`}>
                   <div className="card-3d soft-reflection p-8 text-center group cursor-pointer">
                     <div className="text-5xl mb-4">{category.icon}</div>
                     <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Helmet } from 'react-helmet';
+import { useSearchParams } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import { getProducts, getProductQuantities } from '@/api/EcommerceApi';
 import ProductCard3D from '@/components/ProductCard3D';
@@ -13,9 +14,21 @@ const ProductsList = ({ setIsCartOpen }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('All Products');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialCategory = searchParams.get('category') || 'All Products';
+  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('newest');
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    if (category === 'All Products') {
+      searchParams.delete('category');
+    } else {
+      searchParams.set('category', category);
+    }
+    setSearchParams(searchParams);
+  };
 
   useEffect(() => {
     const fetchProductsWithQuantities = async () => {
@@ -66,12 +79,7 @@ const ProductsList = ({ setIsCartOpen }) => {
 
     if (selectedCategory !== 'All Products') {
       filtered = filtered.filter(product => 
-        product.collections.some(col => {
-          const categoryMatch = products.find(p => 
-            p.collections.some(c => c.collection_id === col.collection_id)
-          );
-          return categoryMatch?.type?.value === selectedCategory;
-        }) || product.type?.value === selectedCategory
+        product.type?.value === selectedCategory
       );
     }
 
@@ -173,7 +181,7 @@ const ProductsList = ({ setIsCartOpen }) => {
 
         <CategoryFilter
           selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
+          onCategoryChange={handleCategoryChange}
         />
 
         {filteredAndSortedProducts.length === 0 ? (
