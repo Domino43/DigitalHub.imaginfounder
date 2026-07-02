@@ -582,26 +582,30 @@ export async function getProductQuantities({ fields, product_ids }) {
 
   const url = `${ECOMMERCE_API_URL}/store/${ECOMMERCE_STORE_ID}/variants?${queryParams.toString()}`;
 
-  const response = await fetch(url, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    return {
+      variants: (data.variants || []).map((variant) => ({
+        id: variant.id,
+        inventory_quantity: variant.inventory_quantity,
+      })),
+    };
+  } catch (err) {
+    console.warn("Product quantities fetch failed, returning empty:", err);
+    return { variants: [] };
   }
-
-  const data = await response.json();
-
-  // Track only if product variant manage_inventory=true
-  return {
-    variants: (data.variants || []).map((variant) => ({
-      id: variant.id,
-      inventory_quantity: variant.inventory_quantity,
-    })),
-  };
 }
 
 /**
@@ -621,32 +625,37 @@ export async function getProductQuantities({ fields, product_ids }) {
 export async function getCategories() {
   const url = `${ECOMMERCE_API_URL}/store/${ECOMMERCE_STORE_ID}/collections`;
 
-  const response = await fetch(url, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    return {
+      categories: (data.collections || []).map((collection) => ({
+        id: collection.id,
+        title: collection.title,
+        image_url: collection.image_url,
+        store_id: collection.store_id,
+        created_at: collection.created_at,
+        updated_at: collection.updated_at,
+        deleted_at: collection.deleted_at,
+        metadata: collection.metadata,
+      })),
+      count: data.count,
+    };
+  } catch (err) {
+    console.warn("Categories fetch failed, returning empty:", err);
+    return { categories: [], count: 0 };
   }
-
-  const data = await response.json();
-
-  return {
-    categories: (data.collections || []).map((collection) => ({
-      id: collection.id,
-      title: collection.title,
-      image_url: collection.image_url,
-      store_id: collection.store_id,
-      created_at: collection.created_at,
-      updated_at: collection.updated_at,
-      deleted_at: collection.deleted_at,
-      metadata: collection.metadata,
-    })),
-    count: data.count,
-  };
 }
 
 async function getCheckoutLanguage() {
