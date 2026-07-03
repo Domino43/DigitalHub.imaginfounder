@@ -5,14 +5,14 @@ export const mockProducts = [
     subtitle: "Complete undated digital planner bundle for iPad & tablets",
     ribbon_text: "BEST SELLER",
     description: "<h3>Unleash your productivity and aesthetic</h3><p>Stop trying to keep everything in your head. Our Premium Daily Planner is designed specifically for modern creators to streamline their days, weeks, and months. Fully compatible with GoodNotes, Notability, and major tablet annotation apps.</p><h4>What's Included:</h4><ul><li>Undated daily planning sheets</li><li>Weekly and monthly overviews</li><li>200+ free pre-cropped digital stickers</li><li>Installation guide PDF</li></ul>",
-    image: "https://gumloop.com/artifacts/TJ9yrERpz6RGzV3THAdcAe?version_id=GF6FEaCjasisDRiirQfNRQ",
+    image: "/products/daily-planner.jpg",
     price_in_cents: 999,
     currency: "USD",
     purchasable: true,
     order: 1,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/TJ9yrERpz6RGzV3THAdcAe?version_id=GF6FEaCjasisDRiirQfNRQ", order: 1, type: "main" }
+      { url: "/products/daily-planner.jpg", order: 1, type: "main" }
     ],
     options: [],
     variants: [
@@ -47,14 +47,14 @@ export const mockProducts = [
     subtitle: "500+ Hand-Drawn Pre-cut Icons & Stickers",
     ribbon_text: "NEW ARRIVAL",
     description: "<h3>Make your digital planner beautifully yours</h3><p>A massive collection of delightful, hand-drawn pastel-colored digital stickers to organize and decorate your planner pages. Perfect for GoodNotes, Notability, and other digital scrapbooking apps.</p><h4>Features:</h4><ul><li>500+ Individual PNG elements</li><li>Pre-cropped GoodNotes sticker book included</li><li>Pastel cozy color palette</li></ul>",
-    image: "https://gumloop.com/artifacts/DAufaevifrrvMmsvVWzfYo?version_id=SC5Ln6n5SrikbgpUCLkHsv",
+    image: "/products/digital-stickers.jpg",
     price_in_cents: 499,
     currency: "USD",
     purchasable: true,
     order: 2,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/DAufaevifrrvMmsvVWzfYo?version_id=SC5Ln6n5SrikbgpUCLkHsv", order: 1, type: "main" }
+      { url: "/products/digital-stickers.jpg", order: 1, type: "main" }
     ],
     options: [],
     variants: [
@@ -89,14 +89,14 @@ export const mockProducts = [
     subtitle: "Sleek responsive portfolio website template for designers & developers",
     ribbon_text: "PREMIUM",
     description: "<h3>Build your premium creator website in minutes</h3><p>A dark-themed portfolio and product showcase template with smooth animations, high-end responsive grid layout, and stunning aesthetic components. Perfect for designers, freelancers, and developers.</p><h4>Includes:</h4><ul><li>Responsive HTML5/CSS3/JavaScript files</li><li>Fully customizable Figma design file</li><li>Comprehensive setup documentation</li><li>Fast page loading & SEO optimized code</li></ul>",
-    image: "https://gumloop.com/artifacts/JtRPUT8ft8MmNB5SRAoj7A?version_id=n8esNu38rhwMe5MDBCP8DS",
+    image: "/products/website-template.jpg",
     price_in_cents: 2900,
     currency: "USD",
     purchasable: true,
     order: 3,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/JtRPUT8ft8MmNB5SRAoj7A?version_id=n8esNu38rhwMe5MDBCP8DS", order: 1, type: "main" }
+      { url: "/products/website-template.jpg", order: 1, type: "main" }
     ],
     options: [],
     variants: [
@@ -131,14 +131,14 @@ export const mockProducts = [
     subtitle: "Interactive Children's Ebook & Printable Coloring Pack",
     ribbon_text: "POPULAR",
     description: "<h3>Whimsical storytime adventures for kids</h3><p>An enchanting story of a friendly green dragon and a little girl exploring the Magical Forest. Designed to spark creativity, with beautiful watercolor illustrations and instant download access.</p><h4>Features:</h4><ul><li>Standard EPUB, PDF, and Kindle formats</li><li>Interactive animated reading mode</li><li>15 Printable coloring pages and puzzle sheets</li></ul>",
-    image: "https://gumloop.com/artifacts/NErcPtSbQqaK4hCpxdaE8E?version_id=7LX6CRGpm6j3Ebe4rQeVpw",
+    image: "/products/childrens-book.jpg",
     price_in_cents: 699,
     currency: "USD",
     purchasable: true,
     order: 4,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/NErcPtSbQqaK4hCpxdaE8E?version_id=7LX6CRGpm6j3Ebe4rQeVpw", order: 1, type: "main" }
+      { url: "/products/childrens-book.jpg", order: 1, type: "main" }
     ],
     options: [],
     variants: [
@@ -173,14 +173,14 @@ export const mockProducts = [
     subtitle: "5 Fully Editable SVG/PNG Apparel Graphic Vector Assets",
     ribbon_text: "EXCLUSIVE",
     description: "<h3>Heavyweight aesthetic street apparel designs</h3><p>Scale your clothing brand with 5 premium editable vector typography designs. Styled with sharp clean geometry, neon accents, and bold layouts suitable for t-shirts, hoodies, and totes.</p><h4>Includes:</h4><ul><li>5 High-res vector designs in SVG, PNG, and AI formats</li><li>Fully editable text and layout layers</li><li>Free font licensing references</li></ul>",
-    image: "https://gumloop.com/artifacts/iui8xkLNqrZ2K9JFUvbwDy?version_id=6D7gwaDBMjriz9wLDodwdv",
+    image: "/products/tshirt-design.jpg",
     price_in_cents: 1999,
     currency: "USD",
     purchasable: true,
     order: 5,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/iui8xkLNqrZ2K9JFUvbwDy?version_id=6D7gwaDBMjriz9wLDodwdv", order: 1, type: "main" }
+      { url: "/products/tshirt-design.jpg", order: 1, type: "main" }
     ],
     options: [],
     variants: [
@@ -215,14 +215,14 @@ export const mockProducts = [
     subtitle: "Frosted glass dashboard design components and pre-built frames in Figma",
     ribbon_text: "BEST SELLER",
     description: "<h3>Design breathtaking frosted glass dashboards</h3><p>Unlock the power of modern UI with AuraUI. Featuring over 120+ pre-built frosted glass cards, responsive sidebar layouts, colorful charts, and dark-themed components ready to drop into your Figma project.</p><h4>Includes:</h4><ul><li>Interactive buttons, input fields, checkboxes</li><li>10 Full page responsive template frames</li><li>Figma auto-layout v5 enabled layers</li></ul>",
-    image: "https://gumloop.com/artifacts/ZMy9YiBUpPetdoZ3s8hKtd?version_id=fszyL39YutxZj4SeBEWwpb",
+    image: "/products/figma-uikit.jpg",
     price_in_cents: 2499,
     currency: "USD",
     purchasable: true,
     order: 6,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/ZMy9YiBUpPetdoZ3s8hKtd?version_id=fszyL39YutxZj4SeBEWwpb", order: 1, type: "main" }
+      { url: "/products/figma-uikit.jpg", order: 1, type: "main" }
     ],
     options: [],
     variants: [
@@ -257,14 +257,14 @@ export const mockProducts = [
     subtitle: "A modern React & Tailwind CSS web app package for art showcases",
     ribbon_text: "PREMIUM",
     description: "<h3>Present your physical or digital art cleanly</h3><p>A beautifully designed gallery and portfolio application built on React. Styled with dark aesthetics, fluid grids, and slide-in detailed cards for physical artwork or digital NFT collections.</p><h4>Features:</h4><ul><li>Responsive masonry layout grid</li><li>Built-in slide and light-box viewer</li><li>Tailwind CSS variables configured for rapid theme edits</li></ul>",
-    image: "https://gumloop.com/artifacts/bhevEj6RDVv6BASkMWYY6Y?version_id=RRJugUafN5oR3dZAoitXs2",
+    image: "/products/gallery-app.jpg",
     price_in_cents: 1499,
     currency: "USD",
     purchasable: true,
     order: 7,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/bhevEj6RDVv6BASkMWYY6Y?version_id=RRJugUafN5oR3dZAoitXs2", order: 1, type: "main" }
+      { url: "/products/gallery-app.jpg", order: 1, type: "main" }
     ],
     options: [],
     variants: [
@@ -299,14 +299,14 @@ export const mockProducts = [
     subtitle: "Premium lightweight desktop markdown tool for developers",
     ribbon_text: "NEW",
     description: "<h3>Organize your thoughts and developer snippets</h3><p>CodeSwift is an ultra-fast markdown writer, documentation planner, and code snippet manager for macOS and Windows. Styled in dark theme with quick syntax highlighting, hotkey expansions, and cloud-save syncing.</p><h4>Features:</h4><ul><li>Vim keybindings & code folding</li><li>50+ Language syntax highlighting</li><li>Local-first security with optional encrypted backup</li></ul>",
-    image: "https://gumloop.com/artifacts/TYnS2MJNH8Gz9qGjeaTPTc?version_id=8MPHjUhwXe8jCAUVmdZFmG",
+    image: "/products/software-tool.jpg",
     price_in_cents: 1900,
     currency: "USD",
     purchasable: true,
     order: 8,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/TYnS2MJNH8Gz9qGjeaTPTc?version_id=8MPHjUhwXe8jCAUVmdZFmG", order: 1, type: "main" }
+      { url: "/products/software-tool.jpg", order: 1, type: "main" }
     ],
     options: [],
     variants: [
@@ -341,14 +341,14 @@ export const mockProducts = [
     subtitle: "25 High-Resolution warm styled photograph mockups for websites & social media",
     ribbon_text: "CREATOR PACK",
     description: "<h3>Professional photography for modern creators</h3><p>High-quality candid lifestyle and flat-lay desk photos. Clean warm tones, minimalist laptops, iPads, cups of coffee, and beautiful ceramic mugs to elevate your landing pages, ads, and web banners.</p><h4>Includes:</h4><ul><li>25 High-resolution JPEG images (6000 x 4000 px)</li><li>Included Commercial licensing agreement</li><li>Warm aesthetic LUT profile files</li></ul>",
-    image: "https://gumloop.com/artifacts/HK6v6Bf9tgvby73tM3k6Zz?version_id=jtLQnewTNECa3chCWM5AnW",
+    image: "/products/stock-photos.jpg",
     price_in_cents: 1200,
     currency: "USD",
     purchasable: true,
     order: 9,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/HK6v6Bf9tgvby73tM3k6Zz?version_id=jtLQnewTNECa3chCWM5AnW", order: 1, type: "main" }
+      { url: "/products/stock-photos.jpg", order: 1, type: "main" }
     ],
     options: [],
     variants: [
