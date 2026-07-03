@@ -5,14 +5,14 @@ export const mockProducts = [
     subtitle: "Complete undated digital planner bundle for iPad & tablets",
     ribbon_text: "BEST SELLER",
     description: "<h3>Unleash your productivity and aesthetic</h3><p>Stop trying to keep everything in your head. Our Premium Daily Planner is designed specifically for modern creators to streamline their days, weeks, and months. Fully compatible with GoodNotes, Notability, and major tablet annotation apps.</p><h4>What's Included:</h4><ul><li>Undated daily planning sheets</li><li>Weekly and monthly overviews</li><li>200+ free pre-cropped digital stickers</li><li>Installation guide PDF</li></ul>",
-    image: "https://gumloop.com/artifacts/fhRUwEC6HXPuf2jPxAPVKX?version_id=CV3kT7aSTf6sNPZvkUHGWR",
+    image: "https://gumloop.com/artifacts/TJ9yrERpz6RGzV3THAdcAe?version_id=GF6FEaCjasisDRiirQfNRQ",
     price_in_cents: 999,
     currency: "USD",
     purchasable: true,
     order: 1,
     site_product_selection: "lowest_price_first",
     images: [
-      { url: "https://gumloop.com/artifacts/fhRUwEC6HXPuf2jPxAPVKX?version_id=CV3kT7aSTf6sNPZvkUHGWR", order: 1, type: "main" }
+      { url: "https://gumloop.com/artifacts/TJ9yrERpz6RGzV3THAdcAe?version_id=GF6FEaCjasisDRiirQfNRQ", order: 1, type: "main" }
     ],
     options: [],
     variants: [
