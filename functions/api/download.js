@@ -1,14 +1,14 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
   "mock-daily-planner": "premium-aesthetic-daily-planner.pdf",
-  "mock-digital-stickers": "digital-stickers-bundle.zip",
-  "mock-website-template": "website-template.zip",
-  "mock-childrens-book": "magical-forest-adventures.pdf",
-  "mock-tshirt-design": "streetwear-tshirt-vector-pack.zip",
-  "mock-figma-uikit": "auraui-glassmorphic-design-system.fig",
-  "mock-gallery-app": "artdisplay-gallery-app.zip",
-  "mock-software-tool": "codeswarm-markdown-editor.zip",
-  "mock-stock-photos": "warm-tone-stock-photo-pack.zip"
+  "mock-digital-stickers": "digital-stickers-collection.pdf",
+  "mock-website-template": "website-template-guide.pdf",
+  "mock-childrens-book": "magical-forest-adventures-book.pdf",
+  "mock-tshirt-design": "streetwear-tshirt-design-catalog.pdf",
+  "mock-figma-uikit": "auraui-design-system-guide.pdf",
+  "mock-gallery-app": "artdisplay-gallery-app-guide.pdf",
+  "mock-software-tool": "codeswarm-markdown-editor-guide.pdf",
+  "mock-stock-photos": "warm-tone-stock-photo-catalog.pdf"
 };
 
 // Content types for different file extensions
