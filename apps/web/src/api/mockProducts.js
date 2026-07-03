@@ -1,5 +1,47 @@
 export const mockProducts = [
   {
+    id: "mock-adhd-budget-planner",
+    title: "ADHD-Friendly Budget & Habit Planner",
+    subtitle: "A gentle, dopamine-friendly system for finances + daily focus",
+    ribbon_text: "TRENDING",
+    description: "<h3>Finally, a planner built for how your brain actually works</h3><p>Ditch the guilt-trip productivity systems. This planner combines two of the most requested niches on Etsy right now &mdash; ADHD-friendly focus tools and beginner budgeting &mdash; into one gentle, low-friction system. Print at home or use digitally with GoodNotes, Notability, or any PDF annotation app.</p><h4>What's Included:</h4><ul><li>4 Daily Focus & Brain Dump pages</li><li>2 Weekly Budget Overview spreads</li><li>Monthly Calendar & Bill Payment tracker</li><li>Debt Payoff & Savings Goal worksheets</li><li>Dopamine-friendly Habit Tracker (no streak-shaming!)</li><li>Energy-Based Priority Sorting guide</li></ul>",
+    image: "/products/adhd-budget-planner.jpg",
+    price_in_cents: 1299,
+    currency: "USD",
+    purchasable: true,
+    order: 10,
+    site_product_selection: "lowest_price_first",
+    images: [
+      { url: "/products/adhd-budget-planner.jpg", order: 1, type: "main" }
+    ],
+    options: [],
+    variants: [
+      {
+        id: "mock-adhd-budget-planner-v1",
+        title: "Standard Edition",
+        price_in_cents: 1299,
+        sale_price_in_cents: null,
+        currency: "USD",
+        price_formatted: "$12.99",
+        sale_price_formatted: "",
+        manage_inventory: false,
+        options: []
+      }
+    ],
+    collections: [
+      { collection_id: "col-ebooks", product_id: "mock-adhd-budget-planner", order: 2 }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "How to Use", description: "<p>Print at home on standard letter paper, or import the PDF directly into GoodNotes, Notability, Xodo, or any annotation app for fully digital, dopamine-friendly planning.</p>" }
+    ],
+    type: {
+      value: "Ebooks"
+    },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-07-03T00:00:00.000Z"
+  },
+  {
     id: "mock-daily-planner",
     title: "Premium Aesthetic Daily Planner",
     subtitle: "Complete undated digital planner bundle for iPad & tablets",
