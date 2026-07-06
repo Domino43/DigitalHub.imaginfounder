@@ -73,7 +73,7 @@ export async function onRequestGet(context) {
   const repoUrl = env?.GITHUB_REPO_URL || 'https://github.com/Domino43/DigitalHub.imaginfounder';
   
   // Extract owner/repo from URL
-  const repoMatch = repoUrl.match(/github\.com\/([^/]+)\/([^/.]+)/);
+  const repoMatch = repoUrl.match(/github\.com\/([^/]+)\/([^/?#]+?)(?:\.git)?\/?$/);
   if (!repoMatch) {
     return new Response(JSON.stringify({ error: 'Invalid repo configuration' }), {
       status: 500,
