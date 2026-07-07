@@ -1,15 +1,14 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
+  "mock-wellness-gratitude-journal": "mindful-morning-reset-journal.pdf",
   "mock-adhd-budget-planner": "adhd-budget-habit-planner.pdf",
-  "mock-daily-planner": "premium-aesthetic-daily-planner.pdf",
-  "mock-digital-stickers": "digital-stickers-collection.pdf",
-  "mock-website-template": "website-template-guide.pdf",
-  "mock-childrens-book": "magical-forest-adventures-book.pdf",
-  "mock-tshirt-design": "streetwear-tshirt-design-catalog.pdf",
-  "mock-figma-uikit": "auraui-design-system-guide.pdf",
-  "mock-gallery-app": "artdisplay-gallery-app-guide.pdf",
-  "mock-software-tool": "codeswarm-markdown-editor-guide.pdf",
-  "mock-stock-photos": "warm-tone-stock-photo-catalog.pdf"
+  "mock-handwritten-font-bundle": "audrey-script-font-bundle.pdf",
+  "mock-wellness-website-template": "bloom-wellness-website-template.pdf",
+  "mock-dragon-childrens-book": "dragon-and-lilys-adventure.pdf",
+  "mock-tshirt-design-bundle": "trendy-tshirt-designs-bundle.pdf",
+  "mock-flux-flow-ui-kit": "flux-flow-ui-kit.pdf",
+  "mock-productivity-os-notion": "productivity-os-notion-template.pdf",
+  "mock-premium-stock-photos": "premium-stock-photo-collection.pdf"
 };
 
 // Content types for different file extensions
@@ -71,9 +70,9 @@ export async function onRequestGet(context) {
   // Fetch the file from the GitHub private repo
   const githubToken = env?.GITHUB_TOKEN;
   const repoUrl = env?.GITHUB_REPO_URL || 'https://github.com/Domino43/DigitalHub.imaginfounder';
-  
+
   // Extract owner/repo from URL
-  const repoMatch = repoUrl.match(/github\.com\/([^/]+)\/([^/?#]+?)(?:\.git)?\/?$/);
+  const repoMatch = repoUrl.match(/github\.com\/([^\/]+)\/([^\/?#]+?)(?:\.git)?\/?$/);
   if (!repoMatch) {
     return new Response(JSON.stringify({ error: 'Invalid repo configuration' }), {
       status: 500,
