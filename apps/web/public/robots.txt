@@ -1,0 +1,6 @@
+# robots.txt for DigitalHub Digital Products Storefront
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://digitalhub-storefront.pages.dev/sitemap.xml
