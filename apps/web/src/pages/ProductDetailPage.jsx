@@ -225,7 +225,7 @@ function ProductDetailPage({ setIsCartOpen }) {
             <div className="relative overflow-hidden rounded-2xl shadow-3d-xl h-96 md:h-[600px] card-3d print:shadow-none print:h-auto print:max-h-[400px] print:border print:border-gray-200">
               <img
                 src={!currentImage?.url ? placeholderImage : currentImage.url}
-                alt={product.title}
+                alt={`${product.title}${currentImage?.type ? ' - ' + currentImage.type.replace(/-/g, ' ') : ''}`}
                 className="w-full h-full object-cover print:object-contain print:h-auto print:max-h-[400px]"
               />
 
@@ -267,7 +267,7 @@ function ProductDetailPage({ setIsCartOpen }) {
                   >
                     <img
                       src={!image.url ? placeholderImage : image.url}
-                      alt={`${product.title} ${index + 1}`}
+                      alt={`${product.title}${image.type ? ' - ' + image.type.replace(/-/g, ' ') : ''} ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
                   </button>
