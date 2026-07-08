@@ -90,7 +90,7 @@ const ShoppingCart = ({ isCartOpen, setIsCartOpen }) => {
             )}
           </motion.div>
         </motion.div>
-      )
+      )}
     </AnimatePresence>
   );
 };

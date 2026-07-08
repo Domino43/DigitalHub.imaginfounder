@@ -15,11 +15,10 @@ const PAYPAL_CLIENT_ID = import.meta.env.VITE_PAYPAL_CLIENT_ID || 'YOUR_PAYPAL_C
 
 function CheckoutPage({ setIsCartOpen }) {
   const navigate = useNavigate();
-  const { cart, getCartTotal, getCartItems, clearCart } = useCart();
+  const { cartItems, getCartTotal, clearCart } = useCart();
   const { toast } = useToast();
   const [isProcessing, setIsProcessing] = useState(false);
 
-  const cartItems = getCartItems();
   const totalAmount = getCartTotal();
 
   useEffect(() => {
@@ -173,19 +172,68 @@ function CheckoutPage({ setIsCartOpen }) {
           >
             {/* Back button */}
             <Button
-n                      layout: 'vertical',
-                      color: 'gold',
-                      shape: 'rect',
-                      label: 'paypal',
-                    }}
-                    createOrder={createOrder}
-                    onApprove={onApprove}
-                    onError={onError}
-                    onCancel={onCancel}
-                    disabled={isProcessing}
-                  />
+              variant="ghost"
+              onClick={() => navigate('/products')}
+              className="mb-6 -ml-2"
+            >
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Continue Shopping
+            </Button>
+
+            <h1 className="text-3xl font-bold mb-8">Checkout</h1>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-10">
+              {/* Order Summary */}
+              <div className="bg-card border border-border rounded-lg p-6">
+                <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <ShoppingCart className="h-5 w-5" />
+                  Order Summary
+                </h2>
+                <div className="space-y-4 mb-6">
+                  {cartItems.map((item) => (
+                    <div key={item.variant.id} className="flex items-center justify-between text-sm">
+                      <div className="flex-1 pr-4">
+                        <p className="font-medium text-card-foreground">{item.product.title}</p>
+                        <p className="text-muted-foreground">{item.variant.title} × {item.quantity}</p>
+                      </div>
+                      <p className="font-semibold text-card-foreground whitespace-nowrap">
+                        {formatPrice((item.variant.sale_price_in_cents ?? item.variant.price_in_cents) * item.quantity)}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              )}
+                <div className="border-t border-border pt-4 flex justify-between items-center">
+                  <span className="text-lg font-medium">Total</span>
+                  <span className="text-2xl font-bold text-primary">{totalAmount}</span>
+                </div>
+              </div>
+
+              {/* Payment */}
+              <div className="bg-card border border-border rounded-lg p-6">
+                <h2 className="text-xl font-semibold mb-4">Payment</h2>
+                {isProcessing ? (
+                  <div className="flex flex-col items-center justify-center py-12 text-muted-foreground">
+                    <Loader2 className="h-8 w-8 animate-spin mb-3" />
+                    <p>Processing your payment...</p>
+                  </div>
+                ) : (
+                  <div>
+                    <PayPalButtons
+                      style={{
+                        layout: 'vertical',
+                        color: 'gold',
+                        shape: 'rect',
+                        label: 'paypal',
+                      }}
+                      createOrder={createOrder}
+                      onApprove={onApprove}
+                      onError={onError}
+                      onCancel={onCancel}
+                      disabled={isProcessing}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Security Notice */}
