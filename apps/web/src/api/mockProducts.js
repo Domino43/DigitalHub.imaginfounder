@@ -8,9 +8,9 @@ export const mockProducts = [
     price: 12.99,
     currency: "USD",
     images: [
-      { url: "/products/wellness-gratitude-journal.jpg", order: 1, type: "main" },
-      { url: "/products/wellness-gratitude-journal-pages.jpg", order: 2, type: "detail" },
-      { url: "/products/wellness-gratitude-journal-lifestyle.jpg", order: 3, type: "lifestyle" }
+      { url: "/product-images/wellness-gratitude-journal.jpg", order: 1, type: "main" },
+      { url: "/product-images/wellness-gratitude-journal-pages.jpg", order: 2, type: "detail" },
+      { url: "/product-images/wellness-gratitude-journal-lifestyle.jpg", order: 3, type: "lifestyle" }
     ],
     video_url: null,
     type: { value: "Ebooks" },
@@ -28,8 +28,8 @@ export const mockProducts = [
     currency: "USD",
     images: [
       { url: "https://gumloop.com/artifacts/VpxrRMU3BDMSsW69A7BYvf?version_id=eoRmHSyav9cpBWNxtGSfAM", order: 1, type: "main" },
-      { url: "/products/adhd-planner-budget-page.jpg", order: 2, type: "detail" },
-      { url: "/products/adhd-planner-habit-tracker.jpg", order: 3, type: "detail" }
+      { url: "/product-images/adhd-planner-budget-page.jpg", order: 2, type: "detail" },
+      { url: "/product-images/adhd-planner-habit-tracker.jpg", order: 3, type: "detail" }
     ],
     video_url: null,
     type: { value: "Ebooks" },
@@ -65,8 +65,8 @@ export const mockProducts = [
     currency: "USD",
     images: [
       { url: "https://gumloop.com/artifacts/XZXiaBVaqB8QEgC7o8uPWb?version_id=8QP5qR2wPj43aSJRDoWFJf", order: 1, type: "main" },
-      { url: "/products/website-template-mobile.jpg", order: 2, type: "mobile" },
-      { url: "/products/website-template-pages.jpg", order: 3, type: "detail" }
+      { url: "/product-images/website-template-mobile.jpg", order: 2, type: "mobile" },
+      { url: "/product-images/website-template-pages.jpg", order: 3, type: "detail" }
     ],
     video_url: null,
     type: { value: "Website Templates" },
@@ -83,8 +83,8 @@ export const mockProducts = [
     currency: "USD",
     images: [
       { url: "https://gumloop.com/artifacts/5BLDn8nwjkridkCTy3QBwF?version_id=i6sqRXvFXXz7gpbaUqmkmv", order: 1, type: "main" },
-      { url: "/products/childrens-book-pages.jpg", order: 2, type: "detail" },
-      { url: "/products/childrens-book-coloring.jpg", order: 3, type: "bonus" }
+      { url: "/product-images/childrens-book-pages.jpg", order: 2, type: "detail" },
+      { url: "/product-images/childrens-book-coloring.jpg", order: 3, type: "bonus" }
     ],
     video_url: null,
     type: { value: "Children's Books" },
@@ -101,8 +101,8 @@ export const mockProducts = [
     currency: "USD",
     images: [
       { url: "https://gumloop.com/artifacts/BPDN8o9KBHMzV7aw6nGfSP?version_id=MS8gA9AHx68KsXGDQsdBKA", order: 1, type: "main" },
-      { url: "/products/tshirt-designs-closeup.jpg", order: 2, type: "detail" },
-      { url: "/products/tshirt-designs-variations.jpg", order: 3, type: "variations" }
+      { url: "/product-images/tshirt-designs-closeup.jpg", order: 2, type: "detail" },
+      { url: "/product-images/tshirt-designs-variations.jpg", order: 3, type: "variations" }
     ],
     video_url: null,
     type: { value: "T-Shirt Designs" },
@@ -119,9 +119,9 @@ export const mockProducts = [
     currency: "USD",
     images: [
       { url: "https://gumloop.com/artifacts/TACDXxSm6QQrcq5PkmrQvX?version_id=badUGSrZ524dqHtCdhamdR", order: 1, type: "main" },
-      { url: "/products/ui-kit-screens.jpg", order: 2, type: "detail" },
-      { url: "/products/ui-kit-components.jpg", order: 3, type: "components" },
-      { url: "/products/ui-kit-dark-mode.jpg", order: 4, type: "dark-mode" }
+      { url: "/product-images/ui-kit-screens.jpg", order: 2, type: "detail" },
+      { url: "/product-images/ui-kit-components.jpg", order: 3, type: "components" },
+      { url: "/product-images/ui-kit-dark-mode.jpg", order: 4, type: "dark-mode" }
     ],
     video_url: null,
     type: { value: "UI Kits" },
@@ -138,8 +138,8 @@ export const mockProducts = [
     currency: "USD",
     images: [
       { url: "https://gumloop.com/artifacts/Jy7KcTT4nEAqNKodzzExKv?version_id=A8VH5KvpWNud2fNLU2X7tx", order: 1, type: "main" },
-      { url: "/products/notion-template-dashboard.jpg", order: 2, type: "dashboard" },
-      { url: "/products/notion-template-mobile.jpg", order: 3, type: "mobile" }
+      { url: "/product-images/notion-template-dashboard.jpg", order: 2, type: "dashboard" },
+      { url: "/product-images/notion-template-mobile.jpg", order: 3, type: "mobile" }
     ],
     video_url: null,
     type: { value: "Software Tools" },
@@ -156,9 +156,9 @@ export const mockProducts = [
     currency: "USD",
     images: [
       { url: "https://gumloop.com/artifacts/JkPVspaGmNUa4nDbrtd64s?version_id=bbVnVPpdoc6horCi8bA2tq", order: 1, type: "main" },
-      { url: "/products/stock-photos-lifestyle.jpg", order: 2, type: "category-lifestyle" },
-      { url: "/products/stock-photos-nature.jpg", order: 3, type: "category-nature" },
-      { url: "/products/stock-photos-business.jpg", order: 4, type: "category-business" }
+      { url: "/product-images/stock-photos-lifestyle.jpg", order: 2, type: "category-lifestyle" },
+      { url: "/product-images/stock-photos-nature.jpg", order: 3, type: "category-nature" },
+      { url: "/product-images/stock-photos-business.jpg", order: 4, type: "category-business" }
     ],
     video_url: null,
     type: { value: "Stock Photos" },

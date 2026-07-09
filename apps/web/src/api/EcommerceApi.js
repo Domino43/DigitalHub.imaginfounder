@@ -19,6 +19,53 @@ export const formatCurrency = (priceInCents, currencyInfo) => {
   return `${currencyDisplay}${amount}`;
 };
 
+// Mock products (managed via mockProducts.js) are authored with a simple flat
+// schema (price, currency, images[]) rather than the Hostinger store's
+// variants-based schema. Normalize them here so downstream rendering code
+// (which expects product.variants[]/product.image) never crashes.
+const normalizeMockProduct = (product) => {
+  if (Array.isArray(product.variants) && product.variants.length > 0) {
+    return product;
+  }
+
+  const priceInCents = Math.round((product.price || 0) * 100);
+  const currencyCode = product.currency || "USD";
+  const currencyInfo = { code: currencyCode, symbol: currencyCode === "USD" ? "$" : undefined };
+  const primaryImage = product.images?.[0]?.url || null;
+
+  const defaultVariant = {
+    id: `${product.id}-default`,
+    title: "Default",
+    image_url: primaryImage,
+    sku: null,
+    price_in_cents: priceInCents,
+    sale_price_in_cents: null,
+    currency: currencyCode.toLowerCase(),
+    currency_info: currencyInfo,
+    price_formatted: formatCurrency(priceInCents, currencyInfo),
+    sale_price_formatted: null,
+    manage_inventory: false,
+    weight: null,
+    options: [],
+    inventory_quantity: null,
+  };
+
+  return {
+    ...product,
+    image: product.image || primaryImage,
+    price_in_cents: priceInCents,
+    currency: currencyCode.toLowerCase(),
+    purchasable: product.purchasable ?? true,
+    order: product.order ?? 0,
+    site_product_selection: product.site_product_selection ?? null,
+    status: product.status ?? "published",
+    options: product.options || [],
+    collections: product.collections || [],
+    additional_info: product.additional_info || [],
+    variants: [defaultVariant],
+  };
+};
+
 const extractVariantOptions = (options) => {
   return (options || []).map((opt) => ({
     id: opt?.id || "",
@@ -458,7 +505,7 @@ export async function getProducts({
   }
 
   // Combine mock products with hostinger products
-  const combinedProducts = [...mockProducts, ...hostingerProducts];
+  const combinedProducts = [...mockProducts.map(normalizeMockProduct), ...hostingerProducts];
 
   return {
     count: combinedProducts.length,
@@ -492,7 +539,7 @@ export async function getProduct(id, { field } = {}) {
   if (id && id.startsWith("mock-")) {
     const mockP = mockProducts.find((p) => p.id === id);
     if (mockP) {
-      return JSON.parse(JSON.stringify(mockP)); // Return deep copy
+      return normalizeMockProduct(JSON.parse(JSON.stringify(mockP))); // Return deep copy, normalized
     }
   }
   const queryParams = new URLSearchParams();
