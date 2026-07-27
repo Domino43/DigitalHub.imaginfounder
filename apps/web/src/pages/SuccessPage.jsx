@@ -17,7 +17,8 @@ const PRODUCT_NAMES = {
   'mock-figma-uikit': 'AuraUI - Glassmorphic Design System & UI Kit',
   'mock-gallery-app': 'ArtDisplay - Minimalist Portfolio Gallery React App',
   'mock-software-tool': 'CodeSwift - Desktop Markdown Editor & Snippet Manager',
-  'mock-stock-photos': 'Candid Warm Tone Creator Workspace Stock Photo Pack'
+  'mock-stock-photos': 'Candid Warm Tone Creator Workspace Stock Photo Pack',
+  'mock-adhd-budget-planner': 'ADHD-Friendly Budget & Habit Planner'
 };
 
 const SuccessPage = ({ setIsCartOpen }) => {
