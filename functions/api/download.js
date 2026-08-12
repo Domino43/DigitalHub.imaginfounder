@@ -1,5 +1,6 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
+  "mock-anxiety-sleep-reset-planner": "anxiety-sleep-reset-planner.pdf",
   "mock-wellness-gratitude-journal": "mindful-morning-reset-journal.pdf",
   "mock-adhd-budget-planner": "adhd-budget-habit-planner.pdf",
   "mock-handwritten-font-bundle": "audrey-script-font-bundle.pdf",

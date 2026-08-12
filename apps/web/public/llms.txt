@@ -1,4 +1,5 @@
 ## Pages
 - [- DigitalHub`}](/productdetail): No description available
-- [Checkout - DigitalHub](/checkout): Complete your purchase securely with PayPal
-- [Order Successful - DigitalHub](/success): You
+- [Checkout - DigitalHub](/checkout): Complete your purchase securely with PayPal on DigitalHub.
+- [Order Successful - DigitalHub](/success): Your order has been successfully placed. Download your digital products here.
+- [Products - DigitalHub](/productslist): Browse our collection of premium digital products including templates, ebooks, software tools, and more.

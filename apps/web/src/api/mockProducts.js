@@ -1,5 +1,22 @@
 export const mockProducts = [
   {
+    id: "mock-anxiety-sleep-reset-planner",
+    title: "Anxiety + Sleep Reset Planner",
+    subtitle: "A gentle 30-day nervous-system system for calmer nights and clearer mornings",
+    ribbon_text: "TRENDING",
+    description: "<h3>Calm your nights. Clear your mornings.</h3><p>This planner stacks two of 2026&rsquo;s strongest wellness demand drivers &mdash; <strong>anxiety relief</strong> and <strong>sleep reset routines</strong> &mdash; into one low-pressure, undated PDF. Designed for overstimulated minds that need safety before productivity.</p><h4>What&rsquo;s Included:</h4><ul><li>Daily anxiety check-ins (body sensations + thought loops)</li><li>Sleep quality scoring and wind-down checklists</li><li>Energy-based gentle priority planning</li><li>Brain dump pages for racing thoughts</li><li>Weekly nervous-system reset reviews</li><li>Habit tracker for restorative rest routines</li><li>Monthly calm overview and soft goal pages</li><li>No-guilt design &mdash; skip days without starting over</li></ul><p><strong>Perfect for:</strong> Anxious high-achievers, burned-out creators, light sleepers, anyone rebuilding a bedtime routine, people who hate rigid planners.</p><p><strong>Format:</strong> Printable PDF (US Letter), 10 thoughtfully designed pages you can reprint anytime. Undated. Works on paper or in GoodNotes / Notability.</p>",
+    price: 12.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/anxiety-sleep-reset-planner.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "Ebooks" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
     id: "mock-wellness-gratitude-journal",
     title: "Mindful Morning Reset Journal",
     subtitle: "A 90-day wellness & gratitude system for intentional living",
