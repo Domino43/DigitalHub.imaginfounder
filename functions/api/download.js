@@ -1,5 +1,14 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
+  "mock-artdisplay-gallery-app": "artdisplay-gallery-app.zip",
+  "mock-auraui-design-system": "auraui-glassmorphic-design-system.zip",
+  "mock-codeswift-markdown-editor": "codeswarm-markdown-editor.zip",
+  "mock-streetwear-tshirt-vector-pack": "streetwear-tshirt-vector-pack.zip",
+  "mock-warm-tone-stock-photos": "warm-tone-stock-photo-pack.zip",
+  "mock-eliza-website-template": "website-template.zip",
+  "mock-premium-aesthetic-daily-planner": "premium-aesthetic-daily-planner.pdf",
+  "mock-digital-stickers-collection": "digital-stickers-bundle.zip",
+  "mock-magical-forest-adventures": "magical-forest-adventures-book.pdf",
   "mock-anxiety-sleep-reset-planner": "anxiety-sleep-reset-planner.pdf",
   "mock-wellness-gratitude-journal": "mindful-morning-reset-journal.pdf",
   "mock-adhd-budget-planner": "adhd-budget-habit-planner.pdf",

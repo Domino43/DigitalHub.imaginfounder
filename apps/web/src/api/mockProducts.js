@@ -1,5 +1,158 @@
 export const mockProducts = [
   {
+    id: "mock-artdisplay-gallery-app",
+    title: "ArtDisplay - Portfolio Gallery React App",
+    subtitle: "Complete React + Tailwind source code with masonry layout & lightbox",
+    ribbon_text: "NEW",
+    description: "<h3>A modern, minimalist portfolio gallery, ready to deploy</h3><p>ArtDisplay is a complete React + Tailwind CSS gallery application built for artists, photographers, and creators who want to showcase their work beautifully &mdash; without building a gallery app from scratch.</p><h4>What's Included:</h4><ul><li>Complete React + Tailwind CSS source code</li><li>Responsive masonry layout that adapts to any screen</li><li>Built-in lightbox viewer for full-size image browsing</li><li>Dark / light theme toggle</li><li>Docker deployment included</li><li>Full setup documentation</li></ul><p><strong>Perfect for:</strong> Photographers, illustrators, designers, and agencies who need a fast, beautiful portfolio site without a subscription page builder.</p><p><strong>Format:</strong> ZIP (source code) + PDF documentation. Commercial license included.</p>",
+    price: 34.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/artdisplay-gallery-app.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "Gallery Apps" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
+    id: "mock-auraui-design-system",
+    title: "AuraUI - Glassmorphic UI Kit & Component Library",
+    subtitle: "150+ glassmorphic components, 12 dashboard layouts, dark & light modes",
+    ribbon_text: "NEW",
+    description: "<h3>Ship polished glassmorphic interfaces in a fraction of the time</h3><p>AuraUI is a complete glassmorphic design system with a huge component library and pre-built dashboard layouts &mdash; built for designers and developers who want a premium, modern look without designing every screen from scratch.</p><h4>What's Included:</h4><ul><li>150+ glassmorphic UI components</li><li>12 pre-built dashboard layouts</li><li>200+ icons included</li><li>Dark & light mode variants</li><li>Auto-layout components (Figma)</li><li>Buttons, controls, toggles, sliders & more</li></ul><p><strong>Perfect for:</strong> Product designers, SaaS teams, dashboard builders, and freelancers who need a cohesive, premium UI system fast.</p><p><strong>Format:</strong> Figma (.fig) + ZIP source + PDF design guide. Commercial license included.</p>",
+    price: 54.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/auraui-design-system.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "UI Kits" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
+    id: "mock-codeswift-markdown-editor",
+    title: "CodeSwift - Desktop Markdown Editor & Snippet Manager",
+    subtitle: "Ultra-fast markdown editor for developers, macOS / Windows / Linux",
+    ribbon_text: "NEW",
+    description: "<h3>A distraction-free markdown editor built for developers</h3><p>CodeSwift is an ultra-fast markdown editor for developers who write documentation, manage code snippets, and want a clean, distraction-free writing environment that opens instantly &mdash; even with large files.</p><h4>What's Included:</h4><ul><li>macOS, Windows & Linux builds</li><li>50+ language syntax highlighting</li><li>Vim keybindings & code folding</li><li>Local-first encrypted backup</li><li>Optional cloud sync</li><li>Lightning-fast performance, no lag</li></ul><p><strong>Perfect for:</strong> Developers, technical writers, and teams who manage documentation and code snippets daily.</p><p><strong>Format:</strong> ZIP (desktop app builds) + PDF setup guide. Commercial license included.</p>",
+    price: 27.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/codeswift-markdown-editor.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "Software Tools" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
+    id: "mock-streetwear-tshirt-vector-pack",
+    title: "Streetwear Vector Pack - 5 Editable T-Shirt Designs",
+    subtitle: "Bold graffiti-style graphics, print-ready in SVG, PNG & PDF",
+    ribbon_text: "NEW",
+    description: "<h3>Bold streetwear graphics, ready for print-on-demand</h3><p>Five fully editable graffiti-style t-shirt designs built for print-on-demand sellers who want standout streetwear graphics without hiring an illustrator.</p><h4>What's Included:</h4><ul><li>5 SVG vector files (fully editable)</li><li>5 PNG files (4500x5400px, 300 DPI)</li><li>5 PDF print-ready previews</li><li>Color palette guide included</li><li>Commercial print license</li></ul><p><strong>Perfect for:</strong> POD sellers, streetwear brands, Etsy & Redbubble merchants.</p><p><strong>Format:</strong> ZIP (SVG + PNG + PDF) + PDF catalog. Commercial print license (not for resale as digital files).</p>",
+    price: 19.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/streetwear-tshirt-vector-pack.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "T-Shirt Designs" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
+    id: "mock-warm-tone-stock-photos",
+    title: "Warm Tone Stock Photos - 25 Creator Workspace Images",
+    subtitle: "High-resolution cozy desk & lifestyle photography, commercial license",
+    ribbon_text: "NEW",
+    description: "<h3>Warm, cozy creator-workspace photography for your brand</h3><p>25 high-resolution warm-tone photos of cozy desk flat lays and creator workspaces &mdash; perfect for blogs, social media, and marketing that needs an inviting, aesthetic look.</p><h4>What's Included:</h4><ul><li>25 JPEG images (6000x4000px)</li><li>300 DPI print quality</li><li>5 LUT color profile files (.cube) to match the aesthetic in your own photos</li><li>Commercial license included</li><li>No attribution required</li></ul><p><strong>Perfect for:</strong> Bloggers, content creators, social media managers, small business marketing.</p><p><strong>Format:</strong> ZIP (JPEG + LUTs) + PDF catalog.</p>",
+    price: 29.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/warm-tone-stock-photos.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "Stock Photos" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
+    id: "mock-eliza-website-template",
+    title: "Modern Minimalist Creator Website Template",
+    subtitle: "5 page layouts, React + Vite + Tailwind, dark mode included",
+    ribbon_text: "NEW",
+    description: "<h3>Launch a polished creator portfolio in an afternoon</h3><p>A modern, minimalist website template built for visual storytellers, designers, and creators who want a fast, professional portfolio site without starting from a blank canvas.</p><h4>Template Features:</h4><ul><li>5 pre-built page layouts (Home, Projects, About, Contact, Blog)</li><li>React + Vite + Tailwind CSS</li><li>Fully responsive (mobile / tablet / desktop)</li><li>Dark mode support</li><li>Contact form component</li><li>Blog template with MDX support</li></ul><p><strong>Perfect for:</strong> Designers, photographers, visual storytellers, freelance creatives.</p><p><strong>Format:</strong> ZIP (source code) + PDF documentation. Commercial license for unlimited client projects.</p>",
+    price: 44.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/eliza-website-template.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "Website Templates" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
+    id: "mock-premium-aesthetic-daily-planner",
+    title: "Premium Aesthetic Daily Planner - Undated Digital Bundle",
+    subtitle: "365 daily pages, 52 weekly spreads, 200+ digital stickers, for iPad & Android",
+    ribbon_text: "NEW",
+    description: "<h3>A beautifully designed digital planner for every device</h3><p>An undated digital planner bundle built for GoodNotes, Notability, Xodo, and any digital note-taking app &mdash; with a full year of daily pages, weekly overviews, and monthly calendars in one aesthetic system.</p><h4>What's Included:</h4><ul><li>365 daily planning pages</li><li>52 weekly overview spreads</li><li>12 monthly calendar pages</li><li>200+ digital stickers included</li><li>Habit trackers & goal worksheets</li><li>Gratitude journal pages</li><li>Hyperlinked tabs for easy navigation</li></ul><p><strong>Perfect for:</strong> iPad / GoodNotes users, students, professionals, anyone who wants an all-in-one digital planning system.</p><p><strong>Format:</strong> PDF (hyperlinked), works in GoodNotes, Notability, Xodo. Includes step-by-step install guide.</p>",
+    price: 15.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/premium-aesthetic-daily-planner.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "Ebooks" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
+    id: "mock-digital-stickers-collection",
+    title: "Digital Stickers Collection - 500+ Hand-Drawn Stickers",
+    subtitle: "Productivity icons, cute animals, plants, weather & seasonal sets",
+    ribbon_text: "NEW",
+    description: "<h3>500+ hand-drawn stickers for digital planning</h3><p>A massive hand-drawn sticker collection built to decorate any digital planner, journal, or note-taking app &mdash; from productivity icons to cute animals and seasonal sets.</p><h4>What's Included:</h4><ul><li>Productivity icons (100+)</li><li>Cute animals (50+)</li><li>Plants & nature (80+)</li><li>Weather elements (30+)</li><li>Holiday & seasonal (60+)</li><li>Functional tabs & labels (50+)</li></ul><p><strong>Perfect for:</strong> Digital planner users, GoodNotes / Notability fans, journal decorators, teachers.</p><p><strong>Format:</strong> PNG sticker pack (transparent background) + PDF catalog preview.</p>",
+    price: 9.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/digital-stickers-collection.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "Stock Photos" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
+    id: "mock-magical-forest-adventures",
+    title: "The Magical Forest Adventures - Illustrated Storybook",
+    subtitle: "A story of friendship & courage, plus printable coloring & activity pack",
+    ribbon_text: "NEW",
+    description: "<h3>Join Lily and Pip on a magical forest adventure</h3><p>A beautifully illustrated 32-page children's ebook about friendship and courage, following curious 7-year-old Lily and her fox friend Pip through a magical forest &mdash; plus a printable coloring and activity pack.</p><h4>What's Included:</h4><ul><li>32-page illustrated children's ebook (full color)</li><li>10 printable coloring pages featuring all characters</li><li>5 activity sheets (mazes, word searches, spot-the-difference)</li><li>Character cut-out puppets for creative play</li></ul><p><strong>Perfect for:</strong> Parents, teachers, homeschoolers, children ages 4-8.</p><p><strong>Format:</strong> PDF (illustrated ebook + printable activity pack). Personal use license.</p>",
+    price: 9.99,
+    currency: "USD",
+    images: [
+      { url: "/product-images/magical-forest-adventures.jpg", order: 1, type: "main" }
+    ],
+    video_url: null,
+    type: { value: "Children's Books" },
+    custom_fields: [],
+    related_products: [],
+    updated_at: "2026-08-12T00:00:00.000Z"
+  },
+  {
     id: "mock-anxiety-sleep-reset-planner",
     title: "Anxiety + Sleep Reset Planner",
     subtitle: "A gentle 30-day nervous-system system for calmer nights and clearer mornings",
