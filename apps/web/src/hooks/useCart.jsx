@@ -66,10 +66,21 @@ export const CartProvider = ({ children }) => {
   }, []);
 
   const getCartTotal = useCallback(() => {
+    // Guard: an empty cart has no items to read currency info from. Without this
+    // check, visiting /checkout (or any page calling getCartTotal) with an empty
+    // cart throws "Cannot read properties of undefined (reading 'variant')" and
+    // white-screens the whole app.
+    if (!cartItems || cartItems.length === 0) {
+      return formatCurrency(0, { code: "USD", symbol: "$" });
+    }
+
+    const currencyInfo =
+      cartItems[0]?.variant?.currency_info || { code: "USD", symbol: "$" };
+
     return formatCurrency(cartItems.reduce((total, item) => {
-      const price = item.variant.sale_price_in_cents ?? item.variant.price_in_cents;
+      const price = item.variant?.sale_price_in_cents ?? item.variant?.price_in_cents ?? 0;
       return total + price * item.quantity;
-    }, 0), cartItems[0].variant.currency_info);
+    }, 0), currencyInfo);
   }, [cartItems]);
 
   const value = useMemo(() => ({

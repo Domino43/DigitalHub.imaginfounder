@@ -2,7 +2,7 @@
  * PayPal Webhook Handler
  * Verifies and processes PayPal payment notifications
  * 
- * Webhook URL: https://digitalhub-storefront.pages.dev/api/paypal-webhook
+ * Webhook URL: https://digitalhub.imaginfounder.com/api/paypal-webhook
  * 
  * Required Environment Variables:
  * - PAYPAL_CLIENT_ID: Your PayPal Client ID

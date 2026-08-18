@@ -7,18 +7,29 @@ import { CheckCircle, ArrowRight, Download, Loader2, FileText, Package } from 'l
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-// Product ID to display name mapping
+// Product ID to display name mapping.
+// Must stay in sync with apps/web/src/api/mockProducts.js and the
+// PRODUCT_FILES map in functions/api/download.js.
 const PRODUCT_NAMES = {
-  'mock-daily-planner': 'Premium Aesthetic Daily Planner',
-  'mock-digital-stickers': 'Whimsical Digital Stickers Bundle',
-  'mock-website-template': 'Modern Minimalist Creator Website Template',
-  'mock-childrens-book': 'The Magical Forest Adventures',
-  'mock-tshirt-design': 'Streetwear Typography T-Shirt Vector Pack',
-  'mock-figma-uikit': 'AuraUI - Glassmorphic Design System & UI Kit',
-  'mock-gallery-app': 'ArtDisplay - Minimalist Portfolio Gallery React App',
-  'mock-software-tool': 'CodeSwift - Desktop Markdown Editor & Snippet Manager',
-  'mock-stock-photos': 'Candid Warm Tone Creator Workspace Stock Photo Pack',
-  'mock-adhd-budget-planner': 'ADHD-Friendly Budget & Habit Planner'
+  'mock-artdisplay-gallery-app': 'ArtDisplay - Portfolio Gallery React App',
+  'mock-auraui-design-system': 'AuraUI - Glassmorphic UI Kit & Component Library',
+  'mock-codeswift-markdown-editor': 'CodeSwift - Desktop Markdown Editor & Snippet Manager',
+  'mock-streetwear-tshirt-vector-pack': 'Streetwear Vector Pack - 5 Editable T-Shirt Designs',
+  'mock-warm-tone-stock-photos': 'Warm Tone Stock Photos - 25 Creator Workspace Images',
+  'mock-eliza-website-template': 'Modern Minimalist Creator Website Template',
+  'mock-premium-aesthetic-daily-planner': 'Premium Aesthetic Daily Planner - Undated Digital Bundle',
+  'mock-digital-stickers-collection': 'Digital Stickers Collection - 500+ Hand-Drawn Stickers',
+  'mock-magical-forest-adventures': 'The Magical Forest Adventures - Illustrated Storybook',
+  'mock-anxiety-sleep-reset-planner': 'Anxiety + Sleep Reset Planner',
+  'mock-wellness-gratitude-journal': 'Mindful Morning Reset Journal',
+  'mock-adhd-budget-planner': 'ADHD-Friendly Budget & Habit Planner',
+  'mock-handwritten-font-bundle': 'Audrey Script - Handwritten Font Bundle',
+  'mock-wellness-website-template': 'Bloom - Wellness Website Template',
+  'mock-dragon-childrens-book': "The Dragon and Lily's Adventure",
+  'mock-tshirt-design-bundle': 'Trendy T-Shirt Design Bundle - 15 Graphics',
+  'mock-flux-flow-ui-kit': 'Flux Flow - Modern Mobile UI Kit',
+  'mock-productivity-os-notion': 'Productivity OS - Complete Notion Template',
+  'mock-premium-stock-photos': 'Premium Stock Photo Collection - 100+ Images'
 };
 
 const SuccessPage = ({ setIsCartOpen }) => {

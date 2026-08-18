@@ -3,6 +3,13 @@ import { mockProducts } from "./mockProducts";
 const ECOMMERCE_API_URL = "https://api-ecommerce.hostinger.com";
 const ECOMMERCE_STORE_ID = "store_01KRM66B40KXDAX8EP9M5J2N2C";
 
+// The Hostinger store backing this catalog is not provisioned (the API returns
+// 404 "Store not found" for this store id), which produced a failed request and
+// console error on every page load. The storefront is currently served entirely
+// from mockProducts.js + PayPal checkout, so skip the remote call until a real
+// store id is configured. Set to true once Hostinger Ecommerce is live.
+const ENABLE_HOSTINGER_API = false;
+
 export const formatCurrency = (priceInCents, currencyInfo) => {
   if (!currencyInfo || priceInCents === null || priceInCents === undefined) {
     return "";
@@ -462,14 +469,16 @@ export async function getProducts({
 
   let hostingerProducts = [];
   try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = ENABLE_HOSTINGER_API
+      ? await fetch(url, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+      : null;
 
-    if (response.ok) {
+    if (response && response.ok) {
       const data = await response.json();
       hostingerProducts = (data.products || []).map((product) => {
         const { price_in_cents, currency } = getProductPrice(product);

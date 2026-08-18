@@ -70,8 +70,8 @@ async function createOrder(items, env) {
       brand_name: 'DigitalHub',
       landing_page: 'NO_PREFERENCE',
       user_action: 'PAY_NOW',
-      return_url: `${env.SITE_URL || 'https://digitalhub-storefront.pages.dev'}/success`,
-      cancel_url: `${env.SITE_URL || 'https://digitalhub-storefront.pages.dev'}/checkout`,
+      return_url: `${env.SITE_URL || 'https://digitalhub.imaginfounder.com'}/success`,
+      cancel_url: `${env.SITE_URL || 'https://digitalhub.imaginfounder.com'}/checkout`,
     },
   };
 
