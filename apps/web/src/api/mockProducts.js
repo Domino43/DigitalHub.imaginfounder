@@ -7,12 +7,12 @@ export const mockProducts = [
     description: "<h3>Plan your autumn, cozily</h3><p>A seasonal set of six printable planner inserts designed for the slower, warmer months &mdash; monthly and weekly layouts alongside the fun stuff like a fall bucket list and a reading log.</p><h4>What's Included:</h4><ul><li>Fall bucket list &mdash; plan the season's cozy little rituals</li><li>Undated monthly planner &mdash; start any month, any year</li><li>Weekly planner spread</li><li>Pumpkin notepad page</li><li>Hello Fall notepad page</li><li>Books-to-read reading log</li></ul><p><strong>Perfect for:</strong> Autumn lovers, seasonal planners, bullet journal fans, and anyone who resets their routine when the weather turns.</p><p><strong>Format:</strong> Printable PDF, 14 pages (6 inserts + cover + license). US Letter. Undated &mdash; reprint any page as often as you like. Works printed or digitally in GoodNotes, Notability and Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale or redistribution.</p>",
     price: 6.99,
     currency: "USD",
-    image: "/product-images/hello-fall-planner-collection.jpg",
+    image: "/product-images/hello-fall-planner-collection-lifestyle.jpg",
     alt_text: "Hello Fall Planner Collection printable autumn planner inserts with monthly, weekly and bucket list pages",
     images: [
-      { url: "/product-images/hello-fall-planner-collection.jpg", order: 1, type: "main" },
+      { url: "/product-images/hello-fall-planner-collection-lifestyle.jpg", order: 1, type: "main" },
       { url: "/product-images/hello-fall-planner-collection-preview.jpg", order: 2, type: "detail" },
-      { url: "/product-images/hello-fall-planner-collection-lifestyle.jpg", order: 3, type: "lifestyle" }
+      { url: "/product-images/hello-fall-planner-collection.jpg", order: 3, type: "cover" }
     ],
     additional_info: [
       { id: "info1", order: 1, title: "What's Included", description: "6 printable planner inserts across 14 pages: fall bucket list, undated monthly planner, weekly planner, pumpkin notepad, Hello Fall notepad, and a books-to-read reading log. Includes a branded cover page and a license page." },
@@ -33,12 +33,12 @@ export const mockProducts = [
     description: "<h3>The planner pages you'll actually reuse every week</h3><p>Eight everyday planner inserts covering the layouts most people need on repeat &mdash; daily schedules, weekly and monthly overviews, habit tracking and project planning. No seasonal theming, no clutter.</p><h4>What's Included:</h4><ul><li>Monthly overview &mdash; two layout styles</li><li>Habit tracker</li><li>Daily planner &mdash; two different styles</li><li>24-hour daily planner for full-day scheduling</li><li>Weekly overview spread</li><li>Project planner</li></ul><p><strong>Perfect for:</strong> Anyone building a planning routine from scratch, people who want flexible undated layouts, and planner users who prefer clean functional pages over decorative ones.</p><p><strong>Format:</strong> Printable PDF, 17 pages (8 inserts + cover + license). US Letter. Undated. Print or use digitally in GoodNotes, Notability and Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale or redistribution.</p>",
     price: 7.99,
     currency: "USD",
-    image: "/product-images/everyday-essentials-planner-pack.jpg",
+    image: "/product-images/everyday-essentials-planner-pack-lifestyle.jpg",
     alt_text: "Everyday Essentials Planner Pack printable daily, weekly, monthly and habit tracker planner inserts",
     images: [
-      { url: "/product-images/everyday-essentials-planner-pack.jpg", order: 1, type: "main" },
+      { url: "/product-images/everyday-essentials-planner-pack-lifestyle.jpg", order: 1, type: "main" },
       { url: "/product-images/everyday-essentials-planner-pack-preview.jpg", order: 2, type: "detail" },
-      { url: "/product-images/everyday-essentials-planner-pack-lifestyle.jpg", order: 3, type: "lifestyle" }
+      { url: "/product-images/everyday-essentials-planner-pack.jpg", order: 3, type: "cover" }
     ],
     additional_info: [
       { id: "info1", order: 1, title: "What's Included", description: "8 printable planner inserts across 17 pages: monthly overview (two styles), habit tracker, daily planner (two styles), 24-hour daily planner, weekly overview and project planner. Includes a branded cover page and a license page." },
@@ -59,12 +59,12 @@ export const mockProducts = [
     description: "<h3>Keep on top of term without the overwhelm</h3><p>A focused set of three study planner inserts built for students juggling multiple subjects, deadlines and long-running projects.</p><h4>What's Included:</h4><ul><li>Weekly study planner &mdash; map study blocks across the week</li><li>Subject study planner &mdash; track topics and revision per subject</li><li>Project planner &mdash; break assignments into stages and deadlines</li></ul><p><strong>Perfect for:</strong> High school, college and university students, revision planning, dissertation and coursework tracking, and anyone studying part-time around work.</p><p><strong>Format:</strong> Printable PDF, 8 pages (3 inserts + cover + license). US Letter. Undated &mdash; works for any term or semester. Print or use digitally in GoodNotes, Notability and Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale or redistribution.</p>",
     price: 4.99,
     currency: "USD",
-    image: "/product-images/student-study-planner-pack.jpg",
+    image: "/product-images/student-study-planner-pack-lifestyle.jpg",
     alt_text: "Student Study Planner Pack printable weekly study, subject and project planner inserts for college and university",
     images: [
-      { url: "/product-images/student-study-planner-pack.jpg", order: 1, type: "main" },
+      { url: "/product-images/student-study-planner-pack-lifestyle.jpg", order: 1, type: "main" },
       { url: "/product-images/student-study-planner-pack-preview.jpg", order: 2, type: "detail" },
-      { url: "/product-images/student-study-planner-pack-lifestyle.jpg", order: 3, type: "lifestyle" }
+      { url: "/product-images/student-study-planner-pack.jpg", order: 3, type: "cover" }
     ],
     additional_info: [
       { id: "info1", order: 1, title: "What's Included", description: "3 printable study planner inserts across 8 pages: weekly study planner, subject study planner and project planner. Includes a branded cover page and a license page." },
@@ -88,7 +88,8 @@ export const mockProducts = [
     image: "/product-images/cozy-kitchen-routine-planner.jpg",
     alt_text: "Cozy Kitchen Routine Planner printable planner cover with weekly and daily planning pages",
     images: [
-      { url: "/product-images/cozy-kitchen-routine-planner.jpg", order: 1, type: "main" }
+      { url: "/product-images/cozy-kitchen-routine-planner.jpg", order: 1, type: "main" },
+      { url: "/product-images/cozy-kitchen-routine-planner-inside.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
     type: { value: "Ebooks" },
@@ -107,7 +108,8 @@ export const mockProducts = [
     image: "/product-images/start-here-kit.jpg",
     alt_text: "The Start Here Kit cover, a starter pack for launching your first online business in 30 days",
     images: [
-      { url: "/product-images/start-here-kit.jpg", order: 1, type: "main" }
+      { url: "/product-images/start-here-kit.jpg", order: 1, type: "main" },
+      { url: "/product-images/start-here-kit-inside.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
     type: { value: "Ebooks" },
