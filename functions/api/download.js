@@ -1,5 +1,7 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
+  "mock-cozy-kitchen-routine-planner": "cozy-kitchen-routine-planner.pdf",
+  "mock-start-here-kit": "start-here-kit.pdf",
   "mock-artdisplay-gallery-app": "artdisplay-gallery-app.zip",
   "mock-auraui-design-system": "auraui-glassmorphic-design-system.zip",
   "mock-codeswift-markdown-editor": "codeswarm-markdown-editor.zip",
