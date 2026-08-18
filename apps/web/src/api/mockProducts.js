@@ -185,7 +185,8 @@ export const mockProducts = [
     image: "/product-images/streetwear-tshirt-vector-pack.jpg",
     alt_text: "Streetwear typography t-shirt design on a black tee with SVG PNG AI file icons",
     images: [
-      { url: "/product-images/streetwear-tshirt-vector-pack.jpg", order: 1, type: "main" }
+      { url: "/product-images/streetwear-tshirt-vector-pack.jpg", order: 1, type: "main" },
+      { url: "/product-images/streetwear-tshirt-vector-pack-files.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
     type: { value: "T-Shirt Designs" },
@@ -261,7 +262,8 @@ export const mockProducts = [
     image: "/product-images/digital-stickers-collection.jpg",
     alt_text: "Collection of hand drawn pastel digital planner stickers",
     images: [
-      { url: "/product-images/digital-stickers-collection.jpg", order: 1, type: "main" }
+      { url: "/product-images/digital-stickers-collection.jpg", order: 1, type: "main" },
+      { url: "/product-images/digital-stickers-collection-sheet.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
     type: { value: "Stock Photos" },
@@ -280,7 +282,8 @@ export const mockProducts = [
     image: "/product-images/magical-forest-adventures.jpg",
     alt_text: "The Magical Forest Adventures illustrated children's storybook open to a chapter page",
     images: [
-      { url: "/product-images/magical-forest-adventures.jpg", order: 1, type: "main" }
+      { url: "/product-images/magical-forest-adventures.jpg", order: 1, type: "main" },
+      { url: "/product-images/magical-forest-adventures-inside.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
     type: { value: "Children's Books" },
@@ -299,7 +302,8 @@ export const mockProducts = [
     image: "/product-images/anxiety-sleep-reset-planner.jpg",
     alt_text: "Anxiety and Sleep Reset Planner cover in cream, lavender and soft pink",
     images: [
-      { url: "/product-images/anxiety-sleep-reset-planner.jpg", order: 1, type: "main" }
+      { url: "/product-images/anxiety-sleep-reset-planner.jpg", order: 1, type: "main" },
+      { url: "/product-images/anxiety-sleep-reset-planner-cover.jpg", order: 2, type: "cover" }
     ],
     video_url: null,
     type: { value: "Ebooks" },
@@ -337,7 +341,8 @@ export const mockProducts = [
     image: "/product-images/adhd-budget-planner.jpg",
     alt_text: "The Calm Budget Planner, an ADHD friendly budget and habit planner, open to weekly budget pages",
     images: [
-      { url: "/product-images/adhd-budget-planner.jpg", order: 1, type: "main" }
+      { url: "/product-images/adhd-budget-planner.jpg", order: 1, type: "main" },
+      { url: "/product-images/adhd-budget-planner-inside.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
     type: { value: "Ebooks" },
