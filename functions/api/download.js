@@ -1,5 +1,8 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
+  "mock-hello-fall-planner-collection": "hello-fall-planner-collection.pdf",
+  "mock-everyday-essentials-planner-pack": "everyday-essentials-planner-pack.pdf",
+  "mock-student-study-planner-pack": "student-study-planner-pack.pdf",
   "mock-cozy-kitchen-routine-planner": "cozy-kitchen-routine-planner.pdf",
   "mock-start-here-kit": "start-here-kit.pdf",
   "mock-artdisplay-gallery-app": "artdisplay-gallery-app.zip",
