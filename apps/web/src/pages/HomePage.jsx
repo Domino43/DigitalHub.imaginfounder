@@ -8,18 +8,9 @@ import { getProducts, getProductQuantities } from '@/api/EcommerceApi';
 import ProductCard3D from '@/components/ProductCard3D';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { CATEGORY_TREE } from '@/data/categories';
 
-const categories = [
-  { name: 'Website Templates', icon: '🌐' },
-  { name: 'Children\'s Books', icon: '📚' },
-  { name: 'Ebooks', icon: '📖' },
-  { name: 'Gallery Apps', icon: '🖼️' },
-  { name: 'Software Tools', icon: '🛠️' },
-  { name: 'T-Shirt Designs', icon: '👕' },
-  { name: 'UI Kits', icon: '🎨' },
-  { name: 'Fonts & Typography', icon: '✍️' },
-  { name: 'Stock Photos', icon: '📸' }
-];
+const categories = CATEGORY_TREE;
 
 const HomePage = ({ setIsCartOpen }) => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -171,11 +162,17 @@ const HomePage = ({ setIsCartOpen }) => {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
               >
                 <Link to={`/products?category=${encodeURIComponent(category.name)}`}>
-                  <div className="card-3d soft-reflection p-8 text-center group cursor-pointer">
+                  <div className="card-3d soft-reflection p-8 text-center group cursor-pointer h-full">
                     <div className="text-5xl mb-4">{category.icon}</div>
                     <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                       {category.name}
                     </h3>
+                    {category.children?.length > 0 && (
+                      <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+                        {category.children.slice(0, 3).join(' · ')}
+                        {category.children.length > 3 ? ' · more' : ''}
+                      </p>
+                    )}
                   </div>
                 </Link>
               </motion.div>

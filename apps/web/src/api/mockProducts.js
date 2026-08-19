@@ -20,7 +20,8 @@ export const mockProducts = [
       { id: "info3", order: 3, title: "License Terms", description: "Personal Use License. You may print unlimited copies for your own personal or household use and use the files digitally on your own devices. You may not resell, redistribute, share, or use the files commercially, and you may not upload them to any file-sharing or template marketplace. Full terms are included on the final page of the PDF." }
     ],
     video_url: null,
-    type: { value: "Ebooks" },
+    subcategory: "Monthly",
+    type: { value: "Planners" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-18T00:00:00.000Z"
@@ -46,7 +47,8 @@ export const mockProducts = [
       { id: "info3", order: 3, title: "License Terms", description: "Personal Use License. You may print unlimited copies for your own personal or household use and use the files digitally on your own devices. You may not resell, redistribute, share, or use the files commercially, and you may not upload them to any file-sharing or template marketplace. Full terms are included on the final page of the PDF." }
     ],
     video_url: null,
-    type: { value: "Ebooks" },
+    subcategory: "Daily",
+    type: { value: "Planners" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-18T00:00:00.000Z"
@@ -72,7 +74,8 @@ export const mockProducts = [
       { id: "info3", order: 3, title: "License Terms", description: "Personal Use License. You may print unlimited copies for your own personal or household use and use the files digitally on your own devices. You may not resell, redistribute, share, or use the files commercially, and you may not upload them to any file-sharing or template marketplace. Full terms are included on the final page of the PDF." }
     ],
     video_url: null,
-    type: { value: "Ebooks" },
+    subcategory: "Study Templates",
+    type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-18T00:00:00.000Z"
@@ -92,7 +95,8 @@ export const mockProducts = [
       { url: "/product-images/cozy-kitchen-routine-planner-inside.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
-    type: { value: "Ebooks" },
+    subcategory: "Meal Planners",
+    type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-18T00:00:00.000Z"
@@ -112,7 +116,8 @@ export const mockProducts = [
       { url: "/product-images/start-here-kit-inside.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
-    type: { value: "Ebooks" },
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-18T00:00:00.000Z"
@@ -131,7 +136,8 @@ export const mockProducts = [
       { url: "/product-images/artdisplay-gallery-app.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Gallery Apps" },
+    subcategory: "Gallery Wall Sets",
+    type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -150,7 +156,8 @@ export const mockProducts = [
       { url: "/product-images/auraui-design-system.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "UI Kits" },
+    subcategory: "Social Media Content Calendars",
+    type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -169,7 +176,7 @@ export const mockProducts = [
       { url: "/product-images/codeswift-markdown-editor.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Software Tools" },
+    type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -189,7 +196,8 @@ export const mockProducts = [
       { url: "/product-images/streetwear-tshirt-vector-pack-files.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
-    type: { value: "T-Shirt Designs" },
+    subcategory: "Abstract Boho Art",
+    type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -208,7 +216,7 @@ export const mockProducts = [
       { url: "/product-images/warm-tone-stock-photos.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Stock Photos" },
+    type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -227,7 +235,7 @@ export const mockProducts = [
       { url: "/product-images/eliza-website-template.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Website Templates" },
+    type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -246,7 +254,8 @@ export const mockProducts = [
       { url: "/product-images/premium-aesthetic-daily-planner.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Ebooks" },
+    subcategory: "Annual Digital Planners",
+    type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -266,7 +275,8 @@ export const mockProducts = [
       { url: "/product-images/digital-stickers-collection-sheet.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
-    type: { value: "Stock Photos" },
+    subcategory: "Party Favor Tags",
+    type: { value: "Party Printables" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -286,7 +296,8 @@ export const mockProducts = [
       { url: "/product-images/magical-forest-adventures-inside.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
-    type: { value: "Children's Books" },
+    subcategory: "Homeschool Supplements",
+    type: { value: "Kids Activities" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -306,7 +317,8 @@ export const mockProducts = [
       { url: "/product-images/anxiety-sleep-reset-planner-cover.jpg", order: 2, type: "cover" }
     ],
     video_url: null,
-    type: { value: "Ebooks" },
+    subcategory: "iPad Wellness Tracker",
+    type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-08-12T00:00:00.000Z"
@@ -325,7 +337,8 @@ export const mockProducts = [
       { url: "/product-images/wellness-gratitude-journal.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Ebooks" },
+    subcategory: "Digital Journal",
+    type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-07-07T00:00:00.000Z"
@@ -345,7 +358,8 @@ export const mockProducts = [
       { url: "/product-images/adhd-budget-planner-inside.jpg", order: 2, type: "detail" }
     ],
     video_url: null,
-    type: { value: "Ebooks" },
+    subcategory: "Budget Trackers",
+    type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-07-03T00:00:00.000Z"
@@ -366,7 +380,7 @@ export const mockProducts = [
       { url: "/product-images/font-bundle-usage.jpg", order: 4, type: "usage" }
     ],
     video_url: null,
-    type: { value: "Fonts & Typography" },
+    type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-07-07T00:00:00.000Z"
@@ -384,7 +398,7 @@ export const mockProducts = [
       { url: "/product-images/wellness-website-template.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Website Templates" },
+    type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-07-07T00:00:00.000Z"
@@ -402,7 +416,8 @@ export const mockProducts = [
       { url: "/product-images/dragon-childrens-book.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Children's Books" },
+    subcategory: "Homeschool Supplements",
+    type: { value: "Kids Activities" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-07-07T00:00:00.000Z"
@@ -420,7 +435,8 @@ export const mockProducts = [
       { url: "/product-images/trendy-tshirt-bundle.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "T-Shirt Designs" },
+    subcategory: "Abstract Boho Art",
+    type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-07-07T00:00:00.000Z"
@@ -438,7 +454,7 @@ export const mockProducts = [
       { url: "/product-images/flux-flow-ui-kit.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "UI Kits" },
+    type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-07-07T00:00:00.000Z"
@@ -456,7 +472,8 @@ export const mockProducts = [
       { url: "/product-images/productivity-os-notion.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Software Tools" },
+    subcategory: "Hyperlinked Monthly Views",
+    type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-07-07T00:00:00.000Z"
@@ -474,7 +491,8 @@ export const mockProducts = [
       { url: "/product-images/premium-stock-photos.jpg", order: 1, type: "main" }
     ],
     video_url: null,
-    type: { value: "Stock Photos" },
+    subcategory: "Gallery Wall Sets",
+    type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
     updated_at: "2026-07-07T00:00:00.000Z"

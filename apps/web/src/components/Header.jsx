@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart, Menu, X } from 'lucide-react';
+import { ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CATEGORY_TREE } from '@/data/categories';
 
 const Header = ({ setIsCartOpen }) => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const Header = ({ setIsCartOpen }) => {
     { path: '/', label: 'Home' },
     { path: '/products', label: 'Products' }
   ];
+  const [shopOpen, setShopOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 glass-effect border-b border-border shadow-3d-sm">
@@ -53,6 +55,60 @@ const Header = ({ setIsCartOpen }) => {
                 )}
               </Link>
             ))}
+            <div
+              className="relative"
+              onMouseEnter={() => setShopOpen(true)}
+              onMouseLeave={() => setShopOpen(false)}
+            >
+              <button
+                type="button"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
+                onClick={() => setShopOpen((open) => !open)}
+              >
+                Shop
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              <AnimatePresence>
+                {shopOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    className="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50"
+                  >
+                    <div className="w-[720px] max-w-[90vw] bg-card border border-border rounded-2xl shadow-3d-md p-5 grid grid-cols-3 gap-4">
+                      {CATEGORY_TREE.map((category) => (
+                        <div key={category.name}>
+                          <Link
+                            to={`/products?category=${encodeURIComponent(category.name)}`}
+                            className="text-sm font-semibold hover:text-primary transition-colors"
+                            onClick={() => setShopOpen(false)}
+                          >
+                            <span className="mr-1">{category.icon}</span>
+                            {category.name}
+                          </Link>
+                          {category.children?.length > 0 && (
+                            <ul className="mt-2 space-y-1">
+                              {category.children.slice(0, 4).map((child) => (
+                                <li key={child}>
+                                  <Link
+                                    to={`/products?category=${encodeURIComponent(category.name)}&subcategory=${encodeURIComponent(child)}`}
+                                    className="text-xs text-muted-foreground hover:text-primary transition-colors"
+                                    onClick={() => setShopOpen(false)}
+                                  >
+                                    {child}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             <a
               href="https://hpanel.hostinger.com"
               target="_blank"
@@ -113,6 +169,21 @@ const Header = ({ setIsCartOpen }) => {
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-2">
+                <p className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Shop</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {CATEGORY_TREE.map((category) => (
+                    <Link
+                      key={category.name}
+                      to={`/products?category=${encodeURIComponent(category.name)}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-xs text-card-foreground hover:text-primary transition-colors"
+                    >
+                      {category.icon} {category.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
               <a
                 href="https://hpanel.hostinger.com"
                 target="_blank"

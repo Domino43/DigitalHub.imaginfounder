@@ -9,6 +9,7 @@ import SearchBar from '@/components/SearchBar';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Skeleton } from '@/components/ui/skeleton';
+import { productMatchesCategory, getParentForSubcategory } from '@/data/categories';
 
 const ProductsList = ({ setIsCartOpen }) => {
   const [products, setProducts] = useState([]);
@@ -16,16 +17,35 @@ const ProductsList = ({ setIsCartOpen }) => {
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = searchParams.get('category') || 'All Products';
+  const initialSubcategory = searchParams.get('subcategory') || null;
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [selectedSubcategory, setSelectedSubcategory] = useState(initialSubcategory);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('newest');
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+    setSelectedSubcategory(null);
     if (category === 'All Products') {
       searchParams.delete('category');
     } else {
       searchParams.set('category', category);
+    }
+    searchParams.delete('subcategory');
+    setSearchParams(searchParams);
+  };
+
+  const handleSubcategoryChange = (subcategory) => {
+    setSelectedSubcategory(subcategory);
+    if (!subcategory) {
+      searchParams.delete('subcategory');
+    } else {
+      searchParams.set('subcategory', subcategory);
+      const parent = getParentForSubcategory(subcategory);
+      if (parent) {
+        setSelectedCategory(parent.name);
+        searchParams.set('category', parent.name);
+      }
     }
     setSearchParams(searchParams);
   };
@@ -77,9 +97,9 @@ const ProductsList = ({ setIsCartOpen }) => {
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = products;
 
-    if (selectedCategory !== 'All Products') {
-      filtered = filtered.filter(product => 
-        product.type?.value === selectedCategory
+    if (selectedCategory !== 'All Products' || selectedSubcategory) {
+      filtered = filtered.filter((product) =>
+        productMatchesCategory(product, selectedCategory, selectedSubcategory)
       );
     }
 
@@ -107,7 +127,7 @@ const ProductsList = ({ setIsCartOpen }) => {
     });
 
     return sorted;
-  }, [products, selectedCategory, searchTerm, sortBy]);
+  }, [products, selectedCategory, selectedSubcategory, searchTerm, sortBy]);
 
   if (loading) {
     return (
@@ -159,7 +179,7 @@ const ProductsList = ({ setIsCartOpen }) => {
     <>
       <Helmet>
         <title>Products - DigitalHub</title>
-        <meta name="description" content="Browse our collection of premium digital products including templates, ebooks, software tools, and more." />
+        <meta name="description" content="Browse DigitalHub printables: planners, invitations, wall art, kids worksheets, party kits, and more." />
       </Helmet>
       <Header setIsCartOpen={setIsCartOpen} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -181,7 +201,9 @@ const ProductsList = ({ setIsCartOpen }) => {
 
         <CategoryFilter
           selectedCategory={selectedCategory}
+          selectedSubcategory={selectedSubcategory}
           onCategoryChange={handleCategoryChange}
+          onSubcategoryChange={handleSubcategoryChange}
         />
 
         {filteredAndSortedProducts.length === 0 ? (

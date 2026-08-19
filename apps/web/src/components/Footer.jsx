@@ -1,19 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Mail } from 'lucide-react';
+import { PARENT_CATEGORIES } from '@/data/categories';
 
 const Footer = () => {
-  const categories = [
-    'Website Templates',
-    'Children\'s Books',
-    'Ebooks',
-    'Gallery Apps',
-    'Software Tools',
-    'T-Shirt Designs',
-    'UI Kits',
-    'Fonts & Typography',
-    'Stock Photos'
-  ];
+  const categories = PARENT_CATEGORIES;
 
   return (
     <footer className="bg-secondary text-secondary-foreground mt-20 border-t border-border">
