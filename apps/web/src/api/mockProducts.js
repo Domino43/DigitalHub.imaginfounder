@@ -24,6 +24,7 @@ export const mockProducts = [
     type: { value: "Planners" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-18T00:00:00.000Z"
   },
   {
@@ -51,6 +52,7 @@ export const mockProducts = [
     type: { value: "Planners" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-18T00:00:00.000Z"
   },
   {
@@ -78,6 +80,7 @@ export const mockProducts = [
     type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-18T00:00:00.000Z"
   },
   {
@@ -99,6 +102,7 @@ export const mockProducts = [
     type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-18T00:00:00.000Z"
   },
   {
@@ -120,74 +124,92 @@ export const mockProducts = [
     type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-18T00:00:00.000Z"
   },
   {
     id: "mock-artdisplay-gallery-app",
-    title: "ArtDisplay - Portfolio Gallery React App",
-    subtitle: "Complete React + Tailwind source code with masonry layout & lightbox",
+    title: "ArtDisplay Gallery Website Template",
+    subtitle: "A simple 3-page HTML gallery you can host anywhere",
     ribbon_text: "NEW",
-    description: "<h3>A modern, minimalist portfolio gallery, ready to deploy</h3><p>ArtDisplay is a complete React + Tailwind CSS gallery application built for artists, photographers, and creators who want to showcase their work beautifully &mdash; without building a gallery app from scratch.</p><h4>What's Included:</h4><ul><li>Complete React + Tailwind CSS source code</li><li>Responsive masonry layout that adapts to any screen</li><li>Built-in lightbox viewer for full-size image browsing</li><li>Dark / light theme toggle</li><li>Docker deployment included</li><li>Full setup documentation</li></ul><p><strong>Perfect for:</strong> Photographers, illustrators, designers, and agencies who need a fast, beautiful portfolio site without a subscription page builder.</p><p><strong>Format:</strong> ZIP (source code) + PDF documentation. Commercial license included.</p>",
-    price: 4.99,
+    description: "<h3>A gallery site you can actually open</h3><p>ArtDisplay is a ready-to-edit 3-page HTML website for artists and photographers. Unzip, open index.html, and replace the copy with your collection notes. No build step.</p><h4>What's Included:</h4><ul><li>Gallery, About, and Contact pages</li><li>Starter CSS you can restyle</li><li>README with edit instructions</li></ul><p><strong>Format:</strong> ZIP of HTML + CSS. Works locally or on any static host.</p>",
+    price: 12.99,
     currency: "USD",
     image: "/product-images/artdisplay-gallery-app.jpg",
     alt_text: "ArtDisplay portfolio gallery React app shown on a laptop with masonry image grid",
     images: [
       { url: "/product-images/artdisplay-gallery-app.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "3 HTML pages (gallery, about, contact), a shared stylesheet, README and license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Unzip the folder and open index.html in a browser. Edit the text, add your images, then upload the folder to any static host." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal and one-client commercial use. Do not resell or redistribute the template." }
+    ],
     video_url: null,
     subcategory: "Gallery Wall Sets",
     type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-auraui-design-system",
-    title: "AuraUI - Glassmorphic UI Kit & Component Library",
-    subtitle: "150+ glassmorphic components, 12 dashboard layouts, dark & light modes",
-    ribbon_text: "NEW",
-    description: "<h3>Ship polished glassmorphic interfaces in a fraction of the time</h3><p>AuraUI is a complete glassmorphic design system with a huge component library and pre-built dashboard layouts &mdash; built for designers and developers who want a premium, modern look without designing every screen from scratch.</p><h4>What's Included:</h4><ul><li>150+ glassmorphic UI components</li><li>12 pre-built dashboard layouts</li><li>200+ icons included</li><li>Dark & light mode variants</li><li>Auto-layout components (Figma)</li><li>Buttons, controls, toggles, sliders & more</li></ul><p><strong>Perfect for:</strong> Product designers, SaaS teams, dashboard builders, and freelancers who need a cohesive, premium UI system fast.</p><p><strong>Format:</strong> Figma (.fig) + ZIP source + PDF design guide. Commercial license included.</p>",
-    price: 4.99,
+    title: "Aura Social Media Content Calendar",
+    subtitle: "30-day calendar, caption formulas, and an offer one-pager",
+    ribbon_text: "TRENDING",
+    description: "<h3>Stop staring at a blank caption box</h3><p>A printable 30-day content calendar with caption formulas and a one-page offer worksheet. Built for small brands that need a posting rhythm.</p><h4>What's Included:</h4><ul><li>30-day content calendar</li><li>Caption formulas</li><li>Offer one-pager</li></ul><p><strong>Format:</strong> Printable PDF. US Letter. Works printed or in GoodNotes.</p>",
+    price: 9.99,
     currency: "USD",
     image: "/product-images/auraui-design-system.jpg",
     alt_text: "AuraUI glassmorphic dashboard UI kit displayed on a desktop monitor",
     images: [
       { url: "/product-images/auraui-design-system.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "30-day calendar, caption formulas, and an offer worksheet in one PDF." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print or import into a PDF app. Fill one week at a time. Duplicate the calendar page each month." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Not for resale." }
+    ],
     video_url: null,
     subcategory: "Social Media Content Calendars",
     type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-codeswift-markdown-editor",
-    title: "CodeSwift - Desktop Markdown Editor & Snippet Manager",
-    subtitle: "Ultra-fast markdown editor for developers, macOS / Windows / Linux",
-    ribbon_text: "NEW",
-    description: "<h3>A distraction-free markdown editor built for developers</h3><p>CodeSwift is an ultra-fast markdown editor for developers who write documentation, manage code snippets, and want a clean, distraction-free writing environment that opens instantly &mdash; even with large files.</p><h4>What's Included:</h4><ul><li>macOS, Windows & Linux builds</li><li>50+ language syntax highlighting</li><li>Vim keybindings & code folding</li><li>Local-first encrypted backup</li><li>Optional cloud sync</li><li>Lightning-fast performance, no lag</li></ul><p><strong>Perfect for:</strong> Developers, technical writers, and teams who manage documentation and code snippets daily.</p><p><strong>Format:</strong> ZIP (desktop app builds) + PDF setup guide. Commercial license included.</p>",
-    price: 4.99,
+    title: "CodeSwift Writing Studio",
+    subtitle: "A printable writing system for drafts, snippets, and shipping pages",
+    description: "<h3>Write more. Fiddle with apps less.</h3><p>CodeSwift Writing Studio is a printable system for people who ship words: daily writing pages, a snippet library, a draft tracker, and a weekly review. It is a planner, not a desktop app.</p><h4>What's Included:</h4><ul><li>Daily writing pages</li><li>Snippet library</li><li>Draft tracker</li><li>Weekly review</li></ul><p><strong>Format:</strong> Printable PDF, 14 pages. US Letter.</p>",
+    price: 9.99,
     currency: "USD",
     image: "/product-images/codeswift-markdown-editor.jpg",
     alt_text: "CodeSwift desktop markdown editor with split preview on a laptop screen",
     images: [
       { url: "/product-images/codeswift-markdown-editor.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "14-page printable writing studio: daily pages, snippet library, draft tracker, weekly review, license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print or import into GoodNotes. Track drafts on the tracker page; keep reusable lines in the snippet library." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Not for resale or redistribution." }
+    ],
     video_url: null,
+    subcategory: "Business Planner Bundle",
     type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-streetwear-tshirt-vector-pack",
-    title: "Streetwear Vector Pack - 5 Editable T-Shirt Designs",
-    subtitle: "Bold graffiti-style graphics, print-ready in SVG, PNG & PDF",
-    ribbon_text: "NEW",
-    description: "<h3>Bold streetwear graphics, ready for print-on-demand</h3><p>Five fully editable graffiti-style t-shirt designs built for print-on-demand sellers who want standout streetwear graphics without hiring an illustrator.</p><h4>What's Included:</h4><ul><li>5 SVG vector files (fully editable)</li><li>5 PNG files (4500x5400px, 300 DPI)</li><li>5 PDF print-ready previews</li><li>Color palette guide included</li><li>Commercial print license</li></ul><p><strong>Perfect for:</strong> POD sellers, streetwear brands, Etsy & Redbubble merchants.</p><p><strong>Format:</strong> ZIP (SVG + PNG + PDF) + PDF catalog. Commercial print license (not for resale as digital files).</p>",
-    price: 4.99,
+    title: "Streetwear-Inspired Poster Pack",
+    subtitle: "8 bold graphic posters in SVG + PNG",
+    description: "<h3>Bold graphics for walls</h3><p>Eight original poster graphics in SVG and PNG. Use them as wall art, social graphics, or starting points in Canva. These are original DigitalHub graphics, not licensed streetwear brand marks.</p><h4>What's Included:</h4><ul><li>8 SVG files</li><li>8 PNG files</li><li>README and license</li></ul><p><strong>Format:</strong> ZIP of SVG + PNG. Personal use.</p>",
+    price: 9.99,
     currency: "USD",
     image: "/product-images/streetwear-tshirt-vector-pack.jpg",
     alt_text: "Streetwear typography t-shirt design on a black tee with SVG PNG AI file icons",
@@ -195,78 +217,102 @@ export const mockProducts = [
       { url: "/product-images/streetwear-tshirt-vector-pack.jpg", order: 1, type: "main" },
       { url: "/product-images/streetwear-tshirt-vector-pack-files.jpg", order: 2, type: "detail" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "8 SVG + 8 PNG posters and a README/license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Unzip and open in Canva, Cricut, Figma, or a browser." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Do not resell the source files or use them as-is on merchandise for sale." }
+    ],
     video_url: null,
     subcategory: "Abstract Boho Art",
     type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-warm-tone-stock-photos",
-    title: "Warm Tone Stock Photos - 25 Creator Workspace Images",
-    subtitle: "High-resolution cozy desk & lifestyle photography, commercial license",
-    ribbon_text: "NEW",
-    description: "<h3>Warm, cozy creator-workspace photography for your brand</h3><p>25 high-resolution warm-tone photos of cozy desk flat lays and creator workspaces &mdash; perfect for blogs, social media, and marketing that needs an inviting, aesthetic look.</p><h4>What's Included:</h4><ul><li>25 JPEG images (6000x4000px)</li><li>300 DPI print quality</li><li>5 LUT color profile files (.cube) to match the aesthetic in your own photos</li><li>Commercial license included</li><li>No attribution required</li></ul><p><strong>Perfect for:</strong> Bloggers, content creators, social media managers, small business marketing.</p><p><strong>Format:</strong> ZIP (JPEG + LUTs) + PDF catalog.</p>",
-    price: 4.99,
+    title: "Warm Tone Wall Art Set",
+    subtitle: "6 cream-and-clay quote prints for cozy workspaces",
+    description: "<h3>Warm prints for a calmer desk</h3><p>Six original quote prints in cream, clay, and lavender. These are graphic prints, not stock photographs, designed to hang as a set above a desk or kitchen command center.</p><h4>What's Included:</h4><ul><li>6 printable art pages</li><li>Print guide</li><li>Personal use license</li></ul><p><strong>Format:</strong> Printable PDF. US Letter.</p>",
+    price: 8.99,
     currency: "USD",
     image: "/product-images/warm-tone-stock-photos.jpg",
     alt_text: "Collage of warm tone creator workspace stock photos with coffee and laptops",
     images: [
       { url: "/product-images/warm-tone-stock-photos.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "6 coordinating quote prints plus a print guide and license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on heavy matte paper. Frame with 2-3 inches between prints, bottoms aligned." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Not for resale as prints or POD listings." }
+    ],
     video_url: null,
+    subcategory: "Motivational Quotes",
     type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-eliza-website-template",
-    title: "Modern Minimalist Creator Website Template",
-    subtitle: "5 page layouts, React + Vite + Tailwind, dark mode included",
-    ribbon_text: "NEW",
-    description: "<h3>Launch a polished creator portfolio in an afternoon</h3><p>A modern, minimalist website template built for visual storytellers, designers, and creators who want a fast, professional portfolio site without starting from a blank canvas.</p><h4>Template Features:</h4><ul><li>5 pre-built page layouts (Home, Projects, About, Contact, Blog)</li><li>React + Vite + Tailwind CSS</li><li>Fully responsive (mobile / tablet / desktop)</li><li>Dark mode support</li><li>Contact form component</li><li>Blog template with MDX support</li></ul><p><strong>Perfect for:</strong> Designers, photographers, visual storytellers, freelance creatives.</p><p><strong>Format:</strong> ZIP (source code) + PDF documentation. Commercial license for unlimited client projects.</p>",
-    price: 4.99,
+    title: "Eliza Studio Website Template",
+    subtitle: "5-page HTML portfolio for makers — open index.html and edit",
+    description: "<h3>A calm portfolio you can launch this afternoon</h3><p>Eliza Studio is a 5-page HTML/CSS website for photographers, writers, and small studios. No React, no install. Unzip, edit the copy, upload.</p><h4>What's Included:</h4><ul><li>Home, Work, About, Services, Contact</li><li>Shared stylesheet</li><li>README with edit notes</li></ul><p><strong>Format:</strong> ZIP of HTML + CSS.</p>",
+    price: 14.99,
     currency: "USD",
     image: "/product-images/eliza-website-template.jpg",
     alt_text: "Modern minimalist dark portfolio website template shown on a laptop",
     images: [
       { url: "/product-images/eliza-website-template.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "5 HTML pages, stylesheet, README and license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Unzip and open index.html. Replace the placeholder copy and upload the folder to any static host." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal and one-client commercial use. Do not resell the template." }
+    ],
     video_url: null,
+    subcategory: "Client Intake Forms",
     type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-premium-aesthetic-daily-planner",
-    title: "Premium Aesthetic Daily Planner - Undated Digital Bundle",
-    subtitle: "365 daily pages, 52 weekly spreads, 200+ digital stickers, for iPad & Android",
-    ribbon_text: "NEW",
-    description: "<h3>A beautifully designed digital planner for every device</h3><p>An undated digital planner bundle built for GoodNotes, Notability, Xodo, and any digital note-taking app &mdash; with a full year of daily pages, weekly overviews, and monthly calendars in one aesthetic system.</p><h4>What's Included:</h4><ul><li>365 daily planning pages</li><li>52 weekly overview spreads</li><li>12 monthly calendar pages</li><li>200+ digital stickers included</li><li>Habit trackers & goal worksheets</li><li>Gratitude journal pages</li><li>Hyperlinked tabs for easy navigation</li></ul><p><strong>Perfect for:</strong> iPad / GoodNotes users, students, professionals, anyone who wants an all-in-one digital planning system.</p><p><strong>Format:</strong> PDF (hyperlinked), works in GoodNotes, Notability, Xodo. Includes step-by-step install guide.</p>",
-    price: 7.99,
+    title: "Premium Aesthetic Daily Planner",
+    subtitle: "Undated daily, weekly and monthly pages for iPad or print",
+    ribbon_text: "BEST SELLER",
+    description: "<h3>A planner you can restart any Monday</h3><p>Undated daily pages, weekly resets, a monthly overview, goals, and a habit tracker. Designed for GoodNotes, Notability, Xodo, or a home printer. Duplicate pages as you need them.</p><h4>What's Included:</h4><ul><li>Daily pages</li><li>Weekly resets</li><li>Monthly overview</li><li>Goals + habits</li></ul><p><strong>Format:</strong> Printable PDF, 18 pages. US Letter. Undated.</p>",
+    price: 12.99,
     currency: "USD",
     image: "/product-images/premium-aesthetic-daily-planner.jpg",
     alt_text: "Premium aesthetic daily planner open on an iPad with Apple Pencil",
     images: [
       { url: "/product-images/premium-aesthetic-daily-planner.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "18-page undated planner: goals, habits, daily, weekly, monthly, usage notes, license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Import into GoodNotes or print. Duplicate daily/weekly pages as needed. Undated so you can start any time." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself." }
+    ],
     video_url: null,
     subcategory: "Annual Digital Planners",
     type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-digital-stickers-collection",
-    title: "Digital Stickers Collection - 500+ Hand-Drawn Stickers",
-    subtitle: "Productivity icons, cute animals, plants, weather & seasonal sets",
+    title: "Party Favor Tags & Sticker Pack",
+    subtitle: "Printable favor tags plus 48 PNG stickers for planners and parties",
     ribbon_text: "NEW",
-    description: "<h3>500+ hand-drawn stickers for digital planning</h3><p>A massive hand-drawn sticker collection built to decorate any digital planner, journal, or note-taking app &mdash; from productivity icons to cute animals and seasonal sets.</p><h4>What's Included:</h4><ul><li>Productivity icons (100+)</li><li>Cute animals (50+)</li><li>Plants & nature (80+)</li><li>Weather elements (30+)</li><li>Holiday & seasonal (60+)</li><li>Functional tabs & labels (50+)</li></ul><p><strong>Perfect for:</strong> Digital planner users, GoodNotes / Notability fans, journal decorators, teachers.</p><p><strong>Format:</strong> PNG sticker pack (transparent background) + PDF catalog preview.</p>",
-    price: 4.99,
+    description: "<h3>Tags to print. Stickers to drop into any planner.</h3><p>A party kit with 48 transparent PNG stickers (Done, Today, Thanks, Bday, and more). Import the PNGs into GoodNotes, Canva, or Cricut.</p><h4>What's Included:</h4><ul><li>48 PNG stickers (512px, transparent)</li><li>README with import notes</li></ul><p><strong>Format:</strong> ZIP of PNG stickers.</p>",
+    price: 7.99,
     currency: "USD",
     image: "/product-images/digital-stickers-collection.jpg",
     alt_text: "Collection of hand drawn pastel digital planner stickers",
@@ -274,19 +320,24 @@ export const mockProducts = [
       { url: "/product-images/digital-stickers-collection.jpg", order: 1, type: "main" },
       { url: "/product-images/digital-stickers-collection-sheet.jpg", order: 2, type: "detail" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "48 PNG stickers (512px, transparent) plus README and license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Unzip and import PNGs into GoodNotes, Notability, Canva or Cricut." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Not for resale of the sticker files." }
+    ],
     video_url: null,
     subcategory: "Party Favor Tags",
     type: { value: "Party Printables" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-magical-forest-adventures",
-    title: "The Magical Forest Adventures - Illustrated Storybook",
-    subtitle: "A story of friendship & courage, plus printable coloring & activity pack",
-    ribbon_text: "NEW",
-    description: "<h3>Join Lily and Pip on a magical forest adventure</h3><p>A beautifully illustrated 32-page children's ebook about friendship and courage, following curious 7-year-old Lily and her fox friend Pip through a magical forest &mdash; plus a printable coloring and activity pack.</p><h4>What's Included:</h4><ul><li>32-page illustrated children's ebook (full color)</li><li>10 printable coloring pages featuring all characters</li><li>5 activity sheets (mazes, word searches, spot-the-difference)</li><li>Character cut-out puppets for creative play</li></ul><p><strong>Perfect for:</strong> Parents, teachers, homeschoolers, children ages 4-8.</p><p><strong>Format:</strong> PDF (illustrated ebook + printable activity pack). Personal use license.</p>",
+    title: "The Magical Forest Adventures",
+    subtitle: "Illustrated storybook with coloring page and discussion prompts",
+    description: "<h3>A short read-aloud about friendship and courage</h3><p>Lily and Pip the fox follow a leaf-shaped key through a giggling river, a shy dragon, and home before supper. Includes a coloring page and talk-about prompts for homeschool or bedtime.</p><h4>What's Included:</h4><ul><li>4-chapter illustrated story</li><li>Coloring page</li><li>Discussion questions</li></ul><p><strong>Format:</strong> Printable PDF, 8 pages. US Letter.</p>",
     price: 6.99,
     currency: "USD",
     image: "/product-images/magical-forest-adventures.jpg",
@@ -295,20 +346,26 @@ export const mockProducts = [
       { url: "/product-images/magical-forest-adventures.jpg", order: 1, type: "main" },
       { url: "/product-images/magical-forest-adventures-inside.jpg", order: 2, type: "detail" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Story chapters, coloring page, discussion prompts, license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Read aloud, then color and talk through the prompt page. Print extra coloring pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal / household / classroom use. Not for resale." }
+    ],
     video_url: null,
     subcategory: "Homeschool Supplements",
     type: { value: "Kids Activities" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-anxiety-sleep-reset-planner",
     title: "Anxiety + Sleep Reset Planner",
-    subtitle: "A gentle 30-day nervous-system system for calmer nights and clearer mornings",
+    subtitle: "A gentle nervous-system planner for calmer nights",
     ribbon_text: "TRENDING",
-    description: "<h3>Calm your nights. Clear your mornings.</h3><p>This planner stacks two of 2026&rsquo;s strongest wellness demand drivers &mdash; <strong>anxiety relief</strong> and <strong>sleep reset routines</strong> &mdash; into one low-pressure, undated PDF. Designed for overstimulated minds that need safety before productivity.</p><h4>What&rsquo;s Included:</h4><ul><li>Daily anxiety check-ins (body sensations + thought loops)</li><li>Sleep quality scoring and wind-down checklists</li><li>Energy-based gentle priority planning</li><li>Brain dump pages for racing thoughts</li><li>Weekly nervous-system reset reviews</li><li>Habit tracker for restorative rest routines</li><li>Monthly calm overview and soft goal pages</li><li>No-guilt design &mdash; skip days without starting over</li></ul><p><strong>Perfect for:</strong> Anxious high-achievers, burned-out creators, light sleepers, anyone rebuilding a bedtime routine, people who hate rigid planners.</p><p><strong>Format:</strong> Printable PDF (US Letter), 10 thoughtfully designed pages you can reprint anytime. Undated. Works on paper or in GoodNotes / Notability.</p>",
-    price: 6.99,
+    description: "<h3>Calm your nights. Clear your mornings.</h3><p>Daily calm pages, a wind-down checklist, a worry parking lot, sleep habits, and weekly resets. Undated so you can start on a messy Tuesday.</p><h4>What's Included:</h4><ul><li>Daily calm pages</li><li>Wind-down checklist</li><li>Worry parking lot</li><li>Habit tracker + weekly reset</li></ul><p><strong>Format:</strong> Printable PDF, 17 pages. US Letter. Undated.</p>",
+    price: 12.99,
     currency: "USD",
     image: "/product-images/anxiety-sleep-reset-planner.jpg",
     alt_text: "Anxiety and Sleep Reset Planner cover in cream, lavender and soft pink",
@@ -316,40 +373,52 @@ export const mockProducts = [
       { url: "/product-images/anxiety-sleep-reset-planner.jpg", order: 1, type: "main" },
       { url: "/product-images/anxiety-sleep-reset-planner-cover.jpg", order: 2, type: "cover" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "17-page undated planner: goals, habits, daily, weekly, monthly, wind-down, worry lot, license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print or import into GoodNotes. Use the worry parking lot before bed. Duplicate daily pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Not for resale." }
+    ],
     video_url: null,
     subcategory: "iPad Wellness Tracker",
     type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-08-12T00:00:00.000Z"
   },
   {
     id: "mock-wellness-gratitude-journal",
     title: "Mindful Morning Reset Journal",
-    subtitle: "A 90-day wellness & gratitude system for intentional living",
+    subtitle: "Guided morning pages you can restart anytime",
     ribbon_text: "TRENDING",
-    description: "<h3>Start your mornings with intention, not your phone</h3><p>This 90-day guided journal combines two of Etsy's fastest-growing wellness niches &mdash; morning routines and gratitude practice &mdash; into one beautiful, low-pressure system. Designed for busy people who want more calm, clarity, and purpose without the toxic productivity guilt.</p><h4>What's Included:</h4><ul><li>90 days of guided morning prompts</li><li>Gratitude practice with mood tracking</li><li>Weekly self-care intention setting</li><li>Habit tracker for wellness routines</li><li>Monthly reflection & goal realignment pages</li><li>Affirmation cards for daily inspiration</li><li>Energy level & sleep quality tracker</li><li>Brain dump pages for mental clarity</li></ul><p><strong>Perfect for:</strong> People seeking calm morning routines, neurodivergent creators, anyone building sustainable self-care habits, wellness enthusiasts who want structure without rigidity.</p><p><strong>Format:</strong> Printable PDF (US Letter & A4), 94 pages. Undated—start any time. Can be printed or used digitally in any PDF annotation app. This planner is designed for low-friction use &mdash; skip days without guilt.</p>",
-    price: 4.99,
+    description: "<h3>Start the morning on paper, not on your phone</h3><p>Prompted morning pages, gratitude lines, a habit tracker, and weekly resets. Duplicate the morning page for as many days as you want. This is an undated journal, not a locked 90-day file.</p><h4>What's Included:</h4><ul><li>Morning prompt pages</li><li>Habit tracker</li><li>Weekly reset</li></ul><p><strong>Format:</strong> Printable PDF, 17 pages. US Letter. Undated.</p>",
+    price: 9.99,
     currency: "USD",
     image: "/product-images/wellness-gratitude-journal.jpg",
     alt_text: "Mindful Morning Reset Journal displayed on a tablet with tea and dried flowers",
     images: [
       { url: "/product-images/wellness-gratitude-journal.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "17-page undated journal with prompts, habits, weekly pages, license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Duplicate the morning page in your PDF app, or print extras. One page a day is enough." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Not for resale." }
+    ],
     video_url: null,
     subcategory: "Digital Journal",
     type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-07-07T00:00:00.000Z"
   },
   {
     id: "mock-adhd-budget-planner",
     title: "ADHD-Friendly Budget & Habit Planner",
-    subtitle: "A gentle, dopamine-friendly system for finances + daily focus",
+    subtitle: "Low-friction money pages plus a dopamine-friendly habit grid",
     ribbon_text: "TRENDING",
-    description: "<h3>Finally, a planner that works WITH your ADHD brain</h3><p>Stop forcing yourself into rigid systems that drain your energy. This planner was designed for neurodivergent minds—combining financial tracking with dopamine-driven habit building, all in a low-pressure, visual format that actually sticks.</p><h4>What's Inside:</h4><ul><li><strong>Budget Pages:</strong> Color-coded spending tracker, visual progress bars, gentle monthly check-ins</li><li><strong>Dopamine Habit Tracker:</strong> Reward-based system with instant gratification feedback</li><li><strong>Energy-Based Planning:</strong> Schedule tasks around your energy levels, not arbitrary times</li><li><strong>Brain Dump Pages:</strong> Quick capture for racing thoughts without structured format</li><li><strong>No Guilt Design:</strong> Skip days, restart anytime—built for real ADHD life</li><li><strong>Visual Cues:</strong> Icons, colors, and checkboxes for quick scanning</li></ul><p><strong>Why It Works:</strong> Standard planners demand consistency. This one celebrates flexibility. Tracks what matters (progress, not perfection). Gives quick wins. Reduces decision fatigue with pre-built structure + room to adapt.</p><p><strong>Who It's For:</strong> ADHD adults managing finances, neurodivergent creators seeking gentle structure, anyone tired of productivity guilt, people who need dopamine-driven motivation.</p><p><strong>Format:</strong> 68-page PDF (US Letter & A4). Printable or digital use. Undated—restart monthly or use your own pace.</p>",
-    price: 4.99,
+    description: "<h3>A money planner that does not punish you for missing a day</h3><p>Daily focus pages, a monthly budget, a bill tracker, and a 28-day habit grid. Designed for brains that need fewer boxes and more restarts.</p><h4>What's Included:</h4><ul><li>Daily focus pages</li><li>Monthly budget</li><li>Bill tracker</li><li>Habit grid</li></ul><p><strong>Format:</strong> Printable PDF, 14 pages. US Letter. Undated.</p>",
+    price: 12.99,
     currency: "USD",
     image: "/product-images/adhd-budget-planner.jpg",
     alt_text: "The Calm Budget Planner, an ADHD friendly budget and habit planner, open to weekly budget pages",
@@ -357,19 +426,25 @@ export const mockProducts = [
       { url: "/product-images/adhd-budget-planner.jpg", order: 1, type: "main" },
       { url: "/product-images/adhd-budget-planner-inside.jpg", order: 2, type: "detail" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "14-page undated planner: daily, weekly, budget, bills, habits, license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Fill the bill tracker first. Use daily pages for one priority, not a 20-item list." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Not for resale." }
+    ],
     video_url: null,
     subcategory: "Budget Trackers",
     type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-07-03T00:00:00.000Z"
   },
   {
     id: "mock-handwritten-font-bundle",
-    title: "Audrey Script - Handwritten Font Bundle",
-    subtitle: "Elegant calligraphy font with 200+ glyphs & branding templates",
-    description: "<h3>Add elegant sophistication to your brand</h3><p>Audrey Script is a premium handwritten calligraphy font perfect for luxury branding, wedding stationery, and social media graphics. Features 200+ characters including ligatures, stylistic alternates, and multilingual support.</p><h4>What's Included:</h4><ul><li>TTF and OTF font files</li><li>200+ glyphs with 50+ ligatures</li><li>Uppercase, lowercase, numbers, punctuation</li><li>Multilingual character support</li><li>Commercial license included</li><li>Brand identity mockup templates</li><li>Installation guide</li></ul><p><strong>Perfect for:</strong> Wedding invitations, luxury brand logos, social media graphics, greeting cards, website headers, packaging design.</p>",
-    price: 4.99,
+    title: "Audrey Script Calligraphy Practice Pack",
+    subtitle: "Practice sheets and mini brand-wordmark worksheets",
+    description: "<h3>Practice the hand. Sketch the wordmark.</h3><p>This is a calligraphy practice pack, not an installable font file. Trace the lowercase alphabet, then sketch brand wordmarks and a mini brand kit on paper.</p><h4>What's Included:</h4><ul><li>Lowercase practice sheet</li><li>Wordmark sketch pages</li><li>Mini brand kit</li></ul><p><strong>Format:</strong> Printable PDF, 5 pages. US Letter.</p>",
+    price: 6.99,
     currency: "USD",
     image: "/product-images/font-bundle-main.jpg",
     alt_text: "Audrey Script handwritten calligraphy font specimen with branding stationery",
@@ -379,122 +454,167 @@ export const mockProducts = [
       { url: "/product-images/font-bundle-lifestyle.jpg", order: 3, type: "lifestyle" },
       { url: "/product-images/font-bundle-usage.jpg", order: 4, type: "usage" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Practice sheets, wordmark sketches, mini brand kit, license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print and use a brush pen or fine liner. This PDF does not install a font on your computer." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Not a font license." }
+    ],
     video_url: null,
+    subcategory: "Business Planner Bundle",
     type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-07-07T00:00:00.000Z"
   },
   {
     id: "mock-wellness-website-template",
-    title: "Bloom - Wellness Website Template",
-    subtitle: "Modern responsive template for wellness & lifestyle brands",
-    description: "<h3>Launch your wellness brand in hours, not weeks</h3><p>Bloom is a complete, modern website template designed specifically for wellness coaches, yoga studios, and lifestyle brands. Features a calming sage green gradient design, 8 pre-designed pages, and fully responsive mobile-first code.</p><h4>Template Features:</h4><ul><li>8 fully designed pages (Home, About, Services, Blog, Contact, Shop, Testimonials, FAQ)</li><li>Fully responsive HTML5/CSS3/JavaScript</li><li>Modern gradient design (sage green & cream)</li><li>Mobile-first responsive layout</li><li>Contact form integration ready</li><li>SEO optimized structure</li><li>Clean, semantic code - easy to customize</li><li>Font pairing guide & color palette included</li><li>Comprehensive documentation</li></ul><p><strong>Perfect for:</strong> Wellness coaches, yoga instructors, meditation teachers, holistic health practitioners, lifestyle bloggers.</p>",
-    price: 4.99,
+    title: "Bloom Wellness Brand & Copy Kit",
+    subtitle: "Voice, offer, and page-copy worksheets for wellness brands",
+    description: "<h3>Write the site before you build the site</h3><p>Brand-voice worksheets, an offer one-pager, and Home / About / Services copy pages. Fill these in, then paste the words into Squarespace, Canva, or any website builder.</p><h4>What's Included:</h4><ul><li>Brand voice</li><li>Offer one-pager</li><li>Home, About, Services copy sheets</li></ul><p><strong>Format:</strong> Printable PDF, 7 pages. US Letter.</p>",
+    price: 11.99,
     currency: "USD",
     image: "/product-images/wellness-website-template.jpg",
     alt_text: "Bloom wellness website template shown on desktop monitor and laptop",
     images: [
       { url: "/product-images/wellness-website-template.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "7-page copy and brand worksheet PDF." },
+      { id: "info2", order: 2, title: "How to Use", description: "Fill by hand or in a PDF app. Paste finished copy into your website builder." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal / one-business use. Not for resale." }
+    ],
     video_url: null,
+    subcategory: "Client Intake Forms",
     type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-07-07T00:00:00.000Z"
   },
   {
     id: "mock-dragon-childrens-book",
     title: "The Dragon and Lily's Adventure",
-    subtitle: "Enchanting illustrated storybook for young readers ages 4-8",
-    description: "<h3>A magical adventure that sparks imagination</h3><p>Join Lily and her friendly dragon Sparky on an enchanting adventure through the Magic Forest! This beautifully illustrated children's book features vibrant watercolor artwork and simple, engaging text perfect for early readers or bedtime stories.</p><h4>Story Features:</h4><ul><li>24-page illustrated storybook</li><li>Vibrant watercolor illustrations</li><li>Easy-to-read text for ages 4-8</li><li>Positive messages about friendship and bravery</li><li>Bonus coloring pages included</li><li>Printable format (8.5x11 or A4)</li></ul><p><strong>Perfect for:</strong> Bedtime reading, early readers, homeschool activities, classroom storytelling, gifts for young children.</p><p><strong>Themes:</strong> Friendship, courage, adventure, imagination, kindness.</p>",
-    price: 4.99,
+    subtitle: "A short illustrated read-aloud for ages 4-8",
+    description: "<h3>A teapot-sized dragon, and a girl who practices being gentle</h3><p>Lily meets Sparky in the garden. They rescue a kite, share apple slices, and make a promise. Includes a coloring page and talk-about prompts.</p><h4>What's Included:</h4><ul><li>3-chapter story</li><li>Coloring page</li><li>Discussion prompts</li></ul><p><strong>Format:</strong> Printable PDF, 7 pages. US Letter.</p>",
+    price: 5.99,
     currency: "USD",
     image: "/product-images/dragon-childrens-book.jpg",
     alt_text: "The Dragon and Lily's Adventure illustrated children's storybook",
     images: [
       { url: "/product-images/dragon-childrens-book.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Story, coloring page, discussion prompts, license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Read aloud at bedtime or during a homeschool block. Print extra coloring pages." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal / household / classroom use. Not for resale." }
+    ],
     video_url: null,
     subcategory: "Homeschool Supplements",
     type: { value: "Kids Activities" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-07-07T00:00:00.000Z"
   },
   {
     id: "mock-tshirt-design-bundle",
-    title: "Trendy T-Shirt Design Bundle - 15 Graphics",
-    subtitle: "Print-ready PNG designs for print-on-demand success",
-    description: "<h3>15 best-selling t-shirt designs ready for your store</h3><p>Launch or expand your print-on-demand store with this curated bundle of trending t-shirt graphics. Each design is optimized for popular POD platforms like Printful, Printify, and Redbubble.</p><h4>Bundle Includes:</h4><ul><li>15 unique t-shirt designs</li><li>High-resolution PNG files (4000x4000px, 300 DPI)</li><li>Transparent backgrounds for easy printing</li><li>Retro, nature, and motivational themes</li><li>Color variations for each design</li><li>Commercial license for print-on-demand</li><li>Sizing & placement guide</li></ul><p><strong>Design Styles:</strong> Retro sunset graphics, minimalist line art, nature typography, vintage camping, positive quotes, botanical illustrations.</p><p><strong>Perfect for:</strong> Etsy shops, Redbubble sellers, Teespring creators, print-on-demand entrepreneurs, apparel brands.</p>",
-    price: 4.99,
+    title: "Trendy Graphic Print Bundle",
+    subtitle: "15 original graphics in PNG + SVG for walls, Canva, and crafts",
+    description: "<h3>Fifteen graphics, ready to print or drop into Canva</h3><p>Original DigitalHub graphics. Use as wall art, stickers, or social posts. Source files are SVG + PNG in the ZIP.</p><h4>What's Included:</h4><ul><li>15 PNG files</li><li>15 SVG files</li><li>README and license</li></ul><p><strong>Format:</strong> ZIP of SVG + PNG.</p>",
+    price: 9.99,
     currency: "USD",
     image: "/product-images/trendy-tshirt-bundle.jpg",
     alt_text: "Three trendy t-shirt designs on cream, black and green folded tees",
     images: [
       { url: "/product-images/trendy-tshirt-bundle.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "15 SVG and 15 PNG graphics plus README/license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Unzip and open in Canva, Cricut, or a browser. Print at home on US Letter." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Do not resell the source files." }
+    ],
     video_url: null,
     subcategory: "Abstract Boho Art",
     type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-07-07T00:00:00.000Z"
   },
   {
     id: "mock-flux-flow-ui-kit",
-    title: "Flux Flow - Modern Mobile UI Kit",
-    subtitle: "Complete design system with 50+ screens & 200+ components",
-    description: "<h3>Design stunning mobile apps in hours, not weeks</h3><p>Flux Flow is a comprehensive mobile app UI kit featuring 50+ pre-designed screens and 200+ customizable components. Perfect for designers and developers building modern iOS and Android applications.</p><h4>What's Included:</h4><ul><li>50+ pre-designed mobile screens</li><li>200+ UI components and elements</li><li>Complete design system (colors, typography, icons)</li><li>Light and dark mode variations</li><li>Login, onboarding, dashboard, profile, e-commerce screens</li><li>Figma, Sketch, and Adobe XD files</li><li>100+ custom icons</li><li>Design system documentation</li><li>Developer handoff guide</li></ul><p><strong>Perfect for:</strong> Mobile app designers, UI/UX teams, startup founders, development agencies, product designers.</p><p><strong>File Formats:</strong> Fully editable Figma, Sketch, Adobe XD files + exported PNG assets.</p>",
-    price: 4.99,
+    title: "Flux Flow Content Calendar Kit",
+    subtitle: "30-day calendar, caption formulas, batching checklist",
+    description: "<h3>Batch a week of content in one sitting</h3><p>A 30-day calendar, caption formulas, a batching checklist, and a hashtag parking lot. Made for freelancers and small shops. This is a printable kit, not a Figma UI library.</p><h4>What's Included:</h4><ul><li>30-day calendar</li><li>Caption formulas</li><li>Batching checklist</li><li>Hashtag parking lot</li></ul><p><strong>Format:</strong> Printable PDF, 6 pages. US Letter.</p>",
+    price: 9.99,
     currency: "USD",
     image: "/product-images/flux-flow-ui-kit.jpg",
     alt_text: "Flux Flow mobile UI kit dashboard screens on a tablet and phone",
     images: [
       { url: "/product-images/flux-flow-ui-kit.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "6-page printable content kit." },
+      { id: "info2", order: 2, title: "How to Use", description: "Fill the calendar first, then batch captions. Duplicate monthly." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal / one-business use. Not for resale." }
+    ],
     video_url: null,
+    subcategory: "Social Media Content Calendars",
     type: { value: "Business Templates" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-07-07T00:00:00.000Z"
   },
   {
     id: "mock-productivity-os-notion",
-    title: "Productivity OS - Complete Notion Template",
-    subtitle: "All-in-one life & work management system for Notion",
-    description: "<h3>Your complete second brain in Notion</h3><p>Productivity OS is a comprehensive Notion template that brings together task management, project tracking, habit building, finance planning, and personal growth into one beautifully designed system.</p><h4>Template Features:</h4><ul><li>Daily, weekly, monthly, and annual dashboards</li><li>Task manager with priority sorting & time blocking</li><li>Project tracker with Kanban boards</li><li>Habit tracker with streak counting</li><li>Finance tracker & budget planner</li><li>Health & wellness log</li><li>Reading list & book notes</li><li>Travel planner & bucket list</li><li>Client & project database</li><li>Content calendar for creators</li><li>Ideas & brainstorming hub</li><li>Resources library</li><li>20+ aesthetic cover images & icon library</li><li>Setup video tutorial included</li><li>Lifetime template updates</li></ul><p><strong>Perfect for:</strong> Entrepreneurs, creators, students, freelancers, anyone seeking an all-in-one productivity system.</p>",
-    price: 4.99,
+    title: "Productivity OS Printable Planner",
+    subtitle: "Second-brain style monthly, weekly and project pages",
+    description: "<h3>A second brain you can hold</h3><p>Project goals, weekly resets, daily focus, and a Friday review. Works on iPad or printed. Pair with Notion if you like. This download is a PDF planner, not a Notion template file.</p><h4>What's Included:</h4><ul><li>Goals + habits</li><li>Daily and weekly pages</li><li>Monthly overview</li><li>How to pair with Notion</li></ul><p><strong>Format:</strong> Printable PDF, 16 pages. US Letter. Undated.</p>",
+    price: 11.99,
     currency: "USD",
     image: "/product-images/productivity-os-notion.jpg",
     alt_text: "Productivity OS Notion template dashboard on a monitor and laptop",
     images: [
       { url: "/product-images/productivity-os-notion.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "16-page undated planner plus Notion pairing notes." },
+      { id: "info2", order: 2, title: "How to Use", description: "Import into GoodNotes or print. Optional: copy each week's Top 3 into a Notion database." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Not for resale." }
+    ],
     video_url: null,
     subcategory: "Hyperlinked Monthly Views",
     type: { value: "Digital Planners" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-07-07T00:00:00.000Z"
   },
   {
     id: "mock-premium-stock-photos",
-    title: "Premium Stock Photo Collection - 100+ Images",
-    subtitle: "High-quality commercial-use photos for all your projects",
-    description: "<h3>100+ professional photos for unlimited commercial use</h3><p>This curated collection includes 100+ high-resolution stock photos across lifestyle, nature, business, and abstract categories. Perfect for websites, social media, marketing materials, and client projects.</p><h4>Collection Details:</h4><ul><li>100+ high-resolution images (6000x4000px minimum)</li><li>300 DPI, RGB color mode, optimized JPEGs</li><li>25 lifestyle photos (work from home, coffee shops, cozy interiors)</li><li>25 nature photos (mountains, forests, beaches, seasonal)</li><li>25 business photos (offices, meetings, professional setups)</li><li>25 abstract & texture photos (marble, watercolor, minimalist)</li><li>Extended commercial license included</li><li>Model & property releases where applicable</li></ul><p><strong>Usage Rights:</strong> Use in websites, blogs, social media, marketing materials, print products, client projects, and commercial applications.</p><p><strong>Perfect for:</strong> Web designers, social media managers, bloggers, marketers, content creators, small business owners.</p>",
-    price: 4.99,
+    title: "Premium Printable Art Collection",
+    subtitle: "6 coordinating botanical prints for walls and mockups",
+    description: "<h3>Botanicals that actually print</h3><p>Six original line-art botanicals (sage, olive, fern, eucalyptus, poppy, fig). These are graphic prints, not stock photographs, for gallery walls, blogs, and mockups.</p><h4>What's Included:</h4><ul><li>6 printable art pages</li><li>Print guide</li></ul><p><strong>Format:</strong> Printable PDF. US Letter.</p>",
+    price: 8.99,
     currency: "USD",
     image: "/product-images/premium-stock-photos.jpg",
     alt_text: "Premium stock photo bundle preview on a tablet with camera and prints",
     images: [
       { url: "/product-images/premium-stock-photos.jpg", order: 1, type: "main" }
     ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "6 botanical prints, print guide, license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on heavy matte paper. Hang as a 3+3 or 2+2+2 gallery wall." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Not for resale as prints or stock." }
+    ],
     video_url: null,
-    subcategory: "Gallery Wall Sets",
+    subcategory: "Botanical Prints",
     type: { value: "Wall Art" },
     custom_fields: [],
     related_products: [],
+    purchasable: true,
     updated_at: "2026-07-07T00:00:00.000Z"
   },
 ];
