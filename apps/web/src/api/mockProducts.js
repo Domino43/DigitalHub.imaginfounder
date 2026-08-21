@@ -1,5 +1,815 @@
 export const mockProducts = [
   {
+    id: "mock-modern-abstract-wall-art-print",
+    title: "Modern Abstract Wall Art Print",
+    subtitle: "Transform your living space with this stunning modern abstract wall art print. Features bold",
+    ribbon_text: "NEW",
+    description: "<h3>Modern Abstract Wall Art Print</h3><p>Transform your living space with this stunning modern abstract wall art print. Features bold colors and contemporary design perfect for living rooms, bedrooms, or office spaces. High-quality digital download ready to print in multiple sizes. Instant access upon purchase.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>wall art, abstract art print, modern wall decor, printable wall art, home decor, digital download art, contemporary art, living room decor, instant download</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/modern-abstract-wall-art-print.jpg",
+    alt_text: "Modern Abstract Wall Art Print printable digital download mockup",
+    images: [
+      { url: "/product-images/modern-abstract-wall-art-print.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Abstract Boho Art",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 1,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-minimalist-wall-art-collection",
+    title: "Minimalist Wall Art Collection",
+    subtitle: "Elevate your home with this elegant minimalist wall art collection. Clean lines and sophisti",
+    ribbon_text: "NEW",
+    description: "<h3>Minimalist Wall Art Collection</h3><p>Elevate your home with this elegant minimalist wall art collection. Clean lines and sophisticated design complement any modern interior. Perfect for creating a calming atmosphere in bedrooms, offices, or galleries. Printable PDF format for easy customization.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>minimalist wall art, printable art, modern home decor, scandinavian design, neutral wall art, digital art print, bedroom wall decor, office art</em></p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/minimalist-wall-art-collection.jpg",
+    alt_text: "Minimalist Wall Art Collection printable digital download mockup",
+    images: [
+      { url: "/product-images/minimalist-wall-art-collection.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Gallery Wall Sets",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 2,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-contemporary-gallery-wall-art-set",
+    title: "Contemporary Gallery Wall Art Set",
+    subtitle: "Create a stunning gallery wall with this curated contemporary art set. Designed to coordinat",
+    ribbon_text: "NEW",
+    description: "<h3>Contemporary Gallery Wall Art Set</h3><p>Create a stunning gallery wall with this curated contemporary art set. Designed to coordinate seamlessly together for maximum visual impact. Ideal for living spaces, hallways, or creative studios. Download instantly and print at your preferred size.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>gallery wall art, contemporary art set, wall art bundle, printable wall decor, modern art collection, home styling, instant download, decorative prints</em></p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/contemporary-gallery-wall-art-set.jpg",
+    alt_text: "Contemporary Gallery Wall Art Set printable digital download mockup",
+    images: [
+      { url: "/product-images/contemporary-gallery-wall-art-set.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Gallery Wall Sets",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 3,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-botanical-wall-art-print",
+    title: "Botanical Wall Art Print",
+    subtitle: "Bring nature indoors with this beautiful botanical wall art print. Features stunning plant i",
+    ribbon_text: "NEW",
+    description: "<h3>Botanical Wall Art Print</h3><p>Bring nature indoors with this beautiful botanical wall art print. Features stunning plant imagery perfect for nature lovers and organic interiors. Adds a fresh, calming touch to any room. High-resolution digital file ready for immediate printing.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>botanical wall art, plant print, nature wall decor, leaf art, tropical print, green wall art, printable botanical, home decor digital</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/botanical-wall-art-print.jpg",
+    alt_text: "Botanical Wall Art Print printable digital download mockup",
+    images: [
+      { url: "/product-images/botanical-wall-art-print.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Botanical Prints",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 4,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-geometric-wall-art-design",
+    title: "Geometric Wall Art Design",
+    subtitle: "Make a bold statement with this striking geometric wall art design. Clean shapes and modern ",
+    ribbon_text: "NEW",
+    description: "<h3>Geometric Wall Art Design</h3><p>Make a bold statement with this striking geometric wall art design. Clean shapes and modern aesthetic perfect for contemporary spaces. Versatile design works in both residential and commercial settings. Instant digital download for quick decorating.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>geometric wall art, modern geometric print, abstract shapes, contemporary wall decor, printable geometric art, minimalist design, digital wall art</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/geometric-wall-art-design.jpg",
+    alt_text: "Geometric Wall Art Design printable digital download mockup",
+    images: [
+      { url: "/product-images/geometric-wall-art-design.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Abstract Boho Art",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 5,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-inspirational-quote-wall-art",
+    title: "Inspirational Quote Wall Art",
+    subtitle: "Motivate and inspire with this beautifully designed quote wall art. Uplifting message paired",
+    ribbon_text: "NEW",
+    description: "<h3>Inspirational Quote Wall Art</h3><p>Motivate and inspire with this beautifully designed quote wall art. Uplifting message paired with elegant typography creates the perfect focal point. Ideal for home offices, bedrooms, or creative spaces. Print at any size to fit your space perfectly.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>inspirational wall art, quote print, motivational decor, typography art, printable quotes, office wall decor, bedroom art, digital download</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/inspirational-quote-wall-art.jpg",
+    alt_text: "Inspirational Quote Wall Art printable digital download mockup",
+    images: [
+      { url: "/product-images/inspirational-quote-wall-art.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Motivational Quotes",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 6,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-colorful-abstract-wall-art",
+    title: "Colorful Abstract Wall Art",
+    subtitle: "Add vibrant energy to your space with this colorful abstract wall art. Bold hues and dynamic",
+    ribbon_text: "NEW",
+    description: "<h3>Colorful Abstract Wall Art</h3><p>Add vibrant energy to your space with this colorful abstract wall art. Bold hues and dynamic composition bring life to any room. Perfect for eclectic interiors or as a statement piece. Download immediately and print in your desired dimensions.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>colorful wall art, vibrant abstract print, bold decor, modern art, printable art, rainbow art, living room decor, digital art download</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/colorful-abstract-wall-art.jpg",
+    alt_text: "Colorful Abstract Wall Art printable digital download mockup",
+    images: [
+      { url: "/product-images/colorful-abstract-wall-art.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Abstract Boho Art",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 7,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-neutral-tone-wall-art-print",
+    title: "Neutral Tone Wall Art Print",
+    subtitle: "Enhance your space with this sophisticated neutral tone wall art print. Subtle colors and re",
+    ribbon_text: "NEW",
+    description: "<h3>Neutral Tone Wall Art Print</h3><p>Enhance your space with this sophisticated neutral tone wall art print. Subtle colors and refined design complement any decor style. Creates a cohesive, calming aesthetic perfect for modern homes. Versatile printable format for unlimited customization.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>neutral wall art, beige art print, minimalist decor, scandinavian wall art, printable neutral art, modern home decor, calm aesthetic</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/neutral-tone-wall-art-print.jpg",
+    alt_text: "Neutral Tone Wall Art Print printable digital download mockup",
+    images: [
+      { url: "/product-images/neutral-tone-wall-art-print.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Abstract Boho Art",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 8,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-modern-line-art-print",
+    title: "Modern Line Art Print",
+    subtitle: "Discover the beauty of simplicity with this modern line art print. Elegant single-line desig",
+    ribbon_text: "NEW",
+    description: "<h3>Modern Line Art Print</h3><p>Discover the beauty of simplicity with this modern line art print. Elegant single-line design adds sophistication to any interior. Works beautifully in sets or as standalone pieces. Instant digital file ready for professional or home printing.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>line art print, minimalist art, modern line drawing, simple wall art, printable line art, contemporary decor, one line art, digital download</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/modern-line-art-print.jpg",
+    alt_text: "Modern Line Art Print printable digital download mockup",
+    images: [
+      { url: "/product-images/modern-line-art-print.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Abstract Boho Art",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 9,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-elegant-wedding-invitation-template",
+    title: "Elegant Wedding Invitation Template",
+    subtitle: "Announce your special day with this elegant wedding invitation template. Beautifully designe",
+    ribbon_text: "NEW",
+    description: "<h3>Elegant Wedding Invitation Template</h3><p>Announce your special day with this elegant wedding invitation template. Beautifully designed with customizable text fields for all your wedding details. Sophisticated layout suitable for formal and semi-formal weddings. Editable PDF format for easy personalization.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>wedding invitation, printable wedding invite, editable invitation template, elegant wedding stationery, DIY wedding invites, digital invitation, customizable wedding card</em></p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/elegant-wedding-invitation-template.jpg",
+    alt_text: "Elegant Wedding Invitation Template printable digital download mockup",
+    images: [
+      { url: "/product-images/elegant-wedding-invitation-template.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Editable Wedding Invitations",
+    type: { value: "Wedding Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 10,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-floral-wedding-invitation-suite",
+    title: "Floral Wedding Invitation Suite",
+    subtitle: "Enchant your guests with this stunning floral wedding invitation suite. Features beautiful b",
+    ribbon_text: "NEW",
+    description: "<h3>Floral Wedding Invitation Suite</h3><p>Enchant your guests with this stunning floral wedding invitation suite. Features beautiful botanical illustrations and romantic design elements. Includes matching RSVP and details cards. Perfect for garden, rustic, or bohemian weddings. Fully editable and printable.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>floral wedding invitation, botanical invite, garden wedding stationery, rustic wedding invite, printable wedding suite, editable invitation, romantic wedding card</em></p>",
+    price: 11.99,
+    currency: "USD",
+    image: "/product-images/floral-wedding-invitation-suite.jpg",
+    alt_text: "Floral Wedding Invitation Suite printable digital download mockup",
+    images: [
+      { url: "/product-images/floral-wedding-invitation-suite.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Editable Wedding Invitations",
+    type: { value: "Wedding Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 11,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-modern-minimalist-wedding-invitation",
+    title: "Modern Minimalist Wedding Invitation",
+    subtitle: "Set the tone for your contemporary celebration with this modern minimalist wedding invitatio",
+    ribbon_text: "NEW",
+    description: "<h3>Modern Minimalist Wedding Invitation</h3><p>Set the tone for your contemporary celebration with this modern minimalist wedding invitation. Clean lines and sophisticated typography create timeless elegance. Ideal for modern, chic, or urban weddings. Easy-to-edit template with professional results.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>minimalist wedding invitation, modern wedding invite, simple wedding stationery, contemporary wedding card, editable invite template, clean design wedding</em></p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/modern-minimalist-wedding-invitation.jpg",
+    alt_text: "Modern Minimalist Wedding Invitation printable digital download mockup",
+    images: [
+      { url: "/product-images/modern-minimalist-wedding-invitation.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Editable Wedding Invitations",
+    type: { value: "Wedding Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 12,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-classic-formal-wedding-invitation",
+    title: "Classic Formal Wedding Invitation",
+    subtitle: "Honor tradition with this classic formal wedding invitation. Timeless design with elegant bo",
+    ribbon_text: "NEW",
+    description: "<h3>Classic Formal Wedding Invitation</h3><p>Honor tradition with this classic formal wedding invitation. Timeless design with elegant borders and traditional layout. Perfect for black-tie affairs and formal ceremonies. Customize with your wedding details and print on premium cardstock for luxury finish.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>formal wedding invitation, classic wedding invite, traditional wedding stationery, elegant wedding card, black tie invitation, printable formal invite</em></p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/classic-formal-wedding-invitation.jpg",
+    alt_text: "Classic Formal Wedding Invitation printable digital download mockup",
+    images: [
+      { url: "/product-images/classic-formal-wedding-invitation.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Editable Wedding Invitations",
+    type: { value: "Wedding Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 13,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-rustic-wedding-invitation-design",
+    title: "Rustic Wedding Invitation Design",
+    subtitle: "Celebrate your love story with this charming rustic wedding invitation design. Features natu",
+    ribbon_text: "NEW",
+    description: "<h3>Rustic Wedding Invitation Design</h3><p>Celebrate your love story with this charming rustic wedding invitation design. Features natural textures and warm, earthy tones. Perfect for barn weddings, outdoor ceremonies, or countryside celebrations. Instant download with easy customization options.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>rustic wedding invitation, country wedding invite, barn wedding stationery, outdoor wedding card, kraft paper invite, printable rustic invitation</em></p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/rustic-wedding-invitation-design.jpg",
+    alt_text: "Rustic Wedding Invitation Design printable digital download mockup",
+    images: [
+      { url: "/product-images/rustic-wedding-invitation-design.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Editable Wedding Invitations",
+    type: { value: "Wedding Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 14,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-vintage-wedding-invitation-template",
+    title: "Vintage Wedding Invitation Template",
+    subtitle: "Step back in time with this beautiful vintage wedding invitation template. Ornate details an",
+    ribbon_text: "NEW",
+    description: "<h3>Vintage Wedding Invitation Template</h3><p>Step back in time with this beautiful vintage wedding invitation template. Ornate details and romantic styling evoke old-world charm. Ideal for vintage-themed weddings or couples who love classic aesthetics. Fully customizable digital template.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>vintage wedding invitation, antique wedding invite, retro wedding stationery, ornate invitation, classic wedding card, editable vintage template</em></p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/vintage-wedding-invitation-template.jpg",
+    alt_text: "Vintage Wedding Invitation Template printable digital download mockup",
+    images: [
+      { url: "/product-images/vintage-wedding-invitation-template.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Editable Wedding Invitations",
+    type: { value: "Wedding Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 15,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-beach-wedding-invitation-suite",
+    title: "Beach Wedding Invitation Suite",
+    subtitle: "Make waves with this stunning beach wedding invitation suite. Coastal-inspired design with o",
+    ribbon_text: "NEW",
+    description: "<h3>Beach Wedding Invitation Suite</h3><p>Make waves with this stunning beach wedding invitation suite. Coastal-inspired design with ocean colors and seaside elements. Perfect for destination weddings, beach ceremonies, or nautical themes. Includes invitation, RSVP, and details cards.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>beach wedding invitation, coastal wedding invite, nautical wedding stationery, destination wedding card, ocean wedding invite, seaside wedding template</em></p>",
+    price: 11.99,
+    currency: "USD",
+    image: "/product-images/beach-wedding-invitation-suite.jpg",
+    alt_text: "Beach Wedding Invitation Suite printable digital download mockup",
+    images: [
+      { url: "/product-images/beach-wedding-invitation-suite.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Editable Wedding Invitations",
+    type: { value: "Wedding Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 16,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-bohemian-wedding-invitation",
+    title: "Bohemian Wedding Invitation",
+    subtitle: "Express your free spirit with this bohemian wedding invitation. Features artistic flourishes",
+    ribbon_text: "NEW",
+    description: "<h3>Bohemian Wedding Invitation</h3><p>Express your free spirit with this bohemian wedding invitation. Features artistic flourishes, natural elements, and whimsical design. Perfect for boho weddings, festival-style celebrations, or outdoor ceremonies. Editable template for personalized touch.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>bohemian wedding invitation, boho wedding invite, whimsical wedding stationery, festival wedding card, artistic invitation, free spirit wedding</em></p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/bohemian-wedding-invitation.jpg",
+    alt_text: "Bohemian Wedding Invitation printable digital download mockup",
+    images: [
+      { url: "/product-images/bohemian-wedding-invitation.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Editable Wedding Invitations",
+    type: { value: "Wedding Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 17,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-luxury-wedding-invitation-design",
+    title: "Luxury Wedding Invitation Design",
+    subtitle: "Make an unforgettable impression with this luxury wedding invitation design. Opulent details",
+    ribbon_text: "NEW",
+    description: "<h3>Luxury Wedding Invitation Design</h3><p>Make an unforgettable impression with this luxury wedding invitation design. Opulent details and premium aesthetic for upscale celebrations. Features gold accents and sophisticated layout. Perfect for glamorous weddings and high-end venues.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>luxury wedding invitation, elegant wedding invite, gold wedding stationery, premium wedding card, upscale invitation, glamorous wedding design</em></p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/luxury-wedding-invitation-design.jpg",
+    alt_text: "Luxury Wedding Invitation Design printable digital download mockup",
+    images: [
+      { url: "/product-images/luxury-wedding-invitation-design.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Editable Wedding Invitations",
+    type: { value: "Wedding Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 18,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-complete-wedding-binder-planner",
+    title: "Complete Wedding Binder Planner",
+    subtitle: "Stay organized throughout your wedding planning journey with this comprehensive wedding bind",
+    ribbon_text: "NEW",
+    description: "<h3>Complete Wedding Binder Planner</h3><p>Stay organized throughout your wedding planning journey with this comprehensive wedding binder planner. Includes budget trackers, vendor contacts, timeline checklists, and seating charts. Everything you need to plan your perfect day in one beautiful package. Printable PDF format.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>wedding planner, wedding binder, wedding organizer, bridal planner, printable wedding planner, wedding checklist, budget tracker, wedding planning kit</em></p>",
+    price: 12.99,
+    currency: "USD",
+    image: "/product-images/complete-wedding-binder-planner.jpg",
+    alt_text: "Complete Wedding Binder Planner printable digital download mockup",
+    images: [
+      { url: "/product-images/complete-wedding-binder-planner.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 19,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-wedding-music-list-template",
+    title: "Wedding Music List Template",
+    subtitle: "Curate the perfect soundtrack for your special day with this wedding music list template. Or",
+    ribbon_text: "NEW",
+    description: "<h3>Wedding Music List Template</h3><p>Curate the perfect soundtrack for your special day with this wedding music list template. Organized sections for ceremony, cocktail hour, dinner, and reception. Space to note song titles, artists, and special dedications. Ensures smooth coordination with your DJ or band.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>wedding music list, wedding song planner, reception playlist, ceremony music template, DJ song list, wedding soundtrack, printable music planner</em></p>",
+    price: 7.99,
+    currency: "USD",
+    image: "/product-images/wedding-music-list-template.jpg",
+    alt_text: "Wedding Music List Template printable digital download mockup",
+    images: [
+      { url: "/product-images/wedding-music-list-template.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Mom Planner",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 20,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-wedding-sketch-planning-template",
+    title: "Wedding Sketch Planning Template",
+    subtitle: "Visualize your wedding venue layout with this wedding sketch planning template. Draw table a",
+    ribbon_text: "NEW",
+    description: "<h3>Wedding Sketch Planning Template</h3><p>Visualize your wedding venue layout with this wedding sketch planning template. Draw table arrangements, ceremony setup, and decoration placement. Essential tool for coordinating with venues and vendors. Helps prevent day-of confusion and ensures your vision comes to life perfectly.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>wedding sketch template, venue layout planner, wedding floor plan, seating arrangement, ceremony layout, reception diagram, wedding design tool</em></p>",
+    price: 7.99,
+    currency: "USD",
+    image: "/product-images/wedding-sketch-planning-template.jpg",
+    alt_text: "Wedding Sketch Planning Template printable digital download mockup",
+    images: [
+      { url: "/product-images/wedding-sketch-planning-template.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 21,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-wedding-dress-shopping-checklist",
+    title: "Wedding Dress Shopping Checklist",
+    subtitle: "Find your dream dress with confidence using this wedding dress shopping checklist. Track app",
+    ribbon_text: "NEW",
+    description: "<h3>Wedding Dress Shopping Checklist</h3><p>Find your dream dress with confidence using this wedding dress shopping checklist. Track appointments, dress styles tried, pricing, and alterations notes. Includes space for photos and important contact information. Makes the dress shopping experience organized and stress-free.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>wedding dress checklist, bridal gown planner, dress shopping organizer, wedding dress tracker, bridal appointment planner, dress fitting notes</em></p>",
+    price: 7.99,
+    currency: "USD",
+    image: "/product-images/wedding-dress-shopping-checklist.jpg",
+    alt_text: "Wedding Dress Shopping Checklist printable digital download mockup",
+    images: [
+      { url: "/product-images/wedding-dress-shopping-checklist.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 22,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-wedding-appointments-tracker",
+    title: "Wedding Appointments Tracker",
+    subtitle: "Never miss an important wedding appointment with this comprehensive tracker. Organize vendor",
+    ribbon_text: "NEW",
+    description: "<h3>Wedding Appointments Tracker</h3><p>Never miss an important wedding appointment with this comprehensive tracker. Organize vendor meetings, dress fittings, cake tastings, and venue tours. Includes date, time, location, and notes sections. Keep all your wedding appointments in one convenient place.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>wedding appointments, vendor meeting tracker, bridal appointment planner, wedding schedule, appointment organizer, wedding timeline, meeting tracker</em></p>",
+    price: 7.99,
+    currency: "USD",
+    image: "/product-images/wedding-appointments-tracker.jpg",
+    alt_text: "Wedding Appointments Tracker printable digital download mockup",
+    images: [
+      { url: "/product-images/wedding-appointments-tracker.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Mom Planner",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 23,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-daily-planner-printable",
+    title: "Daily Planner Printable",
+    subtitle: "Maximize your productivity with this beautifully designed daily planner printable. Features ",
+    ribbon_text: "NEW",
+    description: "<h3>Daily Planner Printable</h3><p>Maximize your productivity with this beautifully designed daily planner printable. Features hourly schedule, to-do list, priorities section, and notes area. Clean layout helps you focus on what matters most. Print daily or weekly for ultimate flexibility in your planning routine.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>daily planner, printable planner, daily schedule, productivity planner, to-do list, daily organizer, time management, printable agenda</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/daily-planner-printable.jpg",
+    alt_text: "Daily Planner Printable printable digital download mockup",
+    images: [
+      { url: "/product-images/daily-planner-printable.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Daily",
+    type: { value: "Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 24,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-grocery-list-notepad-template",
+    title: "Grocery List Notepad Template",
+    subtitle: "Simplify your shopping trips with this organized grocery list notepad template. Pre-categori",
+    ribbon_text: "NEW",
+    description: "<h3>Grocery List Notepad Template</h3><p>Simplify your shopping trips with this organized grocery list notepad template. Pre-categorized sections for produce, dairy, meat, pantry staples, and more. Saves time in-store and ensures you never forget essential items. Perfect for meal planning and budget-conscious shopping.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>grocery list, shopping list template, printable grocery list, meal planning, shopping organizer, food list, pantry checklist, market list</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/grocery-list-notepad-template.jpg",
+    alt_text: "Grocery List Notepad Template printable digital download mockup",
+    images: [
+      { url: "/product-images/grocery-list-notepad-template.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Meal Planners",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 25,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-lists-notes-organizer",
+    title: "Lists & Notes Organizer",
+    subtitle: "Capture all your thoughts and tasks with this versatile lists and notes organizer. Multiple ",
+    ribbon_text: "NEW",
+    description: "<h3>Lists &amp; Notes Organizer</h3><p>Capture all your thoughts and tasks with this versatile lists and notes organizer. Multiple sections for different list types plus generous note-taking space. Perfect for brain dumps, project planning, or everyday organization. Clean, functional design for maximum usability.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>lists and notes, note organizer, printable notepad, list maker, note taking template, productivity sheets, organizing printables</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/lists-notes-organizer.jpg",
+    alt_text: "Lists & Notes Organizer printable digital download mockup",
+    images: [
+      { url: "/product-images/lists-notes-organizer.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 26,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-grid-notes-template",
+    title: "Grid Notes Template",
+    subtitle: "Perfect for sketching, planning, and organizing with this grid notes template. Subtle grid p",
+    ribbon_text: "NEW",
+    description: "<h3>Grid Notes Template</h3><p>Perfect for sketching, planning, and organizing with this grid notes template. Subtle grid pattern provides structure without being distracting. Ideal for bullet journaling, design work, math problems, or general note-taking. Versatile format for students and professionals alike.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>grid notes, graph paper, grid template, bullet journal pages, printable grid paper, note taking, sketching paper, planning sheets</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/grid-notes-template.jpg",
+    alt_text: "Grid Notes Template printable digital download mockup",
+    images: [
+      { url: "/product-images/grid-notes-template.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Daily",
+    type: { value: "Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 27,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-habit-tracker-printable",
+    title: "Habit Tracker Printable",
+    subtitle: "Build better habits and achieve your goals with this comprehensive habit tracker printable. ",
+    ribbon_text: "NEW",
+    description: "<h3>Habit Tracker Printable</h3><p>Build better habits and achieve your goals with this comprehensive habit tracker printable. Track multiple habits daily with visual progress indicators. Scientifically designed to boost motivation and accountability. Perfect for fitness goals, wellness routines, or personal development.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>habit tracker, printable habit tracker, goal tracker, daily habits, habit log, routine tracker, self improvement, productivity tracker</em></p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/habit-tracker-printable.jpg",
+    alt_text: "Habit Tracker Printable printable digital download mockup",
+    images: [
+      { url: "/product-images/habit-tracker-printable.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Habit Trackers",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 28,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-business-idea-checklist",
+    title: "Business Idea Checklist",
+    subtitle: "Launch your business with confidence using this comprehensive business idea checklist. Cover",
+    ribbon_text: "NEW",
+    description: "<h3>Business Idea Checklist</h3><p>Launch your business with confidence using this comprehensive business idea checklist. Covers market research, financial planning, legal requirements, and marketing strategies. Step-by-step guidance helps you validate your concept and create a solid foundation. Essential for aspiring entrepreneurs.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>business checklist, startup checklist, business planning, entrepreneur guide, business idea validation, startup planner, business launch</em></p>",
+    price: 9.99,
+    currency: "USD",
+    image: "/product-images/business-idea-checklist.jpg",
+    alt_text: "Business Idea Checklist printable digital download mockup",
+    images: [
+      { url: "/product-images/business-idea-checklist.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Business Planner Bundle",
+    type: { value: "Business Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 29,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
+    id: "mock-sales-commissions-tracker-guide",
+    title: "Sales & Commissions Tracker Guide",
+    subtitle: "Master your sales performance with this professional sales and commissions tracker guide. Tr",
+    ribbon_text: "NEW",
+    description: "<h3>Sales &amp; Commissions Tracker Guide</h3><p>Master your sales performance with this professional sales and commissions tracker guide. Track deals, calculate commissions, monitor quotas, and analyze trends. Includes formulas and templates for accurate financial tracking. Perfect for sales professionals, real estate agents, and commission-based workers.</p><h4>What's Included:</h4><ul><li>Printable PDF (US Letter)</li><li>How-to + personal use license</li><li>Canva edit link included on the license page</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or import into GoodNotes, Notability or Xodo.</p><p><strong>License:</strong> Personal use. Print unlimited copies for yourself; not for resale.</p><p><em>sales tracker, commission calculator, sales performance, revenue tracker, sales planner, commission tracker, sales management, professional tools</em></p>",
+    price: 9.99,
+    currency: "USD",
+    image: "/product-images/sales-commissions-tracker-guide.jpg",
+    alt_text: "Sales & Commissions Tracker Guide printable digital download mockup",
+    images: [
+      { url: "/product-images/sales-commissions-tracker-guide.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF plus a how-to and personal use license. Optional Canva source link is listed on the license page when provided." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or import into GoodNotes, Notability or Xodo. Duplicate pages as needed." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Budget Trackers",
+    type: { value: "Finance Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 30,
+    updated_at: "2026-08-21T00:00:00.000Z"
+  },
+  {
     id: "mock-hello-fall-planner-collection",
     title: "Hello Fall Planner Collection",
     subtitle: "6 cozy autumn planner inserts — 14-page printable set",
