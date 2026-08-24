@@ -3,14 +3,15 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckCircle, Users, Download, Star } from 'lucide-react';
+import { ArrowRight, Brain, Heart, Home, Sparkles } from 'lucide-react';
 import { getProducts, getProductQuantities } from '@/api/EcommerceApi';
 import ProductCard3D from '@/components/ProductCard3D';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { CATEGORY_TREE } from '@/data/categories';
+import { BRAND } from '@/brand';
 
-const categories = CATEGORY_TREE;
+const featuredCategories = CATEGORY_TREE.slice(0, 6);
 
 const HomePage = ({ setIsCartOpen }) => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -20,7 +21,7 @@ const HomePage = ({ setIsCartOpen }) => {
     const fetchFeaturedProducts = async () => {
       try {
         const productsResponse = await getProducts({ limit: '8' });
-        
+
         if (productsResponse.products.length > 0) {
           const productIds = productsResponse.products.map(p => p.id);
           const quantitiesResponse = await getProductQuantities({
@@ -41,7 +42,7 @@ const HomePage = ({ setIsCartOpen }) => {
             }))
           }));
 
-          setFeaturedProducts(productsWithQuantities);
+          setFeaturedProducts(productsWithQuantities.slice(0, 8));
         }
       } catch (error) {
         console.error('Error fetching featured products:', error);
@@ -56,57 +57,111 @@ const HomePage = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>DigitalHub - Premium Digital Products</title>
-        <meta name="description" content="Discover premium digital products including templates, ebooks, software tools, and more. Quality resources for creators and developers." />
+        <title>DigitalHub — ADHD-friendly tools that work with your brain</title>
+        <meta name="description" content="DigitalHub makes ADHD-friendly planners, printables, and kid tools. Clear pages. One next step. Built for adults with ADHD and parents of ADHD kids." />
       </Helmet>
       <Header setIsCartOpen={setIsCartOpen} />
-      
-      <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1646041293779-2466bf622784"
-            alt="Modern workspace"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/75" />
+
+      <section className="relative min-h-[88dvh] flex items-center overflow-hidden bg-background">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute -top-24 -right-16 w-80 h-80 rounded-[2.5rem] bg-primary/10" />
+          <div className="absolute bottom-10 left-8 w-24 h-24 rounded-full bg-accent/40" />
         </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.45 }}
+            className="max-w-3xl"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance" style={{letterSpacing: '-0.02em'}}>
-              Premium digital products for modern creators
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Discover high-quality templates, tools, and resources to elevate your projects
+            <p className="inline-flex items-center rounded-full border border-primary/30 bg-card px-3 py-1 text-sm font-medium text-primary mb-6">
+              {BRAND.badge}
             </p>
-            <Link to="/products">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-3d-lg hover:shadow-3d-xl transition-all text-lg px-8 py-6">
-                Explore Products
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
+            <h1 className="text-4xl md:text-6xl font-semibold mb-5 text-balance" style={{letterSpacing: '-0.02em'}}>
+              {BRAND.tagline}
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
+              {BRAND.mission}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link to="/products">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-3d-md text-base px-7 py-6">
+                  Shop ADHD-friendly tools
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <a href="#who-its-for">
+                <Button variant="outline" size="lg" className="text-base px-7 py-6">
+                  See who it is for
+                </Button>
+              </a>
+            </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section id="who-its-for" className="py-20 bg-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-3" style={{letterSpacing: '-0.02em'}}>
+              Built for ADHD brains, and the people who love them
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {BRAND.valueProposition}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: Brain, ...BRAND.audiences[0] },
+              { icon: Heart, ...BRAND.audiences[1] },
+              { icon: Home, ...BRAND.audiences[2] },
+            ].map((item) => (
+              <div key={item.title} className="card-3d p-7">
+                <item.icon className="h-7 w-7 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-muted-foreground">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-3" style={{letterSpacing: '-0.02em'}}>
+              Why DigitalHub feels different
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              We design against overwhelm. Every page should answer: what do I do next?
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {BRAND.principles.map((principle) => (
+              <div key={principle} className="flex items-start gap-3 rounded-2xl bg-card border border-border p-5">
+                <Sparkles className="h-5 w-5 text-accent mt-0.5 shrink-0" />
+                <p className="font-medium">{principle}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="py-20 bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            transition={{ duration: 0.4 }}
+            className="mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{letterSpacing: '-0.02em'}}>
-              Featured products
+            <h2 className="text-3xl md:text-4xl font-semibold mb-3" style={{letterSpacing: '-0.02em'}}>
+              Start here
             </h2>
             <p className="text-lg text-muted-foreground">
-              Hand-picked premium digital products
+              Low-friction tools first. Browse the rest when you have the energy.
             </p>
           </motion.div>
 
@@ -124,10 +179,10 @@ const HomePage = ({ setIsCartOpen }) => {
             </div>
           )}
 
-          <div className="text-center mt-12">
+          <div className="mt-12">
             <Link to="/products">
-              <Button variant="outline" size="lg" className="shadow-3d-md hover:shadow-3d-lg transition-all">
-                View All Products
+              <Button variant="outline" size="lg" className="shadow-3d-sm">
+                Browse the full shop
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -137,73 +192,30 @@ const HomePage = ({ setIsCartOpen }) => {
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{letterSpacing: '-0.02em'}}>
-              Browse by category
+          <div className="mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-3" style={{letterSpacing: '-0.02em'}}>
+              Shop by need
             </h2>
             <p className="text-lg text-muted-foreground">
-              Find exactly what you need
+              Six starting points. Not eighteen competing choices.
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {categories.map((category, index) => (
-              <motion.div
-                key={category.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-              >
-                <Link to={`/products?category=${encodeURIComponent(category.name)}`}>
-                  <div className="card-3d soft-reflection p-8 text-center group cursor-pointer h-full">
-                    <div className="text-5xl mb-4">{category.icon}</div>
-                    <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                      {category.name}
-                    </h3>
-                    {category.children?.length > 0 && (
-                      <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
-                        {category.children.slice(0, 3).join(' · ')}
-                        {category.children.length > 3 ? ' · more' : ''}
-                      </p>
-                    )}
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-secondary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: Users, label: 'Active creators', value: '12,847' },
-              { icon: Download, label: 'Downloads', value: '47,293' },
-              { icon: Star, label: 'Average rating', value: '4.8/5' },
-              { icon: CheckCircle, label: 'Products', value: '200+' }
-            ].map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-4 shadow-3d-md">
-                  <stat.icon className="h-8 w-8" />
+            {featuredCategories.map((category) => (
+              <Link key={category.name} to={`/products?category=${encodeURIComponent(category.name)}`}>
+                <div className="card-3d p-8 h-full">
+                  <div className="text-4xl mb-4">{category.icon}</div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {category.name}
+                  </h3>
+                  {category.children?.length > 0 && (
+                    <p className="text-sm text-muted-foreground">
+                      {category.children.slice(0, 3).join(' · ')}
+                    </p>
+                  )}
                 </div>
-                <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </motion.div>
+              </Link>
             ))}
           </div>
         </div>

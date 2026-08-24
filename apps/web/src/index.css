@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,33 +15,33 @@ html {
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    --background: 40 36% 95%;
+    --foreground: 272 17% 17%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 40 33% 98%;
+    --card-foreground: 272 17% 17%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 40 33% 98%;
+    --popover-foreground: 272 17% 17%;
     
-    --primary: 221 83% 53%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 252 29% 50%;
+    --primary-foreground: 40 33% 98%;
     
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 40 24% 91%;
+    --secondary-foreground: 272 17% 17%;
     
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 40 20% 90%;
+    --muted-foreground: 272 10% 38%;
     
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 77% 60%;
+    --accent-foreground: 272 17% 17%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 221 83% 53%;
+    --border: 36 18% 82%;
+    --input: 36 18% 82%;
+    --ring: 252 29% 50%;
     
     --radius: 0.75rem;
     
@@ -75,17 +75,17 @@ html {
     --popover: 215 35% 18%;
     --popover-foreground: 210 40% 98%;
     
-    --primary: 221 83% 53%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 252 32% 68%;
+    --primary-foreground: 272 17% 12%;
     
-    --secondary: 215 30% 22%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 272 14% 20%;
+    --secondary-foreground: 40 33% 96%;
     
-    --muted: 215 30% 22%;
-    --muted-foreground: 210 20% 70%;
+    --muted: 272 12% 22%;
+    --muted-foreground: 40 16% 78%;
     
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 70% 58%;
+    --accent-foreground: 272 17% 12%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
@@ -149,8 +149,7 @@ html {
   }
   
   .card-3d:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-3d-xl);
+    box-shadow: var(--shadow-3d-lg);
   }
   
   .floating-panel {
@@ -230,6 +229,20 @@ html {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

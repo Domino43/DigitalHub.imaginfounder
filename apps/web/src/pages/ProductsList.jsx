@@ -178,17 +178,17 @@ const ProductsList = ({ setIsCartOpen }) => {
   return (
     <>
       <Helmet>
-        <title>Products - DigitalHub</title>
-        <meta name="description" content="Browse DigitalHub printables: planners, invitations, wall art, kids worksheets, party kits, and more." />
+        <title>Shop ADHD-friendly tools - DigitalHub</title>
+        <meta name="description" content="Browse ADHD-friendly planners, organizers, kids worksheets, and printables. Clear pages. Instant download." />
       </Helmet>
       <Header setIsCartOpen={setIsCartOpen} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{letterSpacing: '-0.02em'}}>
-            Explore our products
+            Shop ADHD-friendly tools
           </h1>
           <p className="text-lg text-muted-foreground">
-            Discover {products.length} premium digital products
+            {products.length} products. Start with planners, organizers, or kids tools.
           </p>
         </div>
 

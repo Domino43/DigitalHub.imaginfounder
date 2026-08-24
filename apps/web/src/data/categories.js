@@ -1,9 +1,69 @@
 /**
  * DigitalHub category tree
- * Source: Google Sheet "new products" (tab 2)
+ * ADHD-first order: start with planners, organizers, kids tools.
  * Parents are shoppable filters; children are subcategories.
  */
 export const CATEGORY_TREE = [
+  {
+    name: 'Planners',
+    icon: '📅',
+    children: ['Weekly', 'Daily', 'Monthly', 'Yearly', 'Academic Planners'],
+  },
+  {
+    name: 'Organizers',
+    icon: '🗂',
+    children: [
+      'Budget Trackers',
+      'Meal Planners',
+      'Habit Trackers',
+      'Goal Setting Worksheets',
+      'Nurse Planner',
+      'Teacher Planner',
+      'Mom Planner',
+    ],
+  },
+  {
+    name: 'Digital Planners',
+    icon: '💻',
+    children: [
+      'Annual Digital Planners',
+      'Hyperlinked Monthly Views',
+      'Digital Journal',
+      'Study Templates',
+      'iPad Wellness Tracker',
+    ],
+  },
+  {
+    name: 'Kids Worksheets',
+    icon: '📝',
+    children: ['Preschool Worksheets', 'Reading Comprehension', 'Themed Packs'],
+  },
+  {
+    name: 'Kids Activities',
+    icon: '🎨',
+    children: [
+      'Alphabet Tracing',
+      'Homeschool Supplements',
+      'Reward Charts',
+      'Chore Charts',
+    ],
+  },
+  {
+    name: 'Finance Templates',
+    icon: '💰',
+    children: ['Budget Trackers'],
+  },
+  {
+    name: 'Coloring Pages',
+    icon: '🖌',
+    children: [
+      'Mandala Coloring Pages',
+      'Botanical Coloring Sheets',
+      'Inspirational Quotes',
+      'Seasonal Coloring',
+      'Mindfulness Packs',
+    ],
+  },
   {
     name: 'Wall Art',
     icon: '🖼',
@@ -32,39 +92,6 @@ export const CATEGORY_TREE = [
     children: ['Save The Date Cards', 'Baby Shower Invites'],
   },
   {
-    name: 'Planners',
-    icon: '📅',
-    children: ['Weekly', 'Daily', 'Monthly', 'Yearly', 'Academic Planners'],
-  },
-  {
-    name: 'Organizers',
-    icon: '🗂',
-    children: [
-      'Budget Trackers',
-      'Meal Planners',
-      'Habit Trackers',
-      'Goal Setting Worksheets',
-      'Nurse Planner',
-      'Teacher Planner',
-      'Mom Planner',
-    ],
-  },
-  {
-    name: 'Kids Worksheets',
-    icon: '📝',
-    children: ['Preschool Worksheets', 'Reading Comprehension', 'Themed Packs'],
-  },
-  {
-    name: 'Kids Activities',
-    icon: '🎨',
-    children: [
-      'Alphabet Tracing',
-      'Homeschool Supplements',
-      'Reward Charts',
-      'Chore Charts',
-    ],
-  },
-  {
     name: 'Holiday Printables',
     icon: '🎄',
     children: [],
@@ -78,17 +105,6 @@ export const CATEGORY_TREE = [
       'Halloween Party Decor',
       'Easter Activity Sheets',
       'Thanksgiving Place Cards',
-    ],
-  },
-  {
-    name: 'Digital Planners',
-    icon: '💻',
-    children: [
-      'Annual Digital Planners',
-      'Hyperlinked Monthly Views',
-      'Digital Journal',
-      'Study Templates',
-      'iPad Wellness Tracker',
     ],
   },
   {
@@ -118,22 +134,6 @@ export const CATEGORY_TREE = [
       'Business Planner Bundle',
       'Social Media Content Calendars',
       'Freelancer Contracts',
-    ],
-  },
-  {
-    name: 'Finance Templates',
-    icon: '💰',
-    children: ['Budget Trackers'],
-  },
-  {
-    name: 'Coloring Pages',
-    icon: '🖍',
-    children: [
-      'Mandala Coloring Pages',
-      'Botanical Coloring Sheets',
-      'Inspirational Quotes',
-      'Seasonal Coloring',
-      'Mindfulness Packs',
     ],
   },
   {

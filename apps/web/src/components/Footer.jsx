@@ -1,54 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Mail } from 'lucide-react';
+import { Facebook, Mail } from 'lucide-react';
 import { PARENT_CATEGORIES } from '@/data/categories';
+import BrandMark from '@/components/BrandMark';
+import { BRAND } from '@/brand';
 
 const Footer = () => {
-  const categories = PARENT_CATEGORIES;
+  const categories = PARENT_CATEGORIES.slice(0, 8);
 
   return (
     <footer className="bg-secondary text-secondary-foreground mt-20 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl shadow-3d-md flex items-center justify-center">
-                <span className="text-white font-bold text-xl">D</span>
-              </div>
-              <span className="text-xl font-bold" style={{letterSpacing: '-0.02em'}}>
-                DigitalHub
-              </span>
+            <div className="mb-4">
+              <BrandMark />
             </div>
-            <p className="text-sm opacity-80 mb-4">
-              Premium digital products for moms, daughters, girlfriends, and DIY projects.
+            <p className="text-sm opacity-80 mb-3">
+              {BRAND.mission}
+            </p>
+            <p className="text-sm font-medium mb-4">
+              {BRAND.tagline}
             </p>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/Imaginfounder/" className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-all flex items-center justify-center shadow-3d-sm">
+              <a href="https://www.facebook.com/Imaginfounder/" className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-all flex items-center justify-center shadow-3d-sm" aria-label="Facebook">
                 <Facebook className="h-4 w-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-all flex items-center justify-center shadow-3d-sm">
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-all flex items-center justify-center shadow-3d-sm">
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-all flex items-center justify-center shadow-3d-sm">
-                <Linkedin className="h-4 w-4" />
               </a>
             </div>
           </div>
-          
+
           <div>
-            <span className="font-semibold mb-4 block">Quick Links</span>
+            <span className="font-semibold mb-4 block">Quick links</span>
             <ul className="space-y-2 text-sm">
               <li><Link to="/" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Home</Link></li>
-              <li><Link to="/products" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Products</Link></li>
-              <li><a href="https://hpanel.hostinger.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Admin Login</a></li>
+              <li><Link to="/products" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Shop tools</Link></li>
+              <li><a href="/#who-its-for" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Who it is for</a></li>
             </ul>
           </div>
-          
+
           <div>
-            <span className="font-semibold mb-4 block">Categories</span>
+            <span className="font-semibold mb-4 block">Start with</span>
             <ul className="space-y-2 text-sm">
               {categories.map((category) => (
                 <li key={category}>
@@ -59,13 +50,13 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
+
           <div>
             <span className="font-semibold mb-4 block">Contact</span>
             <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-2 opacity-80">
                 <Mail className="h-4 w-4" />
-                <span>support@digitalhub.com</span>
+                <a href={`mailto:${BRAND.supportEmail}`}>{BRAND.supportEmail}</a>
               </li>
             </ul>
             <div className="mt-6">
@@ -77,9 +68,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm opacity-70">
-          <p>&copy; 2026 DigitalHub. All rights reserved.</p>
+
+        <div className="border-t border-border mt-8 pt-8 text-sm opacity-70">
+          <p>&copy; 2026 DigitalHub. Tools that work with your brain.</p>
         </div>
       </div>
     </footer>
