@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260702-05-84893f2"}');</script><script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summit Tasks</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/0179d719c431a79e.data_sdk.js" integrity="sha512-OsRvJkI5GkC3MJQcgotQYotpzrMSX415GiKKgvYdxQEEkzD/fdchShO2FMSy0PJr/tiINMXOk5Vl2zAgg6bUiA=="></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,600&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Work Sans', sans-serif; }
+    .app-scrim {
+      background: linear-gradient(180deg, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.35) 30%, rgba(15,23,42,0.72) 100%);
+    }
+    .glass {
+      background: rgba(255,255,255,0.10);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .badge { transition: transform .35s ease, filter .45s ease, opacity .45s ease; }
+    .badge:not(.earned) { filter: grayscale(1) brightness(.7); opacity: .5; }
+    .badge.earned { filter: none; opacity: 1; }
+    .badge.pop { animation: badgePop .6s cubic-bezier(.34,1.56,.64,1); }
+    @keyframes badgePop {
+      0% { transform: scale(.6) rotate(-8deg); }
+      55% { transform: scale(1.18) rotate(4deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+    .task-item { transition: background .25s ease, opacity .25s ease; }
+    .task-done .task-title { text-decoration: line-through; opacity: .6; }
+    .toast {
+      transition: opacity .3s ease, transform .3s ease;
+      opacity: 0; transform: translateY(12px); pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .fade-in { animation: fadeIn .4s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity:1; transform:none; } }
+    @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+  </style>
+  <script src="/_sdk/0b3af1c300e720aa.resizing_sdk.js" type="text/javascript" integrity="sha512-nX1P6oXZmEY5wCI2lUVg3BwKu1cr0yi+ZpXgZ0Yn90vkSwvpmyzBMvOyD6VLJUtBwFI2dSrw1b6OvORxSggw3w=="></script>
+ </head>
+ <body data-template-id="__page-root" class="min-h-screen text-white" style="background: rgb(15, 23, 42);">
+  <!-- Mountain backdrop --> <img data-template-id="bg-image" loading="lazy" class="canva-image fixed inset-0 w-full h-full object-cover z-0" alt="Majestic snow-covered mountain range with a rising moon and pink sunset sky." src="https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920">
+  <div class="app-scrim fixed inset-0 z-0"></div><!-- Welcome cover screen -->
+  <div id="cover-screen" class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
+   <div class="relative z-20 w-full max-w-2xl mx-auto px-5 sm:px-8 py-12">
+    <div class="glass rounded-3xl p-8 sm:p-10 text-center">
+     <h1 data-template-id="cover-title" class="canva-text text-4xl sm:text-5xl font-bold mb-4 drop-shadow-lg" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 42px;">Summit Tasks</h1>
+     <p data-template-id="cover-tagline" class="canva-text text-lg sm:text-xl mb-8 text-white/90 drop-shadow" style="color: rgb(226, 232, 240); font-weight: 400; font-style: normal; font-size: 16px;">Transform your to-do list into an adventure. Organize tasks by category, complete them, and earn badges as you reach new heights.</p><!-- Instructions -->
+     <div class="text-left mb-8 space-y-4">
+      <h2 data-template-id="instructions-header" class="canva-text text-xl font-semibold mb-4 text-center" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 18px;">How to Use</h2>
+      <div class="space-y-3">
+       <div class="flex gap-3 items-start">
+        <div class="canva-tag rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white/20 shrink-0 text-base">
+         1
+        </div>
+        <div>
+         <p data-template-id="step-1-title" class="canva-text font-semibold mb-1" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Add Your Tasks</p>
+         <p data-template-id="step-1-desc" class="canva-text text-sm text-white/80" style="font-weight: 400; font-style: normal; font-size: 16px;">Type a task in the input field, select a category (Work, Personal, or Shopping), and click Add Task.</p>
+        </div>
+       </div>
+       <div class="flex gap-3 items-start">
+        <div class="canva-tag rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white/20 shrink-0 text-base">
+         2
+        </div>
+        <div>
+         <p data-template-id="step-2-title" class="canva-text font-semibold mb-1" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Organize by Category</p>
+         <p data-template-id="step-2-desc" class="canva-text text-sm text-white/80" style="font-weight: 400; font-style: normal; font-size: 16px;">Your tasks automatically sort into three columns. Keep your work, personal, and shopping items in separate trails.</p>
+        </div>
+       </div>
+       <div class="flex gap-3 items-start">
+        <div class="canva-tag rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white/20 shrink-0 text-base">
+         3
+        </div>
+        <div>
+         <p data-template-id="step-3-title" class="canva-text font-semibold mb-1" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Check Off Progress</p>
+         <p data-template-id="step-3-desc" class="canva-text text-sm text-white/80" style="font-weight: 400; font-style: normal; font-size: 16px;">Click the circle next to any task to mark it complete. Watch your progress bar climb and badges unlock.</p>
+        </div>
+       </div>
+       <div class="flex gap-3 items-start">
+        <div class="canva-tag rounded-full w-8 h-8 flex items-center justify-center font-bold bg-white/20 shrink-0 text-base">
+         4
+        </div>
+        <div>
+         <p data-template-id="step-4-title" class="canva-text font-semibold mb-1" style="color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Earn Achievements</p>
+         <p data-template-id="step-4-desc" class="canva-text text-sm text-white/80" style="font-weight: 400; font-style: normal; font-size: 16px;">Complete 1, 3, 6, or 10 tasks to unlock First Steps, On a Roll, Peak Performer, and Summit Master badges.</p>
+        </div>
+       </div>
+      </div>
+     </div><!-- Start button --> <button id="start-button" data-template-id="cover-cta" class="canva-button rounded-lg px-8 py-3 font-semibold text-lg flex items-center justify-center gap-2 w-full hover:shadow-lg transition-shadow" style="background: rgb(14, 165, 233); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Begin Your Summit</button>
+    </div>
+   </div>
+  </div>
+  <div class="relative z-10 w-full min-h-screen flex flex-col hidden" id="app-main">
+   <header class="text-center mb-7 fade-in">
+    <h1 data-template-id="app-title" class="canva-text drop-shadow-lg leading-tight" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 32px;">Summit Tasks</h1>
+    <p data-template-id="app-subtitle" class="canva-text mt-2 max-w-xl mx-auto drop-shadow" style="color: rgb(226, 232, 240); font-weight: 400; font-style: normal; font-size: 16px;">Conquer your day one peak at a time. Sort tasks, check them off, and unlock badges as you climb.</p>
+    <p id="progress-line" class="mt-3 text-sm font-medium tracking-wide text-white/80" aria-live="polite"></p>
+   </header><!-- Achievement badges -->
+   <section aria-label="Achievements" class="glass rounded-2xl p-4 sm:p-5 mb-7 fade-in">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+     <div id="ach-1" class="badge glass rounded-xl p-3 flex items-center gap-3" data-threshold="1">
+      <span data-template-id="badge-1-ico" class="canva-tag shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-xl" style="background: rgba(255, 255, 255, 0.18); font-weight: 400; font-style: normal; font-size: 16px;">🥾</span> <span class="min-w-0"> <span data-template-id="badge-1-name" class="canva-text block font-semibold leading-tight truncate" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 15px;">First Steps</span> <span data-template-id="badge-1-desc" class="canva-text block text-xs leading-tight" style="color: rgb(203, 213, 225); font-weight: 400; font-style: normal; font-size: 12px;">Complete 1 task</span> </span>
+     </div>
+     <div id="ach-2" class="badge glass rounded-xl p-3 flex items-center gap-3" data-threshold="3">
+      <span data-template-id="badge-2-ico" class="canva-tag shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-xl" style="background: rgba(255, 255, 255, 0.18); font-weight: 400; font-style: normal; font-size: 16px;">🧗</span> <span class="min-w-0"> <span data-template-id="badge-2-name" class="canva-text block font-semibold leading-tight truncate" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 15px;">On a Roll</span> <span data-template-id="badge-2-desc" class="canva-text block text-xs leading-tight" style="color: rgb(203, 213, 225); font-weight: 400; font-style: normal; font-size: 12px;">Complete 3 tasks</span> </span>
+     </div>
+     <div id="ach-3" class="badge glass rounded-xl p-3 flex items-center gap-3" data-threshold="6">
+      <span data-template-id="badge-3-ico" class="canva-tag shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-xl" style="background: rgba(255, 255, 255, 0.18); font-weight: 400; font-style: normal; font-size: 16px;">⛰️</span> <span class="min-w-0"> <span data-template-id="badge-3-name" class="canva-text block font-semibold leading-tight truncate" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 15px;">Peak Performer</span> <span data-template-id="badge-3-desc" class="canva-text block text-xs leading-tight" style="color: rgb(203, 213, 225); font-weight: 400; font-style: normal; font-size: 12px;">Complete 6 tasks</span> </span>
+     </div>
+     <div id="ach-4" class="badge glass rounded-xl p-3 flex items-center gap-3" data-threshold="10">
+      <span data-template-id="badge-4-ico" class="canva-tag shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-xl" style="background: rgba(255, 255, 255, 0.18); font-weight: 400; font-style: normal; font-size: 16px;">🏔️</span> <span class="min-w-0"> <span data-template-id="badge-4-name" class="canva-text block font-semibold leading-tight truncate" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 15px;">Summit Master</span> <span data-template-id="badge-4-desc" class="canva-text block text-xs leading-tight" style="color: rgb(203, 213, 225); font-weight: 400; font-style: normal; font-size: 12px;">Complete 10 tasks</span> </span>
+     </div>
+    </div>
+   </section><!-- Add task -->
+   <form id="task-form" class="glass rounded-2xl p-3 sm:p-4 mb-7 flex flex-col sm:flex-row gap-3 fade-in">
+    <div class="flex-1">
+     <label data-template-id="task-input-label" for="task-input" class="canva-text sr-only" style="font-weight: 400; font-style: normal; font-size: 16px;">Task description</label> <input id="task-input" type="text" maxlength="120" data-template-id="task-input" class="canva-input w-full rounded-lg px-4 py-3 bg-white/90 text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/70" placeholder="What needs conquering?" style="color: rgb(30, 41, 59); font-weight: 400; font-style: normal; font-size: 16px;">
+    </div>
+    <div>
+     <label data-template-id="category-label" for="task-category" class="canva-text sr-only" style="font-weight: 400; font-style: normal; font-size: 16px;">Category</label> <select id="task-category" class="w-full sm:w-auto rounded-lg px-4 py-3 bg-white/90 text-slate-800 focus:outline-none focus:ring-2 focus:ring-white/70"> <option value="Work">Work</option> <option value="Personal">Personal</option> <option value="Shopping">Shopping</option> </select>
+    </div><button type="submit" id="add-button" data-template-id="add-button" class="canva-button rounded-lg px-6 py-3 font-semibold flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed" style="background: rgb(14, 165, 233); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Add Task</button>
+   </form><!-- Category columns -->
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-5 flex-1">
+    <!-- Work -->
+    <section class="glass rounded-2xl p-4 flex flex-col fade-in">
+     <div data-template-id="col-work-header" class="canva-header rounded-xl px-4 py-2.5 mb-3 flex items-center gap-2" style="background: linear-gradient(135deg, rgb(37, 99, 235), rgb(30, 64, 175));">
+      <i data-lucide="briefcase" class="w-5 h-5"></i>
+      <h2 data-template-id="col-work-title" class="canva-text font-semibold" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 18px;">Work</h2>
+     </div>
+     <ul id="list-Work" class="space-y-2.5 flex-1"></ul>
+     <p data-template-id="empty-work" class="canva-text text-sm text-white/70 italic text-center py-6" style="color: rgb(226, 232, 240); font-weight: 400; font-style: italic; font-size: 14px;">No work tasks yet — enjoy the view.</p>
+    </section><!-- Personal -->
+    <section class="glass rounded-2xl p-4 flex flex-col fade-in">
+     <div data-template-id="col-personal-header" class="canva-header rounded-xl px-4 py-2.5 mb-3 flex items-center gap-2" style="background: linear-gradient(135deg, rgb(5, 150, 105), rgb(4, 120, 87));">
+      <i data-lucide="heart" class="w-5 h-5"></i>
+      <h2 data-template-id="col-personal-title" class="canva-text font-semibold" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 18px;">Personal</h2>
+     </div>
+     <ul id="list-Personal" class="space-y-2.5 flex-1"></ul>
+     <p data-template-id="empty-personal" class="canva-text text-sm text-white/70 italic text-center py-6" style="color: rgb(226, 232, 240); font-weight: 400; font-style: italic; font-size: 14px;">Nothing personal on the trail yet.</p>
+    </section><!-- Shopping -->
+    <section class="glass rounded-2xl p-4 flex flex-col fade-in">
+     <div data-template-id="col-shopping-header" class="canva-header rounded-xl px-4 py-2.5 mb-3 flex items-center gap-2" style="background: linear-gradient(135deg, rgb(217, 119, 6), rgb(180, 83, 9));">
+      <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+      <h2 data-template-id="col-shopping-title" class="canva-text font-semibold" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 18px;">Shopping</h2>
+     </div>
+     <ul id="list-Shopping" class="space-y-2.5 flex-1"></ul>
+     <p data-template-id="empty-shopping" class="canva-text text-sm text-white/70 italic text-center py-6" style="color: rgb(226, 232, 240); font-weight: 400; font-style: italic; font-size: 14px;">Your shopping pack is empty.</p>
+    </section>
+   </div>
+   <footer class="text-center text-white/60 text-xs mt-8">
+    <p data-template-id="footer-note" class="canva-text" style="color: rgb(203, 213, 225); font-weight: 400; font-style: normal; font-size: 12px;">Your tasks are saved automatically to your Canva Sheet.</p>
+   </footer>
+  </div> <!-- Toast -->
+  <div id="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 z-30 glass rounded-lg px-5 py-3 text-sm font-medium shadow-xl"></div><!-- Task template (unbound) -->
+  <template id="task-template">
+   <li data-template-id="task-item" class="task-item canva-card rounded-lg px-3 py-2.5 flex items-center gap-3 bg-white/85 text-slate-800 fade-in"><button type="button" class="task-toggle shrink-0 w-6 h-6 flex items-center justify-center text-slate-500 hover:text-emerald-600 transition-colors" aria-label="Toggle complete"> <i data-lucide="circle" class="toggle-icon w-6 h-6"></i> </button> <span data-template-id="task-title" class="canva-text task-title flex-1 min-w-0 break-words text-slate-800"></span> <button type="button" class="task-delete shrink-0 w-7 h-7 flex items-center justify-center text-slate-400 hover:text-rose-600 transition-colors disabled:opacity-40" aria-label="Delete task"> <i data-lucide="trash-2" class="w-4 h-4"></i> </button></li>
+  </template>
+  <script src="/_sdk/6740099151a06780.editing_sdk.js" integrity="sha512-eSc5OWFJjK6fUpxViOKXm5ekJ3Gp5icgygsjPVz9Xzudb9TkX/uNdpqNHc63uN0PdxYE9+g8pZAHIib0FgE0Cw=="></script>
+  <script>
+    const MAX_RECORDS = 999;
+    const CATEGORIES = ['Work', 'Personal', 'Shopping'];
+    let tasks = [];
+    let earnedSet = new Set(); // tracks which badges were already earned (for pop animation)
+
+    // ---- Toast ----
+    let toastTimer;
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+    }
+
+    // ---- Task element helpers ----
+    function createTaskElement(record) {
+      const frag = document.getElementById('task-template').content.cloneNode(true);
+      const li = frag.querySelector('[data-template-id="task-item"]');
+      li.dataset.id = record.__backendId;
+      updateTaskElement(li, record);
+
+      li.querySelector('.task-toggle').addEventListener('click', () => toggleTask(record.__backendId));
+      li.querySelector('.task-delete').addEventListener('click', (e) => deleteTask(record.__backendId, e.currentTarget));
+      return li;
+    }
+
+    function updateTaskElement(li, record) {
+      li.querySelector('.task-title').textContent = record.title;
+      li.classList.toggle('task-done', !!record.completed);
+      const icon = li.querySelector('.toggle-icon');
+      icon.setAttribute('data-lucide', record.completed ? 'check-circle-2' : 'circle');
+      li.querySelector('.task-toggle').style.color = record.completed ? '#059669' : '';
+    }
+
+    // ---- Render ----
+    function render() {
+      CATEGORIES.forEach(cat => {
+        const listEl = document.getElementById('list-' + cat);
+        const items = tasks
+          .filter(t => t.category === cat)
+          .sort((a, b) => (a.created_at || '').localeCompare(b.created_at || ''));
+
+        const existing = new Map([...listEl.children].map(el => [el.dataset.id, el]));
+
+        items.forEach(rec => {
+          const el = existing.get(rec.__backendId);
+          if (el) {
+            updateTaskElement(el, rec);
+            listEl.appendChild(el); // keep order
+            existing.delete(rec.__backendId);
+          } else {
+            listEl.appendChild(createTaskElement(rec));
+          }
+        });
+        existing.forEach(el => el.remove());
+
+        // Empty state
+        const emptyMap = { Work: 'empty-work', Personal: 'empty-personal', Shopping: 'empty-shopping' };
+        const emptyEl = document.querySelector('[data-template-id="' + emptyMap[cat] + '"]');
+        if (emptyEl) emptyEl.style.display = items.length ? 'none' : 'block';
+      });
+
+      updateProgress();
+      updateBadges();
+      lucide.createIcons();
+    }
+
+    function updateProgress() {
+      const done = tasks.filter(t => t.completed).length;
+      const total = tasks.length;
+      const line = document.getElementById('progress-line');
+      if (total === 0) {
+        line.textContent = 'Add your first task and start the climb.';
+      } else {
+        line.textContent = done + ' of ' + total + ' tasks conquered · ' + Math.round((done / total) * 100) + '% to the summit';
+      }
+    }
+
+    function updateBadges() {
+      const done = tasks.filter(t => t.completed).length;
+      ['ach-1', 'ach-2', 'ach-3', 'ach-4'].forEach(id => {
+        const el = document.getElementById(id);
+        const threshold = parseInt(el.dataset.threshold, 10);
+        const isEarned = done >= threshold;
+        el.classList.toggle('earned', isEarned);
+        if (isEarned && !earnedSet.has(id)) {
+          earnedSet.add(id);
+          el.classList.add('pop');
+          el.addEventListener('animationend', () => el.classList.remove('pop'), { once: true });
+        }
+        if (!isEarned) earnedSet.delete(id);
+      });
+    }
+
+    // ---- Data operations ----
+    const dataHandler = {
+      onDataChanged(data) {
+        tasks = data;
+        render();
+      }
+    };
+
+    async function toggleTask(id) {
+      const rec = tasks.find(t => t.__backendId === id);
+      if (!rec) return;
+      const updated = { ...rec, completed: !rec.completed };
+      const result = await window.dataSdk.update(updated);
+      if (result.isError) showToast('Could not update that task. Please try again.');
+    }
+
+    async function deleteTask(id, btn) {
+      const rec = tasks.find(t => t.__backendId === id);
+      if (!rec) return;
+      btn.disabled = true;
+      const result = await window.dataSdk.delete(rec);
+      if (result.isError) {
+        btn.disabled = false;
+        showToast('Could not delete that task. Please try again.');
+      }
+    }
+
+    async function addTask(title, category) {
+      if (tasks.length >= MAX_RECORDS) {
+        showToast('You have reached the 999 task limit. Delete some to add more.');
+        return false;
+      }
+      const result = await window.dataSdk.create({
+        title: title,
+        category: category,
+        completed: false,
+        created_at: new Date().toISOString()
+      });
+      if (result.isError) {
+        showToast('Could not add that task. Please try again.');
+        return false;
+      }
+      return true;
+    }
+
+    // ---- Form ----
+    document.getElementById('task-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = document.getElementById('task-input');
+      const title = input.value.trim();
+      if (!title) { showToast('Type a task before adding.'); return; }
+
+      const category = document.getElementById('task-category').value;
+      const btn = document.getElementById('add-button');
+      const btnText = document.getElementById('add-button-text');
+      const original = btnText.textContent;
+      btn.disabled = true;
+      btnText.textContent = 'Adding…';
+
+      const ok = await addTask(title, category);
+      if (ok) input.value = '';
+
+      btn.disabled = false;
+      btnText.textContent = original;
+      input.focus();
+    });
+
+    // ---- Cover screen ----
+    function hideCover() {
+      const cover = document.getElementById('cover-screen');
+      const main = document.getElementById('app-main');
+      cover.style.animation = 'fadeOut 0.5s ease forwards';
+      setTimeout(() => {
+        cover.style.display = 'none';
+        main.classList.remove('hidden');
+      }, 500);
+    }
+
+    document.getElementById('start-button').addEventListener('click', hideCover);
+
+    // ---- Init ----
+    (async function init() {
+      lucide.createIcons();
+      const res = await window.dataSdk.init(dataHandler);
+      if (res.isError) {
+        showToast('Could not connect to your saved tasks.');
+      }
+    })();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a14bb66ab138ab15',t:'MTc4Mjk3NDk4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body></html>
