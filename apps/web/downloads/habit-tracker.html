@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <script>
+      window["__codeletBootstrap__"] = JSON.parse('{"A":"A","B":"20260702-05-84893f2"}');
+    </script>
+    <script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <script src="/_sdk/0179d719c431a79e.data_sdk.js" integrity="sha512-OsRvJkI5GkC3MJQcgotQYotpzrMSX415GiKKgvYdxQEEkzD/fdchShO2FMSy0PJr/tiINMXOk5Vl2zAgg6bUiA=="></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Work Sans', sans-serif;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Fraunces', serif;
+      }
+
+      /* Ambient gradient veil sits behind content, transitions with progress */
+      #gradient-veil {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        transition: background 1.2s ease, opacity 1.2s ease;
+        opacity: 0.9;
+      }
+
+      .app-shell {
+        position: relative;
+        z-index: 1;
+      }
+
+      .progress-track {
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        transition: width 0.7s cubic-bezier(.22, 1, .36, 1);
+      }
+
+      .habit-enter {
+        animation: rise 0.5s cubic-bezier(.22, 1, .36, 1) both;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .icon-pick.active {
+        outline: 3px solid #d1755a;
+        outline-offset: 2px;
+        transform: scale(1.08);
+      }
+
+      .icon-pick {
+        transition: transform .15s ease;
+      }
+
+      .fade-load {
+        animation: fadeUp .7s ease both;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+    <script src="/_sdk/0b3af1c300e720aa.resizing_sdk.js" type="text/javascript" integrity="sha512-nX1P6oXZmEY5wCI2lUVg3BwKu1cr0yi+ZpXgZ0Yn90vkSwvpmyzBMvOyD6VLJUtBwFI2dSrw1b6OvORxSggw3w=="></script>
+  </head>
+
+  <body data-template-id="__page-root" class="min-h-screen w-full text-stone-800" style="background: linear-gradient(135deg, rgb(244, 239, 233) 0%, rgb(239, 230, 223) 100%);">
+    <div id="gradient-veil"></div>
+    <div class="app-shell w-full"><!-- HERO -->
+      <header class="canva-header relative w-full overflow-hidden"><img data-template-id="hero-image" loading="lazy" class="canva-image w-full h-[38vh] min-h-[260px] object-cover" src="https://images.pexels.com/photos/27743543/pexels-photo-27743543.jpeg" alt="A tranquil sunrise scene with mist over a lush marshland, creating a peaceful atmosphere.">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 p-6 sm:p-10 max-w-5xl mx-auto fade-load">
+          <p data-template-id="app-eyebrow" class="canva-text uppercase tracking-[0.25em] text-sm mb-2" style="color: rgb(247, 233, 221); font-weight: 600; font-style: normal; font-size: 13px;">Daily rituals</p>
+          <h1 data-template-id="app-title" class="canva-text leading-none" style="color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 60px;">Build better days.</h1>
+          <p data-template-id="app-subtitle" class="canva-text mt-3 max-w-xl" style="color: rgb(243, 236, 228); font-weight: 400; font-style: normal; font-size: 17px;">Track the small habits that add up. Watch the light warm as your progress grows.</p>
+        </div>
+      </header>
+      <main class="max-w-5xl mx-auto px-5 sm:px-8 pb-20"><!-- PROGRESS BANNER -->
+        <section class="canva-panel -mt-10 relative rounded-3xl shadow-xl overflow-hidden flex flex-col sm:flex-row" data-template-id="progress-panel" style="background: rgb(255, 253, 250);"><img data-template-id="motivation-image" loading="lazy" class="canva-image w-full sm:w-52 h-44 sm:h-auto object-cover" src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Woman practicing meditation in lotus pose with candles and incense, focusing on wellness and relaxation.">
+          <div class="flex-1 p-6 sm:p-8 flex items-center gap-6">
+            <div class="relative shrink-0" style="width:92px;height:92px;">
+              <svg viewBox="0 0 100 100" class="w-full h-full -rotate-90">
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#00000015" stroke-width="9"></circle>
+                <circle id="progress-ring" cx="50" cy="50" r="42" fill="none" stroke="#d1755a" stroke-width="9" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="263.9" style="transition:stroke-dashoffset .8s ease;"></circle>
+              </svg><span id="progress-percent" class="absolute inset-0 flex items-center justify-center font-bold" style="font-family:'Fraunces',serif;font-size:20px;">0%</span>
+            </div>
+            <div>
+              <h2 data-template-id="progress-heading" class="canva-text" style="color: rgb(59, 47, 40); font-weight: 700; font-style: normal; font-size: 26px;">Today's momentum</h2>
+              <p data-template-id="progress-note" class="canva-text mt-1 text-sm" style="color: rgb(138, 125, 114); font-weight: 400; font-style: normal; font-size: 14px;">Your overall completion across every habit.</p>
+            </div>
+          </div>
+        </section><!-- ADD FORM -->
+        <section class="mt-10">
+          <h2 data-template-id="add-heading" class="canva-text mb-4" style="color: rgb(59, 47, 40); font-weight: 600; font-style: normal; font-size: 24px;">Add a new habit</h2>
+          <form id="habit-form" class="canva-card rounded-3xl p-6 shadow-md grid gap-5" data-template-id="add-card" style="background: rgb(255, 253, 250);">
+            <div><label data-template-id="habit-title-label" for="habit-title" class="canva-text block mb-2 font-medium" style="color: rgb(74, 63, 55); font-weight: 500; font-style: normal; font-size: 15px;">What do you want to do?</label> <input id="habit-title" type="text" required="" class="canva-input w-full rounded-xl border-2 border-stone-200 focus:border-[#d1755a] focus:outline-none px-4 py-3 bg-white/70" data-template-id="habit-title-input" placeholder="e.g. Drink 2L of water" style="color: rgb(59, 47, 40); font-weight: 400; font-style: normal; font-size: 16px;">
+            </div>
+            <div><span data-template-id="habit-icon-label" class="canva-text block mb-2 font-medium" style="color: rgb(74, 63, 55); font-weight: 500; font-style: normal; font-size: 15px;">Pick an icon</span>
+              <div id="icon-picker" class="flex flex-wrap gap-2" role="group" aria-label="Choose an icon"></div>
+            </div>
+            <div class="flex flex-wrap items-end gap-4">
+              <div class="flex-1 min-w-[160px]"><label data-template-id="habit-target-label" for="habit-target" class="canva-text block mb-2 font-medium" style="color: rgb(74, 63, 55); font-weight: 500; font-style: normal; font-size: 15px;">Goal (days)</label> <input id="habit-target" type="number" min="1" max="365" value="30" class="canva-input w-full rounded-xl border-2 border-stone-200 focus:border-[#d1755a] focus:outline-none px-4 py-3 bg-white/70">
+              </div><button type="submit" id="add-button" data-template-id="add-button" class="canva-button rounded-xl px-7 py-3 font-semibold shadow-sm hover:brightness-105 active:scale-95 transition disabled:opacity-60" style="background: rgb(209, 117, 90); color: rgb(255, 255, 255); font-weight: 600; font-style: normal; font-size: 16px;">Add habit</button>
+            </div>
+          </form>
+        </section><!-- HABITS LIST -->
+        <section class="mt-12">
+          <h2 data-template-id="habits-heading" class="canva-text mb-5" style="color: rgb(59, 47, 40); font-weight: 600; font-style: normal; font-size: 24px;">Your habits</h2>
+          <p data-template-id="empty-state" id="empty-state" class="canva-text text-center py-14 rounded-3xl bg-white/40 border-2 border-dashed border-stone-300" style="color: rgb(138, 125, 114); font-weight: 400; font-style: normal; font-size: 16px;">No habits yet — add your first one above and start your streak.</p>
+          <div id="habit-list" class="grid gap-4"></div>
+        </section>
+      </main>
+    </div><!-- Toast -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden">
+      <div class="bg-stone-900 text-white px-5 py-3 rounded-full shadow-lg text-sm font-medium"></div>
+    </div><!-- HABIT CARD TEMPLATE -->
+    <template id="habit-card-template">
+      <article data-template-id="habit-card" class="canva-card habit-enter rounded-3xl p-5 shadow-md flex items-center gap-4">
+        <div class="shrink-0 w-14 h-14 rounded-2xl bg-white/60 flex items-center justify-center text-3xl" data-icon=""></div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 flex-wrap">
+            <h3 data-template-id="habit-card-title" class="canva-text truncate" data-title=""></h3><span class="inline-flex items-center gap-1 text-sm font-semibold rounded-full px-2.5 py-0.5" data-template-id="habit-card-streak-badge"> <i data-lucide="flame" style="width:14px;height:14px;"></i><span data-streak="">0</span> </span>
+          </div>
+          <div class="mt-2 flex items-center gap-3">
+            <div class="progress-track flex-1 h-2.5 rounded-full" data-template-id="habit-card-progress-track">
+              <div class="progress-fill h-full rounded-full" data-template-id="habit-card-progress-fill" data-fill="" style="width:0%"></div>
+            </div><span class="text-xs font-medium tabular-nums text-stone-500 shrink-0" data-count="">0 / 0</span>
+          </div>
+        </div>
+        <div class="shrink-0 flex items-center gap-2" data-actions=""><button type="button" data-template-id="habit-card-done-button" data-done-btn="" class="canva-button rounded-full px-4 py-2 text-sm font-semibold hover:brightness-105 active:scale-95 transition disabled:opacity-60"></button> <span data-template-id="habit-card-done-today" data-done-today="" class="canva-tag hidden items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold"> <i data-lucide="check" style="width:15px;height:15px;"></i> </span> <button type="button" data-del-btn="" aria-label="Delete habit" class="w-9 h-9 rounded-full flex items-center justify-center text-stone-400 hover:text-red-500 hover:bg-red-50 transition"> <i data-lucide="trash-2" style="width:17px;height:17px;"></i> </button>
+        </div>
+        <div class="shrink-0 hidden items-center gap-2" data-confirm=""><button type="button" data-template-id="habit-card-confirm-button" data-confirm-btn="" class="canva-button rounded-full px-3 py-2 text-sm font-semibold bg-red-500 text-white hover:bg-red-600 transition"></button> <button type="button" data-template-id="habit-card-cancel-button" data-cancel-btn="" class="canva-button rounded-full px-3 py-2 text-sm font-semibold bg-stone-200 hover:bg-stone-300 transition"></button>
+        </div>
+      </article>
+    </template>
+    <script src="/_sdk/6740099151a06780.editing_sdk.js" integrity="sha512-eSc5OWFJjK6fUpxViOKXm5ekJ3Gp5icgygsjPVz9Xzudb9TkX/uNdpqNHc63uN0PdxYE9+g8pZAHIib0FgE0Cw=="></script>
+    <script>
+      lucide.createIcons();
+
+      const RING_CIRC = 263.9;
+      const ICONS = ['💧', '🏃', '📚', '🧘', '🍎', '😴', '✍️', '🎯', '🌱', '☀️'];
+      let selectedIcon = ICONS[0];
+      let habits = [];
+      let busy = false;
+
+      /* ---------- Icon picker ---------- */
+      const picker = document.getElementById('icon-picker');
+      ICONS.forEach((emoji, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'icon-pick w-11 h-11 rounded-xl bg-white/70 text-2xl flex items-center justify-center' + (i === 0 ? ' active' : '');
+        b.textContent = emoji;
+        b.setAttribute('aria-label', 'Icon ' + emoji);
+        b.addEventListener('click', () => {
+          selectedIcon = emoji;
+          picker.querySelectorAll('.icon-pick').forEach(el => el.classList.remove('active'));
+          b.classList.add('active');
+        });
+        picker.appendChild(b);
+      });
+
+      /* ---------- Helpers ---------- */
+      function toast(msg) {
+        const t = document.getElementById('toast');
+        t.firstElementChild.textContent = msg;
+        t.classList.remove('hidden');
+        clearTimeout(t._timer);
+        t._timer = setTimeout(() => t.classList.add('hidden'), 2800);
+      }
+
+      function isSameDay(iso, ref) {
+        if (!iso) return false;
+        return new Date(iso).toDateString() === ref.toDateString();
+      }
+
+      function doneToday(h) { return isSameDay(h.last_completed, new Date()); }
+
+      /* ---------- Ambient gradient reacts to progress ---------- */
+      function updateAmbience() {
+        const totalTarget = habits.reduce((s, h) => s + (h.target_days || 0), 0);
+        const totalDone = habits.reduce((s, h) => s + Math.min(h.completed_count || 0, h.target_days || 0), 0);
+        const pct = totalTarget ? totalDone / totalTarget : 0;
+
+        // interpolate cool dawn -> warm coral as progress rises
+        const veil = document.getElementById('gradient-veil');
+        const stops = [
+          { t: 0, a: '#c9d6ff', b: '#e2c9e8', c: '#f6d9c9' },
+          { t: 0.5, a: '#f7d9c4', b: '#f3c2b1', c: '#f9dfa8' },
+          { t: 1, a: '#f9c99a', b: '#f2a488', c: '#f7d774' }
+        ];
+        let lo = stops[0],
+          hi = stops[stops.length - 1];
+        for (let i = 0; i < stops.length - 1; i++) {
+          if (pct >= stops[i].t && pct <= stops[i + 1].t) { lo = stops[i];
+            hi = stops[i + 1]; break; }
+        }
+        const span = (hi.t - lo.t) || 1;
+        const f = (pct - lo.t) / span;
+        const mix = (c1, c2) => {
+          const p1 = [1, 3, 5].map(i => parseInt(c1.substr(i, 2), 16));
+          const p2 = [1, 3, 5].map(i => parseInt(c2.substr(i, 2), 16));
+          return '#' + p1.map((v, i) => Math.round(v + (p2[i] - v) * f).toString(16).padStart(2, '0')).join('');
+        };
+        const A = mix(lo.a, hi.a),
+          B = mix(lo.b, hi.b),
+          C = mix(lo.c, hi.c);
+        veil.style.background = `linear-gradient(135deg, ${A} 0%, ${B} 55%, ${C} 100%)`;
+
+        // ring + percent
+        const p = Math.round(pct * 100);
+        document.getElementById('progress-percent').textContent = p + '%';
+        document.getElementById('progress-ring').style.strokeDashoffset = String(RING_CIRC * (1 - pct));
+      }
+
+      /* ---------- Card rendering ---------- */
+      function fillCard(el, h) {
+        el.dataset.id = h.__backendId;
+        el.querySelector('[data-icon]').textContent = h.icon || '🎯';
+        el.querySelector('[data-title]').textContent = h.title;
+        el.querySelector('[data-streak]').textContent = h.streak || 0;
+
+        const target = h.target_days || 1;
+        const done = Math.min(h.completed_count || 0, target);
+        el.querySelector('[data-fill]').style.width = Math.round((done / target) * 100) + '%';
+        el.querySelector('[data-count]').textContent = done + ' / ' + target;
+
+        const isDone = doneToday(h);
+        el.querySelector('[data-done-btn]').classList.toggle('hidden', isDone);
+        el.querySelector('[data-done-today]').classList.toggle('hidden', !isDone);
+        el.querySelector('[data-done-today]').classList.toggle('inline-flex', isDone);
+      }
+
+      function wireCard(el) {
+        const getHabit = () => habits.find(h => h.__backendId === el.dataset.id);
+
+        el.querySelector('[data-done-btn]').addEventListener('click', () => markDone(getHabit(), el));
+
+        const actions = el.querySelector('[data-actions]');
+        const confirm = el.querySelector('[data-confirm]');
+        el.querySelector('[data-del-btn]').addEventListener('click', () => {
+          actions.classList.add('hidden');
+          confirm.classList.remove('hidden');
+          confirm.classList.add('flex');
+        });
+        el.querySelector('[data-cancel-btn]').addEventListener('click', () => {
+          confirm.classList.add('hidden');
+          confirm.classList.remove('flex');
+          actions.classList.remove('hidden');
+          actions.classList.add('flex');
+        });
+        el.querySelector('[data-confirm-btn]').addEventListener('click', () => removeHabit(getHabit()));
+      }
+
+      function renderList() {
+        const list = document.getElementById('habit-list');
+        const empty = document.getElementById('empty-state');
+        empty.style.display = habits.length ? 'none' : 'block';
+
+        const existing = new Map([...list.children].map(c => [c.dataset.id, c]));
+        const tpl = document.getElementById('habit-card-template');
+
+        habits.forEach(h => {
+          let el = existing.get(h.__backendId);
+          if (el) {
+            fillCard(el, h);
+            existing.delete(h.__backendId);
+          } else {
+            el = tpl.content.firstElementChild.cloneNode(true);
+            fillCard(el, h);
+            wireCard(el);
+            list.appendChild(el);
+          }
+        });
+        existing.forEach(el => el.remove());
+        lucide.createIcons();
+        updateAmbience();
+      }
+
+      /* ---------- Data operations ---------- */
+      const addBtn = document.getElementById('add-button');
+      const addLabel = document.getElementById('add-button-label');
+      const addLoading = document.getElementById('add-button-loading');
+
+      document.getElementById('habit-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (busy) return;
+        const titleInput = document.getElementById('habit-title');
+        const title = titleInput.value.trim();
+        const target = Math.max(1, parseInt(document.getElementById('habit-target').value, 10) || 1);
+        if (!title) { toast('Give your habit a name first.'); return; }
+        if (habits.length >= 999) { toast('Habit limit reached (999). Delete one to add more.'); return; }
+
+        busy = true;
+        addBtn.disabled = true;
+        addLabel.classList.add('hidden');
+        addLoading.classList.remove('hidden');
+
+        const res = await window.dataSdk.create({
+          title,
+          icon: selectedIcon,
+          target_days: target,
+          completed_count: 0,
+          streak: 0,
+          last_completed: '',
+          created_at: new Date().toISOString()
+        });
+
+        if (res.isOk) {
+          titleInput.value = '';
+          document.getElementById('habit-target').value = '30';
+          toast('Habit added ✨');
+        } else {
+          toast('Could not save. Try again.');
+        }
+        busy = false;
+        addBtn.disabled = false;
+        addLabel.classList.remove('hidden');
+        addLoading.classList.add('hidden');
+      });
+
+      async function markDone(h, el) {
+        if (!h || busy || doneToday(h)) return;
+        busy = true;
+        const btn = el.querySelector('[data-done-btn]');
+        btn.disabled = true;
+
+        const today = new Date();
+        const yesterday = new Date(today);
+        yesterday.setDate(today.getDate() - 1);
+        let newStreak = 1;
+        if (isSameDay(h.last_completed, yesterday)) newStreak = (h.streak || 0) + 1;
+
+        const updated = {
+          ...h,
+          completed_count: (h.completed_count || 0) + 1,
+          streak: newStreak,
+          last_completed: today.toISOString()
+        };
+
+        const res = await window.dataSdk.update(updated);
+        if (res.isOk) toast('Nice work — streak ' + newStreak + ' 🔥');
+        else { toast('Could not update. Try again.');
+          btn.disabled = false; }
+        busy = false;
+      }
+
+      async function removeHabit(h) {
+        if (!h || busy) return;
+        busy = true;
+        const res = await window.dataSdk.delete(h);
+        if (!res.isOk) toast('Could not delete. Try again.');
+        busy = false;
+      }
+
+      /* ---------- Init ---------- */
+      const handler = {
+        onDataChanged(data) {
+          habits = data.slice().sort((a, b) =>
+            new Date(a.created_at || 0) - new Date(b.created_at || 0));
+          renderList();
+        }
+      };
+
+      (async () => {
+        const init = await window.dataSdk.init(handler);
+        if (!init.isOk) toast('Storage unavailable right now.');
+      })();
+    </script>
+    <script>
+      (function() {
+        function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script');
+            d.innerHTML = "window.__CF$cv$params={r:'a150256841c6a1f8',t:'MTc4MzAyMTQ3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe');
+          a.height = 1;
+          a.width = 1;
+          a.style.position = 'absolute';
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = 'none';
+          a.style.visibility = 'hidden';
+          document.body.appendChild(a); if ('loading' !== document.readyState) c();
+          else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+          else { var e = document.onreadystatechange || function() {};
+            document.onreadystatechange = function(b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();
+    </script>
+  </body>
+
+</html>

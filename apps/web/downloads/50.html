@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS styling gives us complete design freedom */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFF0F5; /* Soft Lavender Blush background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        .card {
+            width: 100%;
+            height: 100%;
+            border: 20px solid #FFF0F5; /* Outer edge padding */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        /* Stylish double border using standard CSS */
+        .inner-border {
+            position: absolute;
+            top: 15px;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            border: 4px solid #FFB6C1; /* Light pink outer line */
+            outline: 2px solid #D87093; /* Pale violet-red inner line */
+            outline-offset: -10px;
+            pointer-events: none;
+        }
+        .content {
+            z-index: 10;
+            padding: 0 40px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #C71585; /* Medium Violet-Red */
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 40px;
+            color: #4B0082; /* Indigo */
+            margin: 15px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .tagline {
+            font-size: 16px;
+            color: #DB7093;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+        .footer-brand {
+            position: absolute;
+            bottom: 40px;
+            font-size: 10px;
+            color: #8B008B;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="inner-border"></div>
+        <div class="content">
+            <h1>You Got This,</h1>
+            <h2>Boss Babe!</h2>
+            <div class="tagline">♥ Dream Big. Hustle Harder. ♥</div>
+        </div>
+        <div class="footer-brand">The Boss Babe Empowerment Collection</div>
+    </div>
+<script>export const generateLicenseKey = (productPrefix = "DH") => {
+  const segments = [];
+  for (let i = 0; i < 4; i++) {
+    let segment = "";
+    for (let j = 0; j < 4; j++) {
+      const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+      segment += chars[Math.floor(Math.random() * chars.length)];
+    }
+    segments.push(segment);
+  }
+  return `${productPrefix}-${segments.join("-")}`;
+};
+
+// Generate a secure, time-limited download URL
+export const generateDownloadLink = (productId, variantId, expiresInHours = 72) => {
+  const expiry = Date.now() + expiresInHours * 60 * 60 * 1000;
+  const token = btoa(`${productId}:${variantId}:${expiry}`);
+  return `${window.location.origin}/download?token=${token}&expires=${expiry}`;
+};
+
+// License types mapped to product categories
+export const LICENSE_TYPES = {
+  "Website Templates": {
+    name: "Developer License",
+    terms: "Permits use on 1 personal website and up to 3 commercial client projects. No redistribution or reselling.",
+    duration: "perpetual",
+  },
+  "Children's Books": {
+    name: "Personal Use License",
+    terms: "For personal reading and home use. Classroom use permitted for up to 30 students. No commercial redistribution.",
+    duration: "perpetual",
+  },
+  "Ebooks": {
+    name: "Personal Use License",
+    terms: "Single-user personal license. Read on unlimited personal devices. No sharing, redistribution, or reselling.",
+    duration: "perpetual",
+  },
+  "Gallery Apps": {
+    name: "Source Code License",
+    terms: "Single-organization license. Modify and deploy for personal or client projects. No resale of source code.",
+    duration: "perpetual",
+  },
+  "Software Tools": {
+    name: "Single Device License",
+    terms: "Licensed for use on one device. Transfer permitted once. Free lifetime updates included.",
+    duration: "perpetual",
+  },
+  "T-Shirt Designs": {
+    name: "Commercial Print License",
+    terms: "Unlimited print-on-demand usage. Print and sell on physical merchandise. No digital resale of design files.",
+    duration: "perpetual",
+  },
+  "UI Kits": {
+    name: "Figma Design License",
+    terms: "Use in unlimited personal and commercial Figma projects. No resale or redistribution of component files.",
+    duration: "perpetual",
+  },
+  "Fonts & Typography": {
+    name: "Commercial Font License",
+    terms: "Desktop and web font usage included. Embed in digital products and client work. No resale of font files.",
+    duration: "perpetual",
+  },
+  "Stock Photos": {
+    name: "Royalty-Free Commercial License",
+    terms: "Lifetime royalty-free usage across websites, print, ads, and templates. No resale as standalone images.",
+    duration: "perpetual",
+  },
+};
+
+// Get license info for a product
+export const getLicenseInfo = (product) => {
+  const category = product?.type?.value || "Ebooks";
+  return LICENSE_TYPES[category] || LICENSE_TYPES["Ebooks"];
+};
+
+// Build the delivery email template
+export const buildDeliveryEmail = (orderItems, orderNumber) => {
+  const downloadLinks = orderItems
+    .map((item) => {
+      const link = generateDownloadLink(item.product.id, item.variant.id);
+      const license = getLicenseInfo(item.product);
+      const licenseKey = generateLicenseKey(item.product.id.slice(5, 8).toUpperCase());
+      return `
+        <tr>
+          <td style="padding: 16px; border-bottom: 1px solid #e5e7eb;">
+            <strong>${item.product.title}</strong><br/>
+            <span style="color: #6b7280; font-size: 13px;">${item.variant.title}</span><br/>
+            <span style="color: #6b7280; font-size: 12px;">License: ${license.name}</span><br/>
+            <span style="color: #6b7280; font-size: 12px;">Key: <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 4px;">${licenseKey}</code></span>
+          </td>
+          <td style="padding: 16px; border-bottom: 1px solid #e5e7eb; text-align: right;">
+            <a href="${link}" style="display: inline-block; background: #3b82f6; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px;">
+              ⬇ Download
+            </a>
+          </td>
+        </tr>
+      `;
+    })
+    .join("");
+
+  return {
+    subject: `Your DigitalHub Order #${orderNumber} — Instant Downloads Ready`,
+    html: `
+      <div style="font-family: 'DM Sans', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <h1 style="color: #1e293b; font-size: 28px; margin-bottom: 8px;">🎉 Your downloads are ready!</h1>
+          <p style="color: #6b7280; font-size: 16px;">Order #${orderNumber}</p>
+        </div>
+        
+        <p style="color: #374151; font-size: 15px; line-height: 1.6; margin-bottom: 24px;">
+          Thank you for your purchase! Your premium digital products are ready for instant download. 
+          Each download link is valid for 72 hours and includes a unique license key.
+        </p>
+        
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
+          <thead>
+            <tr style="background: #f8fafc;">
+              <th style="padding: 12px 16px; text-align: left; font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Product</th>
+              <th style="padding: 12px 16px; text-align: right; font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${downloadLinks}
+          </tbody>
+        </table>
+        
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+          <p style="color: #15803d; font-size: 14px; margin: 0;">
+            ✅ <strong>License Information:</strong> Each product includes a perpetual commercial license. 
+            See individual product pages for full licensing terms.
+          </p>
+        </div>
+        
+        <p style="color: #6b7280; font-size: 13px; line-height: 1.5; margin-bottom: 24px;">
+          ⚠ Download links expire in 72 hours. Please save your files immediately. 
+          If you need a new link, contact us at support@digitalhub.imaginfounder.com with your order number.
+        </p>
+        
+        <div style="text-align: center; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+          <p style="color: #6b7280; font-size: 13px;">
+            DigitalHub — Premium Digital Products for Modern Creators<br/>
+            <a href="https://digitalhub.imaginfounder.com" style="color: #3b82f6;">Visit our store</a>
+          </p>
+        </div>
+      </div>
+    `,
+  };
+};
+
+// Store purchase record (for future PocketBase integration)
+export const createPurchaseRecord = (orderItems, orderNumber, customerEmail) => {
+  return orderItems.map((item) => {
+    const license = getLicenseInfo(item.product);
+    const licenseKey = generateLicenseKey(item.product.id.slice(5, 8).toUpperCase());
+    const downloadLink = generateDownloadLink(item.product.id, item.variant.id);
+    
+    return {
+      order_number: orderNumber,
+      customer_email: customerEmail,
+      product_id: item.product.id,
+      product_title: item.product.title,
+      variant_id: item.variant.id,
+      variant_title: item.variant.title,
+      license_type: license.name,
+      license_key: licenseKey,
+      license_terms: license.terms,
+      download_link: downloadLink,
+      purchased_at: new Date().toISOString(),
+      expires_at: new Date(Date.now() + 72 * 60 * 60 * 1000).toISOString(),
+    };
+  });
+};
+</script>
+</body>
+</htm>
+

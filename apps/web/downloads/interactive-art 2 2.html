@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260702-01-a83755d"}');</script><script src="/_sdk/f432b76fb310b513.telemetry_sdk.js" integrity="sha512-9FJQ55EKmmqhyyik8BhrMVfm0+iYYfb8uOlRsjtkxJMEI97qOVEI4PnHohDjQAtvAep0IOEpdQ64eki0sz62ug=="></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Masterpieces Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .museum-bg {
+            background-color: #f5f5f5;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px);
+            background-size: 50px 50px;
+            position: relative;
+        }
+        
+        .museum-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+        
+        .artwork-frame {
+            border: 12px solid #8B4513;
+            box-shadow: 0 0 0 2px #5D3A1A, 0 5px 20px rgba(0,0,0,0.3);
+            padding: 0;
+            background-color: #F5F5DC;
+            position: relative;
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .artwork-frame:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 0 2px #5D3A1A, 0 15px 30px rgba(0,0,0,0.4);
+        }
+        
+        .artwork-frame::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 100%);
+            pointer-events: none;
+        }
+        
+        .artwork-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transition: all 0.5s ease;
+        }
+        
+        .artwork-frame:hover .artwork-svg {
+            transform: scale(1.05);
+        }
+        
+        .plaque {
+            background-color: #F5F5DC;
+            border: 2px solid #8B4513;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .artwork-frame:hover + .plaque {
+            transform: translateY(5px);
+        }
+        
+        .start-btn {
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .start-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transform: scale(0.5);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        
+        .start-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .start-btn:hover::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(139, 69, 19, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(139, 69, 19, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(139, 69, 19, 0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .gallery-floor {
+            background: linear-gradient(90deg, #8B4513 0%, #A0522D 100%);
+            height: 20px;
+            transform: perspective(500px) rotateX(60deg);
+            transform-origin: bottom;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .spotlight {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+            transform: translateY(-50%);
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .rotate-slow {
+            animation: rotate 15s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .brush-stroke {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .brush-1 {
+            top: 10%;
+            left: 5%;
+            width: 300px;
+            height: 100px;
+            transform: rotate(30deg);
+        }
+        
+        .brush-2 {
+            bottom: 15%;
+            right: 10%;
+            width: 200px;
+            height: 150px;
+            transform: rotate(-15deg);
+        }
+        
+        .brush-3 {
+            top: 60%;
+            left: 15%;
+            width: 250px;
+            height: 120px;
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="relative min-h-screen museum-bg overflow-hidden">
+        <!-- Decorative brush strokes -->
+        <div class="brush-stroke brush-1">
+            <svg viewBox="0 0 300 100" fill="none">
+                <path d="M10,50 C50,10 100,90 150,30 C200,80 250,20 290,60" stroke="#8B4513" stroke-width="20" stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="brush-stroke brush-2">
+            <svg viewBox="0 0 200 150" fill="none">
+                <path d="M20,20 C60,80 140,40 180,130" stroke="#A0522D" stroke-width="25" stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="brush-stroke brush-3">
+            <svg viewBox="0 0 250 120" fill="none">
+                <path d="M10,100 C70,20 130,90 240,30" stroke="#D2691E" stroke-width="22" stroke-linecap="round" />
+            </svg>
+        </div>
+        
+        <!-- Spotlight effect (will be moved with JS) -->
+        <div id="spotlight" class="spotlight hidden md:block"></div>
+        
+        <div class="container mx-auto px-4 py-12 relative z-10">
+            <header class="text-center mb-12">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Art Masterpieces</h1>
+                <div class="w-24 h-1 bg-amber-700 mx-auto mb-6"></div>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">Explore the world of famous artworks and test your knowledge in this interactive quiz experience</p>
+            </header>
+            
+            <div class="max-w-6xl mx-auto">
+                <!-- Featured Artworks Gallery -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <!-- Artwork 1: Mona Lisa -->
+                    <div class="artwork-container">
+                        <div class="artwork-frame aspect-square rounded-lg overflow-hidden">
+                            <svg viewBox="0 0 400 400" class="artwork-svg">
+                                <rect width="400" height="400" fill="#2D2016"/>
+                                <path d="M200 120 Q240 110 260 150 Q280 190 260 240 Q240 290 200 300 Q160 290 140 240 Q120 190 140 150 Q160 110 200 120" fill="#D6B997"/>
+                                <path d="M170 170 Q185 165 200 170 Q215 165 230 170 Q225 190 200 195 Q175 190 170 170" fill="#553A25"/>
+                                <path d="M180 160 Q185 155 190 160" stroke="#553A25" stroke-width="2" fill="none"/>
+                                <path d="M210 160 Q215 155 220 160" stroke="#553A25" stroke-width="2" fill="none"/>
+                                <path d="M195 175 Q200 180 205 175" stroke="#553A25" stroke-width="2" fill="none"/>
+                                <path d="M190 210 Q200 220 210 210" fill="none" stroke="#8C593B" stroke-width="2"/>
+                                <path d="M150 180 Q120 220 150 260" fill="#2D2016"/>
+                                <path d="M250 180 Q280 220 250 260" fill="#2D2016"/>
+                                <path d="M150 300 Q200 320 250 300 Q280 260 300 200 Q320 140 300 100 Q250 60 200 70 Q150 60 100 100 Q80 140 100 200 Q120 260 150 300" fill="none" stroke="#8C593B" stroke-width="3"/>
+                                <path d="M100 180 Q150 160 200 170 Q250 160 300 180" fill="#2D2016"/>
+                            </svg>
+                        </div>
+                        <div class="plaque mt-3 p-2 rounded text-center">
+                            <p class="font-bold text-gray-800">Mona Lisa</p>
+                            <p class="text-sm text-gray-600">Leonardo da Vinci</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Artwork 2: Starry Night -->
+                    <div class="artwork-container">
+                        <div class="artwork-frame aspect-square rounded-lg overflow-hidden">
+                            <svg viewBox="0 0 400 400" class="artwork-svg">
+                                <rect width="400" height="400" fill="#0A1744"/>
+                                <ellipse cx="320" cy="80" rx="40" ry="40" fill="#FFEB7F"/>
+                                <path d="M280 80 Q310 50 340 80 Q370 110 340 140 Q310 170 280 140 Q250 110 280 80" fill="#0A1744"/>
+                                <path d="M50 100 Q100 50 150 100 Q200 150 250 100 Q300 50 350 100" fill="none" stroke="#FFEB7F" stroke-width="10"/>
+                                <path d="M0 150 Q50 100 100 150 Q150 200 200 150 Q250 100 300 150 Q350 200 400 150" fill="none" stroke="#FFEB7F" stroke-width="10"/>
+                                <path d="M0 200 Q50 150 100 200 Q150 250 200 200 Q250 150 300 200 Q350 250 400 200" fill="none" stroke="#FFEB7F" stroke-width="10"/>
+                                <rect x="0" y="250" width="400" height="150" fill="#172A52"/>
+                                <path d="M150 250 L150 400" fill="none" stroke="#0A1744" stroke-width="5"/>
+                                <path d="M150 250 Q120 200 100 250 Q80 300 100 350 Q120 400 150 400" fill="#0F2038"/>
+                                <path d="M50 300 L100 300 L100 350 L50 350 Z" fill="#172A52"/>
+                                <path d="M200 300 L250 300 L250 350 L200 350 Z" fill="#172A52"/>
+                                <path d="M300 300 L350 300 L350 350 L300 350 Z" fill="#172A52"/>
+                                <path d="M75 300 L75 350" fill="none" stroke="#FFEB7F" stroke-width="2"/>
+                                <path d="M225 300 L225 350" fill="none" stroke="#FFEB7F" stroke-width="2"/>
+                                <path d="M325 300 L325 350" fill="none" stroke="#FFEB7F" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="plaque mt-3 p-2 rounded text-center">
+                            <p class="font-bold text-gray-800">Starry Night</p>
+                            <p class="text-sm text-gray-600">Vincent van Gogh</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Artwork 3: The Scream -->
+                    <div class="artwork-container">
+                        <div class="artwork-frame aspect-square rounded-lg overflow-hidden">
+                            <svg viewBox="0 0 400 400" class="artwork-svg">
+                                <rect width="400" height="400" fill="#F7B731"/>
+                                <path d="M0 0 L400 0 L400 150 Q300 200 200 150 Q100 100 0 150 Z" fill="#E74C3C"/>
+                                <path d="M0 150 Q100 100 200 150 Q300 200 400 150 L400 400 L0 400 Z" fill="#3498DB"/>
+                                <path d="M150 100 Q200 50 250 100" fill="none" stroke="#000" stroke-width="3"/>
+                                <path d="M150 300 Q200 350 250 300" fill="none" stroke="#000" stroke-width="3"/>
+                                <path d="M150 100 Q100 200 150 300" fill="none" stroke="#000" stroke-width="3"/>
+                                <path d="M250 100 Q300 200 250 300" fill="none" stroke="#000" stroke-width="3"/>
+                                <ellipse cx="200" cy="150" rx="40" ry="50" fill="#F5CBA7"/>
+                                <path d="M180 150 Q200 180 220 150" fill="none" stroke="#000" stroke-width="2"/>
+                                <ellipse cx="190" cy="130" rx="5" ry="5" fill="#000"/>
+                                <ellipse cx="210" cy="130" rx="5" ry="5" fill="#000"/>
+                                <path d="M160 200 Q200 300 240 200" fill="#F5CBA7"/>
+                                <path d="M160 200 Q200 230 240 200" fill="none" stroke="#000" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="plaque mt-3 p-2 rounded text-center">
+                            <p class="font-bold text-gray-800">The Scream</p>
+                            <p class="text-sm text-gray-600">Edvard Munch</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Floor Effect -->
+                <div class="gallery-floor w-full mb-16"></div>
+                
+                <!-- Quiz Introduction -->
+                <div class="text-center max-w-3xl mx-auto bg-white bg-opacity-80 p-8 rounded-xl shadow-lg">
+                    <div class="mb-6">
+                        <svg class="w-16 h-16 mx-auto text-amber-700 rotate-slow" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 19c-3.314 0-6-2.686-6-6 0-1.5.5-2 1-3 1.5 3 6 3 6 1 0-1-2-1-3.5-3.5-1-1.5-1.5-3-1.5-4.5 0-2.5 2-2.5 4-2.5 1.5 0 3 0 4.5 1.5 1.5 1.5 1.5 4 1.5 5.5 0 5.5-3.5 9.5-6 9.5z"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Test Your Art Knowledge</h2>
+                    <p class="text-lg text-gray-600 mb-8">Embark on a journey through art history as you identify famous works, artists, styles, and historical contexts. Are you ready to challenge yourself?</p>
+                    
+                    <div class="floating">
+                        <button id="start-btn" class="start-btn pulse text-white font-bold py-4 px-10 rounded-lg shadow-lg text-xl">
+                            Start Quiz
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Art tools decoration -->
+        <div class="absolute bottom-10 right-10 opacity-20 w-40 h-40 hidden md:block">
+            <svg viewBox="0 0 100 100" fill="#8B4513">
+                <path d="M20,80 L80,20 L90,30 L30,90 Z" />
+                <rect x="15" y="75" width="20" height="10" />
+                <circle cx="80" cy="20" r="15" fill="#D2691E" />
+            </svg>
+        </div>
+        
+        <div class="absolute top-20 left-10 opacity-20 w-32 h-32 hidden md:block">
+            <svg viewBox="0 0 100 100" fill="#A0522D">
+                <path d="M10,90 L10,10 L20,10 L20,90 Z" />
+                <path d="M20,20 L90,20 L90,30 L20,30 Z" />
+                <path d="M20,40 L70,40 L70,50 L20,50 Z" />
+                <path d="M20,60 L50,60 L50,70 L20,70 Z" />
+                <path d="M20,80 L60,80 L60,90 L20,90 Z" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Quiz Game Content (Hidden initially) -->
+    <div id="quiz-container" class="hidden">
+        <div class="max-w-5xl mx-auto">
+            <header class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">Art Masterpieces Quiz</h1>
+                <p class="text-lg text-gray-600">Test your knowledge of famous artworks!</p>
+            </header>
+            
+            <div id="game-container" class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <!-- Progress Bar -->
+                <div class="bg-gray-200 w-full">
+                    <div id="progress-bar" class="progress-bar bg-purple-600 w-0"></div>
+                </div>
+                
+                <div class="p-6 museum-bg">
+                    <!-- Artwork Display -->
+                    <div class="flex flex-col md:flex-row gap-6 mb-8">
+                        <div class="w-full md:w-1/2">
+                            <div class="artwork-frame rounded-lg overflow-hidden aspect-square">
+                                <div id="artwork-container" class="w-full h-full flex items-center justify-center bg-gray-100">
+                                    <!-- Artwork SVG will be inserted here -->
+                                </div>
+                            </div>
+                            <div class="plaque mt-3 p-3 rounded text-center">
+                                <p id="artwork-title" class="font-bold text-gray-800"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="w-full md:w-1/2">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 id="question-number" class="text-lg font-semibold text-purple-700">Question 1/4</h3>
+                                    <div class="flex items-center">
+                                        <span id="score-display" class="font-bold text-gray-700">Score: 0</span>
+                                    </div>
+                                </div>
+                                
+                                <h2 id="question-text" class="text-xl font-bold text-gray-800 mb-4">Who painted this masterpiece?</h2>
+                                
+                                <div id="options-container" class="space-y-3">
+                                    <!-- Options will be inserted here -->
+                                </div>
+                                
+                                <div id="feedback-container" class="mt-4 p-4 rounded-lg hidden">
+                                    <!-- Feedback will be shown here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between">
+                        <button id="prev-btn" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg shadow transition hidden">
+                            Previous
+                        </button>
+                        <button id="next-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg shadow transition hidden">
+                            Next Question
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Screen -->
+            <div id="results-screen" class="hidden p-8 text-center">
+                <div class="mb-6">
+                    <svg class="w-24 h-24 mx-auto text-yellow-500" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Quiz Complete!</h2>
+                <p id="final-score" class="text-2xl font-bold text-purple-700 mb-6">Your Score: 0/0</p>
+                <p id="result-message" class="text-lg text-gray-600 mb-8">Thanks for testing your art knowledge!</p>
+                <div class="space-x-4">
+                    <button id="restart-btn" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition">
+                        Play Again
+                    </button>
+                    <button id="return-home-btn" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition">
+                        Return to Gallery
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM elements
+            const startBtn = document.getElementById('start-btn');
+            const quizContainer = document.getElementById('quiz-container');
+            const landingPage = document.querySelector('.museum-bg');
+            const spotlight = document.getElementById('spotlight');
+            const artworkFrames = document.querySelectorAll('.artwork-frame');
+            const returnHomeBtn = document.getElementById('return-home-btn');
+            
+            // Spotlight effect
+            document.addEventListener('mousemove', function(e) {
+                if (window.innerWidth >= 768) { // Only on medium screens and up
+                    spotlight.style.left = e.pageX + 'px';
+                    spotlight.style.top = e.pageY + 'px';
+                }
+            });
+            
+            // Start quiz button
+            startBtn.addEventListener('click', function() {
+                landingPage.classList.add('hidden');
+                quizContainer.classList.remove('hidden');
+                initGame();
+            });
+            
+            // Return to gallery button
+            returnHomeBtn.addEventListener('click', function() {
+                quizContainer.classList.add('hidden');
+                landingPage.classList.remove('hidden');
+                document.getElementById('results-screen').classList.add('hidden');
+            });
+            
+            // Add hover effect to artwork frames
+            artworkFrames.forEach(frame => {
+                frame.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                frame.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+            
+            // Quiz data
+            const quizData = [
+                {
+                    title: "Mona Lisa",
+                    svg: `<svg viewBox="0 0 400 400" class="artwork-svg">
+                        <rect width="400" height="400" fill="#2D2016"/>
+                        <path d="M200 120 Q240 110 260 150 Q280 190 260 240 Q240 290 200 300 Q160 290 140 240 Q120 190 140 150 Q160 110 200 120" fill="#D6B997"/>
+                        <path d="M170 170 Q185 165 200 170 Q215 165 230 170 Q225 190 200 195 Q175 190 170 170" fill="#553A25"/>
+                        <path d="M180 160 Q185 155 190 160" stroke="#553A25" stroke-width="2" fill="none"/>
+                        <path d="M210 160 Q215 155 220 160" stroke="#553A25" stroke-width="2" fill="none"/>
+                        <path d="M195 175 Q200 180 205 175" stroke="#553A25" stroke-width="2" fill="none"/>
+                        <path d="M190 210 Q200 220 210 210" fill="none" stroke="#8C593B" stroke-width="2"/>
+                        <path d="M150 180 Q120 220 150 260" fill="#2D2016"/>
+                        <path d="M250 180 Q280 220 250 260" fill="#2D2016"/>
+                        <path d="M150 300 Q200 320 250 300 Q280 260 300 200 Q320 140 300 100 Q250 60 200 70 Q150 60 100 100 Q80 140 100 200 Q120 260 150 300" fill="none" stroke="#8C593B" stroke-width="3"/>
+                        <path d="M100 180 Q150 160 200 170 Q250 160 300 180" fill="#2D2016"/>
+                    </svg>`,
+                    questions: [
+                        {
+                            question: "Who painted the Mona Lisa?",
+                            options: ["Leonardo da Vinci", "Michelangelo", "Raphael", "Donatello"],
+                            answer: "Leonardo da Vinci"
+                        },
+                        {
+                            question: "When was the Mona Lisa painted?",
+                            options: ["c. 1503-1506", "c. 1350-1355", "c. 1650-1655", "c. 1800-1805"],
+                            answer: "c. 1503-1506"
+                        },
+                        {
+                            question: "Where is the Mona Lisa currently displayed?",
+                            options: ["Louvre Museum, Paris", "Uffizi Gallery, Florence", "Metropolitan Museum of Art, New York", "National Gallery, London"],
+                            answer: "Louvre Museum, Paris"
+                        },
+                        {
+                            question: "What is the Mona Lisa painted on?",
+                            options: ["Poplar wood panel", "Canvas", "Parchment", "Copper plate"],
+                            answer: "Poplar wood panel"
+                        }
+                    ]
+                },
+                {
+                    title: "Starry Night",
+                    svg: `<svg viewBox="0 0 400 400" class="artwork-svg">
+                        <rect width="400" height="400" fill="#0A1744"/>
+                        <ellipse cx="320" cy="80" rx="40" ry="40" fill="#FFEB7F"/>
+                        <path d="M280 80 Q310 50 340 80 Q370 110 340 140 Q310 170 280 140 Q250 110 280 80" fill="#0A1744"/>
+                        <path d="M50 100 Q100 50 150 100 Q200 150 250 100 Q300 50 350 100" fill="none" stroke="#FFEB7F" stroke-width="10"/>
+                        <path d="M0 150 Q50 100 100 150 Q150 200 200 150 Q250 100 300 150 Q350 200 400 150" fill="none" stroke="#FFEB7F" stroke-width="10"/>
+                        <path d="M0 200 Q50 150 100 200 Q150 250 200 200 Q250 150 300 200 Q350 250 400 200" fill="none" stroke="#FFEB7F" stroke-width="10"/>
+                        <rect x="0" y="250" width="400" height="150" fill="#172A52"/>
+                        <path d="M150 250 L150 400" fill="none" stroke="#0A1744" stroke-width="5"/>
+                        <path d="M150 250 Q120 200 100 250 Q80 300 100 350 Q120 400 150 400" fill="#0F2038"/>
+                        <path d="M50 300 L100 300 L100 350 L50 350 Z" fill="#172A52"/>
+                        <path d="M200 300 L250 300 L250 350 L200 350 Z" fill="#172A52"/>
+                        <path d="M300 300 L350 300 L350 350 L300 350 Z" fill="#172A52"/>
+                        <path d="M75 300 L75 350" fill="none" stroke="#FFEB7F" stroke-width="2"/>
+                        <path d="M225 300 L225 350" fill="none" stroke="#FFEB7F" stroke-width="2"/>
+                        <path d="M325 300 L325 350" fill="none" stroke="#FFEB7F" stroke-width="2"/>
+                    </svg>`,
+                    questions: [
+                        {
+                            question: "Who painted 'Starry Night'?",
+                            options: ["Vincent van Gogh", "Claude Monet", "Pablo Picasso", "Edvard Munch"],
+                            answer: "Vincent van Gogh"
+                        },
+                        {
+                            question: "In what year was 'Starry Night' painted?",
+                            options: ["1889", "1901", "1875", "1920"],
+                            answer: "1889"
+                        },
+                        {
+                            question: "Where was Vincent van Gogh staying when he painted 'Starry Night'?",
+                            options: ["Saint-Paul-de-Mausole asylum", "His home in Arles", "His brother's house in Paris", "A hotel in Amsterdam"],
+                            answer: "Saint-Paul-de-Mausole asylum"
+                        },
+                        {
+                            question: "Which art movement is 'Starry Night' associated with?",
+                            options: ["Post-Impressionism", "Cubism", "Surrealism", "Renaissance"],
+                            answer: "Post-Impressionism"
+                        }
+                    ]
+                },
+                {
+                    title: "The Persistence of Memory",
+                    svg: `<svg viewBox="0 0 400 400" class="artwork-svg">
+                        <rect width="400" height="400" fill="#D9C7A7"/>
+                        <path d="M0 250 Q100 200 200 250 Q300 300 400 250 L400 400 L0 400 Z" fill="#8C7D64"/>
+                        <path d="M300 150 L350 120 L380 150 L350 180 Z" fill="#D9D9D9"/>
+                        <path d="M50 200 Q70 180 90 200 Q110 220 90 240 Q70 260 50 240 Q30 220 50 200" fill="#D9D9D9"/>
+                        <ellipse cx="70" cy="220" rx="30" ry="30" fill="none" stroke="#000" stroke-width="2"/>
+                        <path d="M70 200 L70 220 L85 230" fill="none" stroke="#000" stroke-width="2"/>
+                        <path d="M150 180 Q170 160 190 180 Q210 200 190 220 Q170 240 150 220 Q130 200 150 180" fill="#D9D9D9"/>
+                        <ellipse cx="170" cy="200" rx="30" ry="30" fill="none" stroke="#000" stroke-width="2"/>
+                        <path d="M170 180 L170 200 L185 210" fill="none" stroke="#000" stroke-width="2"/>
+                        <path d="M250 100 Q270 80 290 100 Q310 120 290 140 Q270 160 250 140 Q230 120 250 100" fill="#D9D9D9"/>
+                        <ellipse cx="270" cy="120" rx="30" ry="30" fill="none" stroke="#000" stroke-width="2"/>
+                        <path d="M270 100 L270 120 L285 130" fill="none" stroke="#000" stroke-width="2"/>
+                        <path d="M70 220 Q50 260 90 280 Q130 300 170 280 Q210 260 190 220" fill="none" stroke="#000" stroke-width="2"/>
+                        <path d="M170 200 Q150 240 190 260 Q230 280 270 260 Q310 240 290 200" fill="none" stroke="#000" stroke-width="2"/>
+                        <path d="M270 120 Q250 160 290 180 Q330 200 370 180 Q410 160 390 120" fill="none" stroke="#000" stroke-width="2"/>
+                        <path d="M100 300 L120 280 L140 300 L120 320 Z" fill="#8C7D64"/>
+                        <path d="M200 320 L220 300 L240 320 L220 340 Z" fill="#8C7D64"/>
+                        <path d="M300 280 L320 260 L340 280 L320 300 Z" fill="#8C7D64"/>
+                    </svg>`,
+                    questions: [
+                        {
+                            question: "Who painted 'The Persistence of Memory'?",
+                            options: ["Salvador Dalí", "René Magritte", "Pablo Picasso", "Frida Kahlo"],
+                            answer: "Salvador Dalí"
+                        },
+                        {
+                            question: "In what year was 'The Persistence of Memory' created?",
+                            options: ["1931", "1925", "1945", "1912"],
+                            answer: "1931"
+                        },
+                        {
+                            question: "Which art movement is this painting associated with?",
+                            options: ["Surrealism", "Cubism", "Impressionism", "Abstract Expressionism"],
+                            answer: "Surrealism"
+                        },
+                        {
+                            question: "What are the distinctive elements in this painting?",
+                            options: ["Melting clocks", "Staircases", "Geometric shapes", "Religious symbols"],
+                            answer: "Melting clocks"
+                        }
+                    ]
+                },
+                {
+                    title: "The Scream",
+                    svg: `<svg viewBox="0 0 400 400" class="artwork-svg">
+                        <rect width="400" height="400" fill="#F7B731"/>
+                        <path d="M0 0 L400 0 L400 150 Q300 200 200 150 Q100 100 0 150 Z" fill="#E74C3C"/>
+                        <path d="M0 150 Q100 100 200 150 Q300 200 400 150 L400 400 L0 400 Z" fill="#3498DB"/>
+                        <path d="M150 100 Q200 50 250 100" fill="none" stroke="#000" stroke-width="3"/>
+                        <path d="M150 300 Q200 350 250 300" fill="none" stroke="#000" stroke-width="3"/>
+                        <path d="M150 100 Q100 200 150 300" fill="none" stroke="#000" stroke-width="3"/>
+                        <path d="M250 100 Q300 200 250 300" fill="none" stroke="#000" stroke-width="3"/>
+                        <ellipse cx="200" cy="150" rx="40" ry="50" fill="#F5CBA7"/>
+                        <path d="M180 150 Q200 180 220 150" fill="none" stroke="#000" stroke-width="2"/>
+                        <ellipse cx="190" cy="130" rx="5" ry="5" fill="#000"/>
+                        <ellipse cx="210" cy="130" rx="5" ry="5" fill="#000"/>
+                        <path d="M160 200 Q200 300 240 200" fill="#F5CBA7"/>
+                        <path d="M160 200 Q200 230 240 200" fill="none" stroke="#000" stroke-width="2"/>
+                    </svg>`,
+                    questions: [
+                        {
+                            question: "Who created 'The Scream'?",
+                            options: ["Edvard Munch", "Vincent van Gogh", "Gustav Klimt", "Henri Matisse"],
+                            answer: "Edvard Munch"
+                        },
+                        {
+                            question: "When was the original version of 'The Scream' created?",
+                            options: ["1893", "1901", "1887", "1912"],
+                            answer: "1893"
+                        },
+                        {
+                            question: "What inspired Munch to create 'The Scream'?",
+                            options: ["A walk where he felt nature screaming", "A nightmare", "A mental institution", "A theatrical performance"],
+                            answer: "A walk where he felt nature screaming"
+                        },
+                        {
+                            question: "How many versions of 'The Scream' did Munch create?",
+                            options: ["Four", "Two", "Six", "One"],
+                            answer: "Four"
+                        }
+                    ]
+                },
+                {
+                    title: "Girl with a Pearl Earring",
+                    svg: `<svg viewBox="0 0 400 400" class="artwork-svg">
+                        <rect width="400" height="400" fill="#1A1A2E"/>
+                        <path d="M150 100 Q200 50 250 150 Q300 250 250 300 Q200 350 150 300 Q100 250 150 100" fill="#F5CBA7"/>
+                        <path d="M150 150 Q200 100 250 150" fill="#1A1A2E"/>
+                        <path d="M150 150 Q200 200 250 150" fill="none" stroke="#F5CBA7" stroke-width="20"/>
+                        <ellipse cx="180" cy="180" rx="10" ry="10" fill="#1A1A2E"/>
+                        <ellipse cx="220" cy="180" rx="10" ry="10" fill="#1A1A2E"/>
+                        <path d="M190 220 Q200 230 210 220" fill="none" stroke="#A04000" stroke-width="3"/>
+                        <path d="M150 150 Q120 200 150 250" fill="#4A69BD"/>
+                        <path d="M250 150 Q280 200 250 250" fill="#4A69BD"/>
+                        <path d="M250 200 Q270 210 250 220" fill="#F5CBA7"/>
+                        <ellipse cx="260" cy="210" rx="10" ry="10" fill="#F7DC6F"/>
+                    </svg>`,
+                    questions: [
+                        {
+                            question: "Who painted 'Girl with a Pearl Earring'?",
+                            options: ["Johannes Vermeer", "Rembrandt van Rijn", "Frans Hals", "Jan van Eyck"],
+                            answer: "Johannes Vermeer"
+                        },
+                        {
+                            question: "Around what year was 'Girl with a Pearl Earring' painted?",
+                            options: ["c. 1665", "c. 1700", "c. 1590", "c. 1720"],
+                            answer: "c. 1665"
+                        },
+                        {
+                            question: "What is this type of painting called?",
+                            options: ["Tronie", "Portrait", "Still life", "Landscape"],
+                            answer: "Tronie"
+                        },
+                        {
+                            question: "In which museum is 'Girl with a Pearl Earring' housed?",
+                            options: ["Mauritshuis, The Hague", "Rijksmuseum, Amsterdam", "Louvre, Paris", "National Gallery, London"],
+                            answer: "Mauritshuis, The Hague"
+                        }
+                    ]
+                },
+                {
+                    title: "Guernica",
+                    svg: `<svg viewBox="0 0 400 400" class="artwork-svg">
+                        <rect width="400" height="400" fill="#E5E5E5"/>
+                        <polygon points="0,100 100,50 200,100 300,50 400,100 400,300 300,350 200,300 100,350 0,300" fill="#CCCCCC"/>
+                        <path d="M50 150 L100 100 L150 150 L100 200 Z" fill="#333333"/>
+                        <path d="M250 150 L300 100 L350 150 L300 200 Z" fill="#333333"/>
+                        <path d="M150 250 L200 200 L250 250 L200 300 Z" fill="#333333"/>
+                        <ellipse cx="75" cy="125" rx="15" ry="15" fill="#FFFFFF"/>
+                        <ellipse cx="275" cy="125" rx="15" ry="15" fill="#FFFFFF"/>
+                        <ellipse cx="175" cy="225" rx="15" ry="15" fill="#FFFFFF"/>
+                        <path d="M100 200 L150 250" fill="none" stroke="#000000" stroke-width="5"/>
+                        <path d="M300 200 L250 250" fill="none" stroke="#000000" stroke-width="5"/>
+                        <path d="M200 300 L200 350" fill="none" stroke="#000000" stroke-width="5"/>
+                        <path d="M50 300 Q100 250 150 300" fill="none" stroke="#000000" stroke-width="5"/>
+                        <path d="M250 300 Q300 250 350 300" fill="none" stroke="#000000" stroke-width="5"/>
+                        <path d="M150 100 Q200 50 250 100" fill="none" stroke="#000000" stroke-width="5"/>
+                    </svg>`,
+                    questions: [
+                        {
+                            question: "Who painted 'Guernica'?",
+                            options: ["Pablo Picasso", "Salvador Dalí", "Joan Miró", "Francisco Goya"],
+                            answer: "Pablo Picasso"
+                        },
+                        {
+                            question: "What event inspired 'Guernica'?",
+                            options: ["The bombing of Guernica during the Spanish Civil War", "World War I", "The French Revolution", "The Spanish Inquisition"],
+                            answer: "The bombing of Guernica during the Spanish Civil War"
+                        },
+                        {
+                            question: "In what year was 'Guernica' painted?",
+                            options: ["1937", "1925", "1945", "1912"],
+                            answer: "1937"
+                        },
+                        {
+                            question: "What colors did Picasso use in 'Guernica'?",
+                            options: ["Only black, white, and grays", "Vibrant blues and yellows", "Reds and oranges", "Earth tones"],
+                            answer: "Only black, white, and grays"
+                        }
+                    ]
+                }
+            ];
+            
+            // Game state
+            let currentArtworkIndex = 0;
+            let currentQuestionIndex = 0;
+            let score = 0;
+            let answeredQuestions = 0;
+            let gameStarted = false;
+            
+            // DOM elements for quiz
+            const artworkContainer = document.getElementById('artwork-container');
+            const artworkTitle = document.getElementById('artwork-title');
+            const questionNumber = document.getElementById('question-number');
+            const questionText = document.getElementById('question-text');
+            const optionsContainer = document.getElementById('options-container');
+            const feedbackContainer = document.getElementById('feedback-container');
+            const scoreDisplay = document.getElementById('score-display');
+            const finalScore = document.getElementById('final-score');
+            const resultMessage = document.getElementById('result-message');
+            const progressBar = document.getElementById('progress-bar');
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            const restartBtn = document.getElementById('restart-btn');
+            const resultsScreen = document.getElementById('results-screen');
+            
+            // Initialize game
+            function initGame() {
+                currentArtworkIndex = 0;
+                currentQuestionIndex = 0;
+                score = 0;
+                answeredQuestions = 0;
+                gameStarted = true;
+                
+                // Hide results screen if visible
+                resultsScreen.classList.add('hidden');
+                
+                // Load first question
+                loadQuestion();
+                updateProgressBar();
+            }
+            
+            // Load current question
+            function loadQuestion() {
+                const currentArtwork = quizData[currentArtworkIndex];
+                const currentQuestion = currentArtwork.questions[currentQuestionIndex];
+                
+                // Update artwork
+                artworkContainer.innerHTML = currentArtwork.svg;
+                artworkTitle.textContent = currentArtwork.title;
+                
+                // Update question
+                questionNumber.textContent = `Question ${answeredQuestions + 1}/${quizData.length * 4}`;
+                questionText.textContent = currentQuestion.question;
+                
+                // Update score display
+                scoreDisplay.textContent = `Score: ${score}`;
+                
+                // Clear previous options and feedback
+                optionsContainer.innerHTML = '';
+                feedbackContainer.innerHTML = '';
+                feedbackContainer.classList.add('hidden');
+                
+                // Add options
+                currentQuestion.options.forEach((option, index) => {
+                    const optionBtn = document.createElement('button');
+                    optionBtn.className = 'option-btn w-full text-left p-3 mb-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition';
+                    optionBtn.textContent = option;
+                    optionBtn.dataset.option = option;
+                    optionBtn.addEventListener('click', handleOptionClick);
+                    optionsContainer.appendChild(optionBtn);
+                });
+                
+                // Hide next button until answer is selected
+                nextBtn.classList.add('hidden');
+                
+                // Show/hide prev button
+                if (currentArtworkIndex > 0 || currentQuestionIndex > 0) {
+                    prevBtn.classList.remove('hidden');
+                } else {
+                    prevBtn.classList.add('hidden');
+                }
+            }
+            
+            // Handle option click
+            function handleOptionClick(event) {
+                const selectedOption = event.target.dataset.option;
+                const currentArtwork = quizData[currentArtworkIndex];
+                const currentQuestion = currentArtwork.questions[currentQuestionIndex];
+                const isCorrect = selectedOption === currentQuestion.answer;
+                
+                // Disable all options
+                const optionBtns = document.querySelectorAll('.option-btn');
+                optionBtns.forEach(btn => {
+                    btn.classList.add('disabled');
+                    btn.removeEventListener('click', handleOptionClick);
+                    
+                    if (btn.dataset.option === currentQuestion.answer) {
+                        btn.classList.add('correct');
+                    } else if (btn.dataset.option === selectedOption && !isCorrect) {
+                        btn.classList.add('incorrect');
+                    }
+                });
+                
+                // Show feedback
+                feedbackContainer.innerHTML = '';
+                feedbackContainer.classList.remove('hidden');
+                
+                const feedbackEl = document.createElement('div');
+                feedbackEl.className = `p-3 rounded-lg ${isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`;
+                
+                if (isCorrect) {
+                    feedbackEl.innerHTML = `
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="font-bold">Correct!</span>
+                        </div>
+                        <p class="mt-1">Great job! That's the right answer.</p>
+                    `;
+                    score++;
+                    scoreDisplay.textContent = `Score: ${score}`;
+                    
+                    // Create small celebration
+                    createConfetti(20);
+                } else {
+                    feedbackEl.innerHTML = `
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="font-bold">Incorrect</span>
+                        </div>
+                        <p class="mt-1">The correct answer is: ${currentQuestion.answer}</p>
+                    `;
+                }
+                
+                feedbackContainer.appendChild(feedbackEl);
+                
+                // Show next button
+                nextBtn.classList.remove('hidden');
+                
+                // Update answered questions count
+                answeredQuestions++;
+                
+                // Update progress bar
+                updateProgressBar();
+            }
+            
+            // Go to next question
+            function nextQuestion() {
+                currentQuestionIndex++;
+                
+                // If we've gone through all questions for this artwork, move to next artwork
+                if (currentQuestionIndex >= quizData[currentArtworkIndex].questions.length) {
+                    currentQuestionIndex = 0;
+                    currentArtworkIndex++;
+                    
+                    // If we've gone through all artworks, show results
+                    if (currentArtworkIndex >= quizData.length) {
+                        showResults();
+                        return;
+                    }
+                }
+                
+                loadQuestion();
+            }
+            
+            // Go to previous question
+            function prevQuestion() {
+                currentQuestionIndex--;
+                
+                // If we've gone back past the first question for this artwork, move to previous artwork
+                if (currentQuestionIndex < 0) {
+                    currentArtworkIndex--;
+                    
+                    // If we've gone back past the first artwork, stay on the first question
+                    if (currentArtworkIndex < 0) {
+                        currentArtworkIndex = 0;
+                        currentQuestionIndex = 0;
+                    } else {
+                        currentQuestionIndex = quizData[currentArtworkIndex].questions.length - 1;
+                    }
+                }
+                
+                loadQuestion();
+            }
+            
+            // Show results screen
+            function showResults() {
+                document.getElementById('game-container').classList.add('hidden');
+                resultsScreen.classList.remove('hidden');
+                
+                const totalQuestions = quizData.length * 4;
+                finalScore.textContent = `Your Score: ${score}/${totalQuestions}`;
+                
+                // Set result message based on score
+                const percentage = (score / totalQuestions) * 100;
+                let message = '';
+                
+                if (percentage >= 90) {
+                    message = "Amazing! You're an art expert! 🎨";
+                } else if (percentage >= 70) {
+                    message = "Great job! You have excellent art knowledge! 👏";
+                } else if (percentage >= 50) {
+                    message = "Good effort! You know your way around an art gallery. 🖼️";
+                } else {
+                    message = "Thanks for playing! Every art journey starts somewhere. 🌱";
+                }
+                
+                resultMessage.textContent = message;
+                
+                // Create big celebration if score is good
+                if (percentage >= 70) {
+                    createConfetti(100);
+                }
+            }
+            
+            // Update progress bar
+            function updateProgressBar() {
+                const totalQuestions = quizData.length * 4;
+                const progress = (answeredQuestions / totalQuestions) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            // Create confetti effect
+            function createConfetti(amount) {
+                const colors = ['#FFC700', '#FF0055', '#0066FF', '#44DD00', '#9900FF'];
+                
+                for (let i = 0; i < amount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.top = `${Math.random() * 100}%`;
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    
+                    document.body.appendChild(confetti);
+                    
+                    // Animate confetti
+                    const animation = confetti.animate([
+                        { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+                        { transform: `translate(${Math.random() * 300 - 150}px, ${Math.random() * 300 + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: 1000 + Math.random() * 1000,
+                        easing: 'cubic-bezier(0,0.9,0.57,1)',
+                        delay: Math.random() * 500
+                    });
+                    
+                    animation.onfinish = function() {
+                        confetti.remove();
+                    };
+                }
+            }
+            
+            // Event listeners for quiz
+            nextBtn.addEventListener('click', nextQuestion);
+            prevBtn.addEventListener('click', prevQuestion);
+            restartBtn.addEventListener('click', initGame);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a14b202ac737e21a',t:'MTc4Mjk2ODgzNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
