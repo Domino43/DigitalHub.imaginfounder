@@ -76,6 +76,34 @@ export const mockProducts = [
     updated_at: "2026-08-12T00:00:00.000Z"
   },
 {
+    id: "daily-5-minutes-planner",
+    title: "Daily 5 Minutes Planner",
+    subtitle: "Small routines make big days easier",
+    ribbon_text: "NEW",
+    description: "<h3>A gentle daily reset in five minutes</h3><p>This daily routine planner helps you begin with clarity and finish with gratitude. Use the morning grid to ground your day, name what you appreciate about yourself, set one intention, refocus at midday, and reflect in the evening.</p><h4>What's Included:</h4><ul><li>Morning grid</li><li>Self-appreciation prompt</li><li>Today's intention</li><li>Midday refocus</li><li>Evening reflection and gratitude sections</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or use with your favorite PDF annotation app.</p>",
+    price: 9.99,
+    currency: "USD",
+    image: "/product-images/daily-5-minutes-planner-preview.svg",
+    preview_url: "/product-images/daily-5-minutes-planner-preview.svg",
+    alt_text: "Daily 5 Minutes Planner printable routine planner preview",
+    images: [
+      { url: "/product-images/daily-5-minutes-planner-preview.svg", order: 1, type: "preview" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "Benefits", description: "A simple, repeatable structure for starting with intention, pausing to refocus, and ending the day with gratitude." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print the one-page planner as often as you need, or import it into GoodNotes, Notability, Xodo, or another PDF annotation app." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself; do not resell, redistribute, or upload the file to a marketplace." }
+    ],
+    video_url: null,
+    subcategory: "Daily",
+    type: { value: "Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 1,
+    updated_at: "2026-08-31T00:00:00.000Z"
+  },
+{
     id: "mock-habit-tracker-printable",
     title: "Habit Tracker Printable",
     subtitle: "Build better habits and achieve your goals with this comprehensive habit tracker printable. ",

@@ -6,7 +6,7 @@ import { getProduct, getProductQuantities, getProducts } from '@/api/EcommerceAp
 import { Button } from '@/components/ui/button';
 import { useCart } from '@/hooks/useCart';
 import { useToast } from '@/hooks/use-toast';
-import { ShoppingCart, Loader2, ArrowLeft, CheckCircle, Minus, Plus, XCircle, ChevronLeft, ChevronRight, Printer } from 'lucide-react';
+import { ShoppingCart, Loader2, ArrowLeft, CheckCircle, Download, Minus, Plus, XCircle, ChevronLeft, ChevronRight, Printer } from 'lucide-react';
 import ProductCard3D from '@/components/ProductCard3D';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -295,6 +295,17 @@ function ProductDetailPage({ setIsCartOpen }) {
             </div>
 
             <div className="prose prose-sm max-w-none mb-8 text-foreground print:text-black" dangerouslySetInnerHTML={{ __html: product.description }} />
+
+            {product.preview_url && (
+              <a
+                href={product.preview_url}
+                download
+                className="mb-8 inline-flex w-fit items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 print:hidden"
+              >
+                <Download size={16} />
+                Download free preview
+              </a>
+            )}
 
             {product.additional_info?.length > 0 && (
               <div className="mb-8 space-y-4 print-break-inside-avoid">

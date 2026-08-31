@@ -30,7 +30,8 @@ const PRODUCT_NAMES = {
   'mock-flux-flow-ui-kit': 'Flux Flow - Modern Mobile UI Kit',
   'mock-productivity-os-notion': 'Productivity OS - Complete Notion Template',
   'mock-premium-stock-photos': 'Premium Stock Photo Collection - 100+ Images',
-  'mock-lists-notes-organizer': 'Lists & Notes Organizer'
+  'mock-lists-notes-organizer': 'Lists & Notes Organizer',
+  'daily-5-minutes-planner': 'Daily 5 Minutes Planner'
 };
 
 const SuccessPage = ({ setIsCartOpen }) => {
