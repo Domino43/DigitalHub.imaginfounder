@@ -100,7 +100,7 @@ export const mockProducts = [
     custom_fields: [],
     related_products: [],
     purchasable: true,
-    order: 1,
+    order: 31,
     updated_at: "2026-08-31T00:00:00.000Z"
   },
 {
