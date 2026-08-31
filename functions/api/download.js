@@ -1,5 +1,6 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
+  "daily-5-minutes-planner": "Daily five minutes.pdf",
   "mock-modern-abstract-wall-art-print": "modern-abstract-wall-art-print.pdf",
   "mock-minimalist-wall-art-collection": "minimalist-wall-art-collection.pdf",
   "mock-contemporary-gallery-wall-art-set": "contemporary-gallery-wall-art-set.pdf",

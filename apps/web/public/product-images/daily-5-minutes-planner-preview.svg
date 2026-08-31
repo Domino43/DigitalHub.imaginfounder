@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-labelledby="title description">
+  <title id="title">Daily 5 Minutes Planner preview</title>
+  <desc id="description">A warm, minimal daily routine planner with sections for morning, intention, refocus, reflection, and gratitude.</desc>
+  <rect width="800" height="1000" fill="#eee7dd"/>
+  <rect x="70" y="55" width="660" height="890" rx="12" fill="#fffdf9"/>
+  <text x="400" y="150" text-anchor="middle" fill="#38493f" font-family="Georgia, serif" font-size="52">Daily 5 Minutes</text>
+  <text x="400" y="195" text-anchor="middle" fill="#8b705d" font-family="Arial, sans-serif" font-size="20" letter-spacing="3">SMALL ROUTINES, BIGGER DAYS</text>
+  <g fill="none" stroke="#c8b8a7" stroke-width="2">
+    <rect x="125" y="255" width="550" height="125" rx="8"/>
+    <rect x="125" y="410" width="260" height="175" rx="8"/>
+    <rect x="415" y="410" width="260" height="175" rx="8"/>
+    <rect x="125" y="615" width="550" height="110" rx="8"/>
+    <rect x="125" y="755" width="550" height="110" rx="8"/>
+  </g>
+  <g fill="#38493f" font-family="Arial, sans-serif" font-size="21" font-weight="700">
+    <text x="150" y="292">MORNING GRID</text>
+    <text x="150" y="447">SELF-APPRECIATION</text>
+    <text x="440" y="447">TODAY'S INTENTION</text>
+    <text x="150" y="652">MIDDAY REFOCUS</text>
+    <text x="150" y="792">EVENING REFLECTION + GRATITUDE</text>
+  </g>
+  <g stroke="#ded3c7" stroke-width="2">
+    <path d="M150 320h500M150 345h500M150 480h210M150 510h210M440 480h210M440 510h210M150 680h500M150 705h500M150 820h500M150 845h500"/>
+  </g>
+  <text x="400" y="915" text-anchor="middle" fill="#8b705d" font-family="Arial, sans-serif" font-size="17">PRINTABLE PDF • PREVIEW</text>
+</svg>

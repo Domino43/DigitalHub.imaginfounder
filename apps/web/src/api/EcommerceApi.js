@@ -545,11 +545,9 @@ export async function getProducts({
  * });
  */
 export async function getProduct(id, { field } = {}) {
-  if (id && id.startsWith("mock-")) {
-    const mockP = mockProducts.find((p) => p.id === id);
-    if (mockP) {
-      return normalizeMockProduct(JSON.parse(JSON.stringify(mockP))); // Return deep copy, normalized
-    }
+  const mockP = mockProducts.find((p) => p.id === id);
+  if (mockP) {
+    return normalizeMockProduct(JSON.parse(JSON.stringify(mockP))); // Return deep copy, normalized
   }
   const queryParams = new URLSearchParams();
 
