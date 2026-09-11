@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ShoppingCart } from 'lucide-react';
 import { useCart } from '@/hooks/useCart';
 import { useToast } from '@/hooks/use-toast';
+import { getProductParent, getProductSubcategory } from '@/data/categories';
 
 const placeholderImage = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzc0MTUxIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzlDQTNBRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pgo8L3N2Zz4K";
 
@@ -60,6 +61,11 @@ const ProductCard3D = ({ product, index = 0 }) => {
           </div>
           
           <div className="p-5 flex flex-col flex-grow">
+            {(getProductParent(product) || getProductSubcategory(product)) && (
+              <p className="text-xs font-medium text-primary mb-2">
+                {[getProductParent(product), getProductSubcategory(product)].filter(Boolean).join(' · ')}
+              </p>
+            )}
             <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors" style={{letterSpacing: '-0.01em'}}>
               {product.title}
             </h3>

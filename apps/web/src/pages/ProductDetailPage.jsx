@@ -10,6 +10,7 @@ import { ShoppingCart, Loader2, ArrowLeft, CheckCircle, Download, Minus, Plus, X
 import ProductCard3D from '@/components/ProductCard3D';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { getProductParent, getProductSubcategory, shopCategoryPath } from '@/data/categories';
 
 const placeholderImage = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzc0MTUxIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzlDQTNBRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pgo8L3N2Zz4K";
 
@@ -205,10 +206,34 @@ function ProductDetailPage({ setIsCartOpen }) {
         </div>
 
         <div className="flex justify-between items-center mb-6 print:hidden">
-          <Link to="/products" className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors">
-            <ArrowLeft size={16} />
-            Back to products
-          </Link>
+          <nav className="flex flex-wrap items-center gap-2 text-sm" aria-label="Breadcrumb">
+            <Link to="/products" className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors">
+              <ArrowLeft size={16} />
+              Shop
+            </Link>
+            {getProductParent(product) && (
+              <>
+                <span className="text-muted-foreground">/</span>
+                <Link
+                  to={shopCategoryPath(getProductParent(product))}
+                  className="text-foreground hover:text-primary transition-colors"
+                >
+                  {getProductParent(product)}
+                </Link>
+              </>
+            )}
+            {getProductSubcategory(product) && (
+              <>
+                <span className="text-muted-foreground">/</span>
+                <Link
+                  to={shopCategoryPath(getProductParent(product), getProductSubcategory(product))}
+                  className="text-foreground hover:text-primary transition-colors"
+                >
+                  {getProductSubcategory(product)}
+                </Link>
+              </>
+            )}
+          </nav>
           <Button onClick={handlePrint} variant="outline" className="shadow-3d-sm hover:shadow-3d-md transition-all">
             <Printer className="mr-2 h-4 w-4" />
             Print Details
@@ -285,6 +310,26 @@ function ProductDetailPage({ setIsCartOpen }) {
             <h1 className="text-4xl md:text-5xl font-bold mb-3 print:hidden" style={{letterSpacing: '-0.02em'}}>
               {product.title}
             </h1>
+            {(getProductParent(product) || getProductSubcategory(product)) && (
+              <div className="flex flex-wrap gap-2 mb-4 print:hidden">
+                {getProductParent(product) && (
+                  <Link
+                    to={shopCategoryPath(getProductParent(product))}
+                    className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium hover:border-primary hover:text-primary"
+                  >
+                    {getProductParent(product)}
+                  </Link>
+                )}
+                {getProductSubcategory(product) && (
+                  <Link
+                    to={shopCategoryPath(getProductParent(product), getProductSubcategory(product))}
+                    className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium hover:border-primary hover:text-primary"
+                  >
+                    {getProductSubcategory(product)}
+                  </Link>
+                )}
+              </div>
+            )}
             <p className="text-xl text-muted-foreground mb-6 print:text-black">{product.subtitle}</p>
 
             <div className="flex items-baseline gap-3 mb-8">

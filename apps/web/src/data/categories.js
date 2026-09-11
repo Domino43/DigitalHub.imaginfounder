@@ -1,6 +1,6 @@
 /**
- * DigitalHub category tree
- * ADHD-first order: start with planners, organizers, kids tools.
+ * DigitalHub category tree — single source of truth for:
+ * shop dropdown, product filters, product-page breadcrumbs, new-product wiring.
  * Parents are shoppable filters; children are subcategories.
  */
 export const CATEGORY_TREE = [
@@ -17,6 +17,7 @@ export const CATEGORY_TREE = [
       'Meal Planners',
       'Habit Trackers',
       'Goal Setting Worksheets',
+      'Lists & Notes',
       'Nurse Planner',
       'Teacher Planner',
       'Mom Planner',
@@ -89,12 +90,12 @@ export const CATEGORY_TREE = [
   {
     name: 'Event Invitations',
     icon: '💌',
-    children: ['Save The Date Cards', 'Baby Shower Invites'],
+    children: ['Save The Date Cards', 'Baby Shower Invites', 'Postcards'],
   },
   {
     name: 'Holiday Printables',
     icon: '🎄',
-    children: [],
+    children: ['Christmas Photo Books', 'Holiday Cards', 'Holiday Decor'],
   },
   {
     name: 'Seasonal Printables',
@@ -163,6 +164,35 @@ export const getCategoryByName = (name) =>
 export const getParentForSubcategory = (subcategory) =>
   CATEGORY_TREE.find((c) => c.children.includes(subcategory));
 
+export const isValidParent = (name) => PARENT_CATEGORIES.includes(name);
+
+export const isValidSubcategory = (parent, child) => {
+  const node = getCategoryByName(parent);
+  return Boolean(node && child && node.children.includes(child));
+};
+
+export const getProductParent = (product) => {
+  const typed = product?.type?.value;
+  if (typed && isValidParent(typed)) return typed;
+  const fromChild = getParentForSubcategory(product?.subcategory);
+  return fromChild?.name || null;
+};
+
+export const getProductSubcategory = (product) => {
+  const parent = getProductParent(product);
+  const child = product?.subcategory;
+  if (parent && isValidSubcategory(parent, child)) return child;
+  return null;
+};
+
+export const shopCategoryPath = (parent, child) => {
+  const params = new URLSearchParams();
+  if (parent) params.set('category', parent);
+  if (child) params.set('subcategory', child);
+  const qs = params.toString();
+  return qs ? `/products?${qs}` : '/products';
+};
+
 export const productMatchesCategory = (product, selectedCategory, selectedSubcategory) => {
   if (selectedSubcategory) {
     return product.subcategory === selectedSubcategory;
@@ -170,7 +200,9 @@ export const productMatchesCategory = (product, selectedCategory, selectedSubcat
   if (!selectedCategory || selectedCategory === 'All Products') {
     return true;
   }
+  const parent = getProductParent(product);
   return (
+    parent === selectedCategory ||
     product.type?.value === selectedCategory ||
     product.subcategory === selectedCategory
   );

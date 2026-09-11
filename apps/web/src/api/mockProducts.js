@@ -284,7 +284,7 @@ export const mockProducts = [
       { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
     ],
     video_url: null,
-    subcategory: "Goal Setting Worksheets",
+    subcategory: "Lists & Notes",
     type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
@@ -1061,8 +1061,8 @@ export const mockProducts = [
       { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Do not resell or upload to a marketplace." }
     ],
     video_url: null,
-    subcategory: "Daily",
-    type: { value: "Planners" },
+    subcategory: "Lists & Notes",
+    type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
     purchasable: true,

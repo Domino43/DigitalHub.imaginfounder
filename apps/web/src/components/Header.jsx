@@ -70,7 +70,7 @@ const Header = ({ setIsCartOpen }) => {
                     exit={{ opacity: 0, y: 8 }}
                     className="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50"
                   >
-                    <div className="w-[720px] max-w-[90vw] bg-card border border-border rounded-2xl shadow-3d-md p-5 grid grid-cols-3 gap-4">
+                    <div className="w-[860px] max-w-[92vw] max-h-[70vh] overflow-y-auto bg-card border border-border rounded-2xl shadow-3d-md p-5 grid grid-cols-3 gap-4">
                       {CATEGORY_TREE.map((category) => (
                         <div key={category.name}>
                           <Link
@@ -83,7 +83,7 @@ const Header = ({ setIsCartOpen }) => {
                           </Link>
                           {category.children?.length > 0 && (
                             <ul className="mt-2 space-y-1">
-                              {category.children.slice(0, 4).map((child) => (
+                              {category.children.map((child) => (
                                 <li key={child}>
                                   <Link
                                     to={`/products?category=${encodeURIComponent(category.name)}&subcategory=${encodeURIComponent(child)}`}

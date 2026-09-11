@@ -94,6 +94,11 @@ const ProductsList = ({ setIsCartOpen }) => {
     fetchProductsWithQuantities();
   }, []);
 
+  useEffect(() => {
+    setSelectedCategory(searchParams.get('category') || 'All Products');
+    setSelectedSubcategory(searchParams.get('subcategory') || null);
+  }, [searchParams]);
+
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = products;
 
