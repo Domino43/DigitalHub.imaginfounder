@@ -1,5 +1,8 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
+  "mock-one-next-step-poster": "one-next-step-poster.pdf",
+  "mock-start-here-postcard": "start-here-postcard.pdf",
+  "mock-low-shame-chore-chart": "low-shame-chore-chart.pdf",
   "daily-5-minutes-planner": "Daily five minutes.pdf",
   "mock-modern-abstract-wall-art-print": "modern-abstract-wall-art-print.pdf",
   "mock-minimalist-wall-art-collection": "minimalist-wall-art-collection.pdf",

@@ -1,5 +1,86 @@
 export const mockProducts = [
 {
+    id: "mock-one-next-step-poster",
+    title: "One Next Step Poster",
+    subtitle: "A calm ADHD-friendly printable that names the next step — not the whole list",
+    ribbon_text: "NEW",
+    description: "<h3>One next step</h3><p>A high-contrast printable poster for ADHD brains. Cream, plum, lavender, and one gold focus point. Hang it where you stall.</p><h4>What's Included:</h4><ul><li>Printable PDF poster</li><li>Personal use license</li></ul><p><strong>Format:</strong> Instant digital download. Print at home.</p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/one-next-step-poster.jpg",
+    alt_text: "One Next Step ADHD-friendly printable poster in cream, plum, and gold",
+    images: [
+      { url: "/product-images/one-next-step-poster.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Printable PDF poster plus personal use license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter or larger poster paper. Hang where you start tasks." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Not for resale." }
+    ],
+    video_url: null,
+    subcategory: "Motivational Quotes",
+    type: { value: "Wall Art" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 1,
+    updated_at: "2026-09-12T00:00:00.000Z"
+  },
+{
+    id: "mock-start-here-postcard",
+    title: "Start Here Postcard",
+    subtitle: "A two-sided ADHD reset card: start here, then three tiny prompts",
+    ribbon_text: "NEW",
+    description: "<h3>Start here</h3><p>A printable postcard for low-energy days. Front says start. Back asks: what is the next step, what can wait, what would make this easier.</p><h4>What's Included:</h4><ul><li>2-page printable PDF (front + back)</li><li>Personal use license</li></ul><p><strong>Format:</strong> Instant digital download. Print on cardstock if you can.</p>",
+    price: 4.99,
+    currency: "USD",
+    image: "/product-images/start-here-postcard.jpg",
+    alt_text: "Start Here ADHD-friendly printable postcard, cream and plum",
+    images: [
+      { url: "/product-images/start-here-postcard.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "Two-sided printable PDF postcard plus personal use license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print both pages. Keep one on your desk. Fill the three prompts when you stall." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for yourself. Not for resale." }
+    ],
+    video_url: null,
+    subcategory: "Postcards",
+    type: { value: "Event Invitations" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 2,
+    updated_at: "2026-09-12T00:00:00.000Z"
+  },
+{
+    id: "mock-low-shame-chore-chart",
+    title: "Low-Shame Chore Chart",
+    subtitle: "One job. Check it. Done. A visual chart for ADHD kids and tired parents",
+    ribbon_text: "NEW",
+    description: "<h3>Low-shame chore chart</h3><p>Seven simple rows. A checkbox, a job line, a gold star. Built for parents of ADHD kids — visual, calm, no yelling language.</p><h4>What's Included:</h4><ul><li>Printable US Letter PDF</li><li>Personal use license</li></ul><p><strong>Format:</strong> Instant digital download. Reprint every week.</p>",
+    price: 5.99,
+    currency: "USD",
+    image: "/product-images/low-shame-chore-chart.jpg",
+    alt_text: "Low-shame chore chart printable for ADHD kids, cream and lavender",
+    images: [
+      { url: "/product-images/low-shame-chore-chart.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "One-page printable chore chart plus personal use license." },
+      { id: "info2", order: 2, title: "How to Use", description: "Write one job per row. Check it when done. Reprint. Do not fill every row on day one." },
+      { id: "info3", order: 3, title: "License Terms", description: "Personal use. Print unlimited copies for your household. Not for resale." }
+    ],
+    video_url: null,
+    subcategory: "Chore Charts",
+    type: { value: "Kids Activities" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 3,
+    updated_at: "2026-09-12T00:00:00.000Z"
+  },
+{
     id: "mock-adhd-budget-planner",
     title: "ADHD-Friendly Budget & Habit Planner",
     subtitle: "Low-friction money pages plus a dopamine-friendly habit grid",

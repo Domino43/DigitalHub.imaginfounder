@@ -11,6 +11,9 @@ import Footer from '@/components/Footer';
 // Must stay in sync with apps/web/src/api/mockProducts.js and the
 // PRODUCT_FILES map in functions/api/download.js.
 const PRODUCT_NAMES = {
+  'mock-one-next-step-poster': 'One Next Step Poster',
+  'mock-start-here-postcard': 'Start Here Postcard',
+  'mock-low-shame-chore-chart': 'Low-Shame Chore Chart',
   'mock-adhd-budget-planner': 'ADHD-Friendly Budget & Habit Planner',
   'mock-start-here-kit': 'The Start Here Kit',
   'mock-anxiety-sleep-reset-planner': 'Anxiety + Sleep Reset Planner',
