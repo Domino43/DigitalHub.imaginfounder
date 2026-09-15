@@ -1,4 +1,106 @@
-export const mockProducts = [
+export const mockProducts = [\n
+  {
+    id: "mock-low-energy-day-planner",
+    title: "Low-Energy Day Planner for ADHD",
+    subtitle: "A gentle, simplified daily structure to help you navigate low-energy days without guilt or overwhelm.",
+    ribbon_text: "NEW",
+    description: "<h3>Navigate Low-Energy Days with Ease</h3><p>When you have ADHD, some days demand a softer approach. The <strong>Low-Energy Day Planner</strong> is designed specifically for neurodivergent brains experiencing burnout or executive dysfunction. Featuring simple steps, clear checkboxes, and a calming, minimalist layout, it makes starting tasks approachable. Protect your peace and gently guide your day without the shame of an overwhelming to-do list.</p><h4>What's Included:</h4><ul><li>Printable PDF planner worksheet</li><li>High-resolution aesthetic design</li><li>Gentle routines and body check-ins</li></ul><p><strong>Format:</strong> Instant digital download. Print at home or use digitally.</p>",
+    price: 4.99,
+    currency: "USD",
+    image: "/product-images/low_energy_day_planner_mockup.jpeg",
+    alt_text: "Low-Energy Day Planner mockup featuring an ADHD-friendly printable worksheet with pastel accents.",
+    images: [
+      { url: "/product-images/low_energy_day_planner_mockup.jpeg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "1-page printable PDF planner." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter paper or use with a digital tablet note-taking app." }
+    ],
+    video_url: null,
+    subcategory: "Productivity",
+    type: { value: "Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 1,
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "mock-hyperfocus-time-blocker",
+    title: "Hyperfocus Time-Blocker Schedule",
+    subtitle: "Harness your ADHD hyperfocus and break tasks into manageable, rhythmic focus blocks.",
+    ribbon_text: "TRENDING",
+    description: "<h3>Master Your Time & Focus</h3><p>Traditional schedules rarely work for ADHD brains. The <strong>Hyperfocus Time-Blocker</strong> helps you discover a simple, realistic way to manage your productivity. By breaking your day into dedicated focus blocks with intentional breaks, you can find your rhythm and stay motivated. Perfect for deep work, study sessions, and preventing burnout through structured rest.</p><h4>What's Included:</h4><ul><li>Printable PDF time-blocking schedule</li><li>Sections for main goals and top priorities</li></ul><p><strong>Format:</strong> Instant digital download. Print at home.</p>",
+    price: 4.99,
+    currency: "USD",
+    image: "/product-images/hyperfocus_time_blocker_mockup.jpeg",
+    alt_text: "Hyperfocus Time-Blocker schedule mockup showing an ADHD-friendly time management printable.",
+    images: [
+      { url: "/product-images/hyperfocus_time_blocker_mockup.jpeg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "1-page printable PDF time-blocker." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print daily or laminate to use with a dry-erase marker." }
+    ],
+    video_url: null,
+    subcategory: "Productivity",
+    type: { value: "Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 2,
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "mock-brain-dump-matrix",
+    title: "Overwhelm Brain Dump Matrix",
+    subtitle: "Prioritize and organize your racing thoughts into actionable clarity.",
+    ribbon_text: "NEW",
+    description: "<h3>Turn Chaos into Clarity</h3><p>When your mind is racing and everything feels urgent, the <strong>Overwhelm Brain Dump Matrix</strong> offers a structured approach to managing your thoughts. Based on the Eisenhower Matrix but tailored for ADHD, this tool helps you organize tasks into clear categories: do now, schedule, delegate, or drop. Reduce anxiety, gain 100% clarity, and navigate your challenges with a smoother, calmer mind.</p><h4>What's Included:</h4><ul><li>Printable PDF Brain Dump Matrix</li><li>Four distinct prioritization quadrants</li></ul><p><strong>Format:</strong> Instant digital download.</p>",
+    price: 4.99,
+    currency: "USD",
+    image: "/product-images/mockup_brain_dump.jpeg",
+    alt_text: "Overwhelm Brain Dump Matrix mockup for ADHD task organization.",
+    images: [
+      { url: "/product-images/mockup_brain_dump.jpeg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "1-page printable PDF Brain Dump sheet." }
+    ],
+    video_url: null,
+    subcategory: "Organization",
+    type: { value: "Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 3,
+    updated_at: new Date().toISOString()
+  },
+  {
+    id: "mock-task-prioritization-funnel",
+    title: "Simple Task Prioritization Funnel",
+    subtitle: "A clear guide to help you focus, filter out distractions, and manage tasks effortlessly.",
+    ribbon_text: "NEW",
+    description: "<h3>Effortless Task Management</h3><p>Stop drowning in endless to-do lists. The <strong>Simple Task Prioritization Funnel</strong> is a visual framework that helps ADHD brains filter tasks from a massive list down to just the top 3 actionable priorities. By applying Pareto and Eisenhower filters, this tool helps clear mental clutter, setting a calm tone for true productivity.</p><h4>What's Included:</h4><ul><li>Printable PDF Prioritization Funnel</li><li>Step-by-step visual filtering system</li></ul><p><strong>Format:</strong> Instant digital download.</p>",
+    price: 4.99,
+    currency: "USD",
+    image: "/product-images/mockup_prioritization_funnel.jpeg",
+    alt_text: "Task Prioritization Funnel mockup for simplifying ADHD to-do lists.",
+    images: [
+      { url: "/product-images/mockup_prioritization_funnel.jpeg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "1-page printable PDF Funnel." }
+    ],
+    video_url: null,
+    subcategory: "Organization",
+    type: { value: "Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 4,
+    updated_at: new Date().toISOString()
+  },
 {
     id: "mock-one-next-step-poster",
     title: "One Next Step Poster",

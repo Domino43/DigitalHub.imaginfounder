@@ -1,5 +1,10 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
+
+  "mock-low-energy-day-planner": "low_energy_day_planner.pdf",
+  "mock-hyperfocus-time-blocker": "hyperfocus_time_blocker.pdf",
+  "mock-brain-dump-matrix": "Brain_Dump_Matrix.pdf",
+  "mock-task-prioritization-funnel": "Task_Prioritization_Funnel.pdf",
   "mock-one-next-step-poster": "one-next-step-poster.pdf",
   "mock-start-here-postcard": "start-here-postcard.pdf",
   "mock-low-shame-chore-chart": "low-shame-chore-chart.pdf",
