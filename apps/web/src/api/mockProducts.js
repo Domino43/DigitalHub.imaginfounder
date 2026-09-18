@@ -1,4 +1,4 @@
-export const mockProducts = [\n
+export const mockProducts = [
   {
     id: "mock-low-energy-day-planner",
     title: "Low-Energy Day Planner for ADHD",
@@ -17,8 +17,8 @@ export const mockProducts = [\n
       { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter paper or use with a digital tablet note-taking app." }
     ],
     video_url: null,
-    subcategory: "Productivity",
-    type: { value: "Templates" },
+    subcategory: "Daily",
+    type: { value: "Planners" },
     custom_fields: [],
     related_products: [],
     purchasable: true,
@@ -43,8 +43,8 @@ export const mockProducts = [\n
       { id: "info2", order: 2, title: "How to Use", description: "Print daily or laminate to use with a dry-erase marker." }
     ],
     video_url: null,
-    subcategory: "Productivity",
-    type: { value: "Templates" },
+    subcategory: "Daily",
+    type: { value: "Planners" },
     custom_fields: [],
     related_products: [],
     purchasable: true,
@@ -68,8 +68,8 @@ export const mockProducts = [\n
       { id: "info1", order: 1, title: "What's Included", description: "1-page printable PDF Brain Dump sheet." }
     ],
     video_url: null,
-    subcategory: "Organization",
-    type: { value: "Templates" },
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
     purchasable: true,
@@ -93,8 +93,8 @@ export const mockProducts = [\n
       { id: "info1", order: 1, title: "What's Included", description: "1-page printable PDF Funnel." }
     ],
     video_url: null,
-    subcategory: "Organization",
-    type: { value: "Templates" },
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
     custom_fields: [],
     related_products: [],
     purchasable: true,
@@ -1637,5 +1637,680 @@ export const mockProducts = [\n
     related_products: [],
     purchasable: true,
     updated_at: "2026-07-07T00:00:00.000Z"
+  },
+  {
+    id: "mock-adhd-low-friction-planners",
+    title: "ADHD Low-Friction Progress Planner",
+    subtitle: "Brain dump, energy check-in, and three small wins. Nothing else to set up.",
+    ribbon_text: "NEW",
+    description: "<h3>ADHD Low-Friction Progress Planner</h3><p>Most planners ask you to become a different person first. This one doesn't.</p><h4>What's Included:</h4><ul><li>Brain dump pages for racing thoughts</li><li>Energy-based planning (plan around your energy, not the clock)</li><li>Quick Wins section - three checkboxes, not thirty</li><li>Low-pressure, flexible format you can skip a day of</li></ul><p><strong>Format:</strong> Instant digital download. 9-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/adhd-low-friction-progress-planners.jpg",
+    alt_text: "ADHD Low-Friction Progress Planner mockup - 9-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/adhd-low-friction-progress-planners.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "9-page printable PDF (adhd-low-friction-progress-planners.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter, or use in any tablet note-taking app." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Daily",
+    type: { value: "Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 32,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-gentle-planning-adhd",
+    title: "Gentle Planning for ADHD",
+    subtitle: "A calmer way to plan your week when your brain won't cooperate.",
+    ribbon_text: "NEW",
+    description: "<h3>Gentle Planning for ADHD</h3><p>Planning shouldn't feel like a test you keep failing.</p><h4>What's Included:</h4><ul><li>Daily habits and weekly focus pages</li><li>Short checkbox lists, generous spacing</li><li>Low-pressure language throughout</li><li>Room to change your mind mid-week</li></ul><p><strong>Format:</strong> Instant digital download. 10-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/gentle-planning-for-adhd.jpg",
+    alt_text: "Gentle Planning for ADHD mockup - 10-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/gentle-planning-for-adhd.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "10-page printable PDF (gentle-planning-for-adhd.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print at home or use digitally. Undated, so it never expires." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Daily",
+    type: { value: "Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 33,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-adhd-daily-planner-canva",
+    title: "ADHD Daily Planner",
+    subtitle: "Top 3, your schedule, a brain dump, and a mood check. One page.",
+    ribbon_text: "BEST SELLER",
+    description: "<h3>ADHD Daily Planner</h3><p>One page. One next step. No 40-step setup.</p><h4>What's Included:</h4><ul><li>Top 3 priorities with checkboxes</li><li>Hourly schedule column</li><li>Habit tracker and mood tracker rows</li><li>Open notes and brain dump space</li></ul><p><strong>Format:</strong> Instant digital download. 9-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/adhd-daily-planner.jpg",
+    alt_text: "ADHD Daily Planner mockup - 9-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/adhd-daily-planner.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "9-page printable PDF (adhd-daily-planner.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print daily, or laminate and use with a dry-erase marker." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Daily",
+    type: { value: "Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 34,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-focus-sprint-checklist",
+    title: "ADHD Focus Sprint Checklist",
+    subtitle: "Four sprints. Built-in breaks. A clear finish line.",
+    ribbon_text: "NEW",
+    description: "<h3>ADHD Focus Sprint Checklist</h3><p>Break a big task into small wins you can actually see.</p><h4>What's Included:</h4><ul><li>Four numbered sprint rows with checkboxes</li><li>25-minute focus blocks and 5-minute breaks</li><li>Clear start and finish points</li><li>Sprint log to track what you finished</li></ul><p><strong>Format:</strong> Instant digital download. 7-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 4.99,
+    currency: "USD",
+    image: "/product-images/focus-sprint-checklist.jpg",
+    alt_text: "ADHD Focus Sprint Checklist mockup - 7-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/focus-sprint-checklist.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "7-page printable PDF (focus-sprint-checklist.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print one per day, or reuse in a sleeve with a dry-erase marker." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 35,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-start-here-low-energy-guide",
+    title: "Start Here: 7-Day Low-Energy Guide",
+    subtitle: "A free, gentle starting point for ADHD brains and busy households.",
+    ribbon_text: "FREE",
+    description: "<h3>Start Here: 7-Day Low-Energy Guide</h3><p>One next step, not a new personality.</p><h4>What's Included:</h4><ul><li>7 short daily prompts</li><li>One small action per day</li><li>No streaks to break, no guilt</li><li>Works on your lowest-energy days</li></ul><p><strong>Format:</strong> Instant digital download. 7-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 0.00,
+    currency: "USD",
+    image: "/product-images/start-here-7-day-low-energy-guide.jpg",
+    alt_text: "Start Here: 7-Day Low-Energy Guide mockup - 7-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/start-here-7-day-low-energy-guide.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "7-page printable PDF (start-here-7-day-low-energy-guide.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Free download. Print it or read it on your phone." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 36,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-executive-function-toolkit",
+    title: "ADHD Executive Function Toolkit",
+    subtitle: "Dopamine menus, time tracking, and focus tools in one set.",
+    ribbon_text: "TRENDING",
+    description: "<h3>ADHD Executive Function Toolkit</h3><p>When starting is the hardest part, you need options - not willpower.</p><h4>What's Included:</h4><ul><li>Dopamine menu grid to pick a low-effort start</li><li>Time tracker to see where your hours really go</li><li>Energy and attention check-in pages</li><li>Focus plan with Top 3 priorities</li></ul><p><strong>Format:</strong> Instant digital download. 8-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 13.99,
+    currency: "USD",
+    image: "/product-images/time-tracking-dopamine-menus-executive-function-tools.jpg",
+    alt_text: "ADHD Executive Function Toolkit mockup - 8-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/time-tracking-dopamine-menus-executive-function-tools.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "8-page printable PDF (time-tracking-dopamine-menus-executive-function-tools.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print the pages you need. Built as a 60-minute walkthrough you can do in stages." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Habit Trackers",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 37,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-digitalhub-calm-blueprint",
+    title: "The Calm Blueprint",
+    subtitle: "A full ADHD-friendly productivity system, built to survive bad days.",
+    ribbon_text: "BEST SELLER",
+    description: "<h3>The Calm Blueprint</h3><p>A system that bends instead of breaking the first week you fall behind.</p><h4>What's Included:</h4><ul><li>Step-by-step setup, one page at a time</li><li>Next-steps pages and open planning panels</li><li>Flexible weekly and daily structure</li><li>Reset pages for when you drop off</li></ul><p><strong>Format:</strong> Instant digital download. 12-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 16.99,
+    currency: "USD",
+    image: "/product-images/digitalhub-calm-blueprint.jpg",
+    alt_text: "The Calm Blueprint mockup - 12-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/digitalhub-calm-blueprint.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "12-page printable PDF (digitalhub-calm-blueprint.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print the whole workbook, or just the pages you use. Undated." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Goal Setting Worksheets",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 38,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-self-care-wellness-journal-90",
+    title: "90-Day Self-Care & Wellness Journal",
+    subtitle: "Daily reflection, mood tracking, and weekly reviews for 90 days.",
+    ribbon_text: "NEW",
+    description: "<h3>90-Day Self-Care & Wellness Journal</h3><p>Small, kind check-ins. Three months of them.</p><h4>What's Included:</h4><ul><li>90 daily reflection pages</li><li>Mood check-in on every page</li><li>12 weekly review and habit-grid spreads</li><li>Notes space on every spread</li></ul><p><strong>Format:</strong> Instant digital download. 22-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 18.99,
+    currency: "USD",
+    image: "/product-images/self-care-wellness-journal-90-day.jpg",
+    alt_text: "90-Day Self-Care & Wellness Journal mockup - 22-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/self-care-wellness-journal-90-day.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "22-page printable PDF (self-care-wellness-journal-90-day.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print as a bound journal, or use digitally on a tablet." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Digital Journal",
+    type: { value: "Digital Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 39,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-the-planner-girl-collection",
+    title: "The Planner Girl Collection",
+    subtitle: "A calm digital planner and lifestyle lookbook set.",
+    ribbon_text: "NEW",
+    description: "<h3>The Planner Girl Collection</h3><p>A planner that looks good and still works on a hard day.</p><h4>What's Included:</h4><ul><li>Monthly dashboard and calendar grids</li><li>Checkbox lists and focus panels</li><li>Aesthetic, low-clutter page design</li><li>Works on iPad and Android tablets</li></ul><p><strong>Format:</strong> Instant digital download. 13-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 11.99,
+    currency: "USD",
+    image: "/product-images/the-planner-girl-collection.jpg",
+    alt_text: "The Planner Girl Collection mockup - 13-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/the-planner-girl-collection.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "13-page printable PDF (the-planner-girl-collection.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Use in any tablet note-taking app, or print the pages you want." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Annual Digital Planners",
+    type: { value: "Digital Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 40,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-the-lifestyle-collection",
+    title: "The Lifestyle Collection",
+    subtitle: "Daily, weekly, and monthly planners in one calm set.",
+    ribbon_text: "NEW",
+    description: "<h3>The Lifestyle Collection</h3><p>Three planners that match, so nothing feels like a new system.</p><h4>What's Included:</h4><ul><li>Daily life planner pages</li><li>Weekly wellness planner pages</li><li>Monthly goals planner pages</li><li>Consistent, quiet page design</li></ul><p><strong>Format:</strong> Instant digital download. 11-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 11.99,
+    currency: "USD",
+    image: "/product-images/the-lifestyle-collection.jpg",
+    alt_text: "The Lifestyle Collection mockup - 11-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/the-lifestyle-collection.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "11-page printable PDF (the-lifestyle-collection.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print at home or use digitally. Undated." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Digital Journal",
+    type: { value: "Digital Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 41,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-planner-girl-lifestyle-design",
+    title: "Planner Girl Lifestyle Design",
+    subtitle: "A short, intentional weekly planning set.",
+    ribbon_text: "NEW",
+    description: "<h3>Planner Girl Lifestyle Design</h3><p>For a more intentional week, without a big commitment.</p><h4>What's Included:</h4><ul><li>Weekly overview grid</li><li>This week's goals checklist</li><li>Single-focus prompt for the week</li><li>Soft, low-distraction layout</li></ul><p><strong>Format:</strong> Instant digital download. 7-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 6.99,
+    currency: "USD",
+    image: "/product-images/planner-girl-lifestyle-design.jpg",
+    alt_text: "Planner Girl Lifestyle Design mockup - 7-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/planner-girl-lifestyle-design.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "7-page printable PDF (planner-girl-lifestyle-design.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print weekly or use digitally. Great as a bundle add-on." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Digital Journal",
+    type: { value: "Digital Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 42,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-digitalhub-girl-planner",
+    title: "DigitalHub Girl Planner",
+    subtitle: "An aesthetic weekly digital planner with a priorities panel.",
+    ribbon_text: "NEW",
+    description: "<h3>DigitalHub Girl Planner</h3><p>Seven calm day columns and one short priority list.</p><h4>What's Included:</h4><ul><li>Weekly layout with seven day columns</li><li>Priorities panel</li><li>Soft lavender, low-glare design</li><li>Tablet-ready page sizing</li></ul><p><strong>Format:</strong> Instant digital download. 10-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 11.99,
+    currency: "USD",
+    image: "/product-images/digitalhub-girl-planner.jpg",
+    alt_text: "DigitalHub Girl Planner mockup - 10-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/digitalhub-girl-planner.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "10-page printable PDF (digitalhub-girl-planner.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Use in GoodNotes, Notability, Noteshelf, or any PDF annotation app." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Annual Digital Planners",
+    type: { value: "Digital Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 43,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-your-life-planner-girl",
+    title: "Your Life Planner Girl",
+    subtitle: "A complete planner set: monthly, goals, and habits.",
+    ribbon_text: "NEW",
+    description: "<h3>Your Life Planner Girl</h3><p>Everything in one place, so you stop rebuilding your system.</p><h4>What's Included:</h4><ul><li>Monthly calendar grids</li><li>Goals and habits pages</li><li>Habit dot-grid trackers</li><li>Notes pages throughout</li></ul><p><strong>Format:</strong> Instant digital download. 11-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 11.99,
+    currency: "USD",
+    image: "/product-images/your-life-planner-girl.jpg",
+    alt_text: "Your Life Planner Girl mockup - 11-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/your-life-planner-girl.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "11-page printable PDF (your-life-planner-girl.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print or use digitally. Undated, so you can start any month." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Annual Digital Planners",
+    type: { value: "Digital Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 44,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-2027-calendar-templates",
+    title: "2027 Calendar Template Bundle",
+    subtitle: "81 printable 2027 calendar pages in multiple layouts.",
+    ribbon_text: "NEW",
+    description: "<h3>2027 Calendar Template Bundle</h3><p>Every 2027 month, in more than one layout, ready to print.</p><h4>What's Included:</h4><ul><li>81 pages of dated 2027 calendars</li><li>Multiple month-grid layouts</li><li>Clear, high-contrast date cells</li><li>Print-friendly margins</li></ul><p><strong>Format:</strong> Instant digital download. 81-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 13.99,
+    currency: "USD",
+    image: "/product-images/2027-calendar-templates.jpg",
+    alt_text: "2027 Calendar Template Bundle mockup - 81-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/2027-calendar-templates.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "81-page printable PDF (2027-calendar-templates.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print the months and layouts you need. No editing required." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Yearly",
+    type: { value: "Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 45,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-minimal-classic-2027",
+    title: "Minimal Classic 2027 Calendar",
+    subtitle: "A quiet, 28-page 2027 calendar with no visual noise.",
+    ribbon_text: "NEW",
+    description: "<h3>Minimal Classic 2027 Calendar</h3><p>Just the dates. Nothing competing for your attention.</p><h4>What's Included:</h4><ul><li>28 pages covering 2027</li><li>Clean month grids</li><li>Minimal type, no decoration</li><li>Prints beautifully in black and white</li></ul><p><strong>Format:</strong> Instant digital download. 28-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 11.99,
+    currency: "USD",
+    image: "/product-images/minimal-classic-2027.jpg",
+    alt_text: "Minimal Classic 2027 Calendar mockup - 28-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/minimal-classic-2027.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "28-page printable PDF (minimal-classic-2027.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print at home on US Letter or A4." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Yearly",
+    type: { value: "Planners" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 46,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-travel-planner-digital",
+    title: "Travel Planner - Printable US Letter",
+    subtitle: "Packing checklists and a day-by-day itinerary grid.",
+    ribbon_text: "PRINT READY",
+    description: "<h3>Travel Planner - Printable US Letter</h3><p>Pack and plan without holding it all in your head.</p><h4>What's Included:</h4><ul><li>Packing checklist columns</li><li>Day-by-day itinerary grid (Day 1-6)</li><li>Flight and destination detail lines</li><li>True US Letter sizing - prints as-is</li></ul><p><strong>Format:</strong> Instant digital download. 8-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 8.99,
+    currency: "USD",
+    image: "/product-images/travel-planner-digital.jpg",
+    alt_text: "Travel Planner - Printable US Letter mockup - 8-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/travel-planner-digital.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "8-page printable PDF (travel-planner-digital.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter. This one is built for paper, not just screens." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Lists & Notes",
+    type: { value: "Organizers" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 47,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-canva-bestseller-blueprint",
+    title: "Canva Bestseller Blueprint",
+    subtitle: "How to build and sell digital products people actually buy.",
+    ribbon_text: "BEST SELLER",
+    description: "<h3>Canva Bestseller Blueprint</h3><p>A clear path from blank Canva file to listed product.</p><h4>What's Included:</h4><ul><li>Step-by-step product build process</li><li>What sells and what stalls</li><li>Listing and pricing guidance</li><li>Workbook pages to plan your first product</li></ul><p><strong>Format:</strong> Instant digital download. 13-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 23.99,
+    currency: "USD",
+    image: "/product-images/canva-bestseller-blueprint.jpg",
+    alt_text: "Canva Bestseller Blueprint mockup - 13-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/canva-bestseller-blueprint.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "13-page printable PDF (canva-bestseller-blueprint.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Digital guide. Read on any device or print it." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Business Planner Bundle",
+    type: { value: "Business Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 48,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-the-launch-playbook",
+    title: "The Launch Playbook",
+    subtitle: "A launch timeline with four phases and a key checklist.",
+    ribbon_text: "NEW",
+    description: "<h3>The Launch Playbook</h3><p>Know what happens next, every week of your launch.</p><h4>What's Included:</h4><ul><li>Four-phase launch timeline</li><li>Key checklist for each milestone</li><li>Landscape layout, easy to follow</li><li>Works for digital or physical launches</li></ul><p><strong>Format:</strong> Instant digital download. 14-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 23.99,
+    currency: "USD",
+    image: "/product-images/the-launch-playbook.jpg",
+    alt_text: "The Launch Playbook mockup - 14-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/the-launch-playbook.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "14-page printable PDF (the-launch-playbook.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Digital guide, landscape format. Print on US Letter landscape." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Business Planner Bundle",
+    type: { value: "Business Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 49,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-startup-operating-system",
+    title: "Startup Operating System",
+    subtitle: "The founder's operating system: four layers, one framework.",
+    ribbon_text: "NEW",
+    description: "<h3>Startup Operating System</h3><p>Stop running your business out of your inbox.</p><h4>What's Included:</h4><ul><li>Four-layer operating framework</li><li>Worksheet pages to map your own setup</li><li>Decision and priority structure</li><li>Pairs with the Startup Execution Playbook</li></ul><p><strong>Format:</strong> Instant digital download. 14-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 28.99,
+    currency: "USD",
+    image: "/product-images/startup-operating-system.jpg",
+    alt_text: "Startup Operating System mockup - 14-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/startup-operating-system.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "14-page printable PDF (startup-operating-system.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Digital guide with printable worksheet pages." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Business Planner Bundle",
+    type: { value: "Business Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 50,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-startup-execution-playbook",
+    title: "Startup Execution Playbook",
+    subtitle: "Execution checklists and a prioritization matrix for founders.",
+    ribbon_text: "NEW",
+    description: "<h3>Startup Execution Playbook</h3><p>Plans are easy. This is the part that isn't.</p><h4>What's Included:</h4><ul><li>Numbered execution checklists</li><li>Impact vs effort prioritization matrix</li><li>Weekly operating rhythm</li><li>Companion to the Startup Operating System</li></ul><p><strong>Format:</strong> Instant digital download. 14-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 28.99,
+    currency: "USD",
+    image: "/product-images/startup-execution-playbook.jpg",
+    alt_text: "Startup Execution Playbook mockup - 14-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/startup-execution-playbook.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "14-page printable PDF (startup-execution-playbook.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Digital guide with printable worksheets." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Business Planner Bundle",
+    type: { value: "Business Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 51,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-seven-figure-ai-engine",
+    title: "The Seven Figure AI Engine",
+    subtitle: "Our most in-depth AI business playbook - 21 pages.",
+    ribbon_text: "PREMIUM",
+    description: "<h3>The Seven Figure AI Engine</h3><p>The full system, mapped out node by node.</p><h4>What's Included:</h4><ul><li>21 pages, our longest guide</li><li>End-to-end AI workflow diagrams</li><li>Connected system architecture</li><li>Implementation sequence, not just theory</li></ul><p><strong>Format:</strong> Instant digital download. 21-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 38.99,
+    currency: "USD",
+    image: "/product-images/the-seven-figure-ai-engine.jpg",
+    alt_text: "The Seven Figure AI Engine mockup - 21-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/the-seven-figure-ai-engine.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "21-page printable PDF (the-seven-figure-ai-engine.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Digital guide. Best read on a laptop or tablet." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Business Planner Bundle",
+    type: { value: "Business Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 52,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-autonomous-commerce-blueprint",
+    title: "Autonomous Commerce Blueprint",
+    subtitle: "Build an ecommerce operation that runs with less of you in it.",
+    ribbon_text: "PREMIUM",
+    description: "<h3>Autonomous Commerce Blueprint</h3><p>Fewer manual steps between a visitor and a delivered product.</p><h4>What's Included:</h4><ul><li>Automation architecture for online stores</li><li>Metrics that actually matter</li><li>Where to automate and where not to</li><li>16 pages, diagram-led</li></ul><p><strong>Format:</strong> Instant digital download. 16-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 33.99,
+    currency: "USD",
+    image: "/product-images/autonomous-commerce-blueprint.jpg",
+    alt_text: "Autonomous Commerce Blueprint mockup - 16-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/autonomous-commerce-blueprint.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "16-page printable PDF (autonomous-commerce-blueprint.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Digital guide. Read on any device." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Business Planner Bundle",
+    type: { value: "Business Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 53,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-automated-product-engine",
+    title: "Automated Product Engine",
+    subtitle: "A repeatable four-step system for shipping digital products.",
+    ribbon_text: "NEW",
+    description: "<h3>Automated Product Engine</h3><p>Build the process once, then just run it.</p><h4>What's Included:</h4><ul><li>Four-step product pipeline</li><li>Checklist for each stage</li><li>Repeatable, not one-off</li><li>Printable planning pages</li></ul><p><strong>Format:</strong> Instant digital download. 12-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 23.99,
+    currency: "USD",
+    image: "/product-images/automated-product-engine.jpg",
+    alt_text: "Automated Product Engine mockup - 12-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/automated-product-engine.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "12-page printable PDF (automated-product-engine.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Digital guide with printable worksheets." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Business Planner Bundle",
+    type: { value: "Business Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 54,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-content-alchemy",
+    title: "Content Alchemy",
+    subtitle: "Turn one piece of content into many, without starting over.",
+    ribbon_text: "NEW",
+    description: "<h3>Content Alchemy</h3><p>Make one thing. Use it everywhere.</p><h4>What's Included:</h4><ul><li>One-to-many repurposing framework</li><li>Content planning grid</li><li>Channel-by-channel adaptation</li><li>Printable worksheet pages</li></ul><p><strong>Format:</strong> Instant digital download. 12-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 18.99,
+    currency: "USD",
+    image: "/product-images/content-alchemy.jpg",
+    alt_text: "Content Alchemy mockup - 12-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/content-alchemy.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "12-page printable PDF (content-alchemy.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Digital guide with printable planning pages." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Social Media Content Calendars",
+    type: { value: "Business Templates" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 55,
+    updated_at: "2026-09-18T00:00:00.000Z"
+  },
+  {
+    id: "mock-regency-ball-planner",
+    title: "Regency Ball Planner",
+    subtitle: "A 36-page Regency event and wardrobe planning set.",
+    ribbon_text: "NEW",
+    description: "<h3>Regency Ball Planner</h3><p>For Regency balls, themed weddings, and Bridgerton-era events.</p><h4>What's Included:</h4><ul><li>Wardrobe and attire checklists</li><li>Outfit notes and new-items-needed pages</li><li>Event planning pages</li><li>36 pages, elegant and restrained</li></ul><p><strong>Format:</strong> Instant digital download. 36-page PDF. ADHD-friendly by design: clear layout, readable type, generous spacing.</p>",
+    price: 13.99,
+    currency: "USD",
+    image: "/product-images/regency-ball-victorian-era-planner.jpg",
+    alt_text: "Regency Ball Planner mockup - 36-page ADHD-friendly printable PDF in calm plum and off-white DigitalHub styling",
+    images: [
+      { url: "/product-images/regency-ball-victorian-era-planner.jpg", order: 1, type: "main" }
+    ],
+    additional_info: [
+      { id: "info1", order: 1, title: "What's Included", description: "36-page printable PDF (regency-ball-victorian-era-planner.pdf)." },
+      { id: "info2", order: 2, title: "How to Use", description: "Print at home on US Letter or A4." },
+      { id: "info3", order: 3, title: "Instant Download", description: "Your download link appears right after checkout and stays active for 7 days." }
+    ],
+    video_url: null,
+    subcategory: "Full Party Kits",
+    type: { value: "Party Printables" },
+    custom_fields: [],
+    related_products: [],
+    purchasable: true,
+    order: 56,
+    updated_at: "2026-09-18T00:00:00.000Z"
   }
 ];

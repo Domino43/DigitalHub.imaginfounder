@@ -1,10 +1,10 @@
 // Product ID to filename mapping
 const PRODUCT_FILES = {
 
-  "mock-low-energy-day-planner": "low_energy_day_planner.pdf",
-  "mock-hyperfocus-time-blocker": "hyperfocus_time_blocker.pdf",
-  "mock-brain-dump-matrix": "Brain_Dump_Matrix.pdf",
-  "mock-task-prioritization-funnel": "Task_Prioritization_Funnel.pdf",
+  "mock-low-energy-day-planner": "low-energy-day-planner.pdf",
+  "mock-hyperfocus-time-blocker": "hyperfocus-time-blocker.pdf",
+  "mock-brain-dump-matrix": "brain-dump-matrix.pdf",
+  "mock-task-prioritization-funnel": "task-prioritization-funnel.pdf",
   "mock-one-next-step-poster": "one-next-step-poster.pdf",
   "mock-start-here-postcard": "start-here-postcard.pdf",
   "mock-low-shame-chore-chart": "low-shame-chore-chart.pdf",
@@ -62,7 +62,32 @@ const PRODUCT_FILES = {
   "mock-tshirt-design-bundle": "trendy-tshirt-graphics.zip",
   "mock-flux-flow-ui-kit": "flux-flow-ui-kit.pdf",
   "mock-productivity-os-notion": "productivity-os-notion-template.pdf",
-  "mock-premium-stock-photos": "premium-stock-photo-collection.pdf"
+  "mock-premium-stock-photos": "premium-stock-photo-collection.pdf",
+  "mock-adhd-low-friction-planners": "adhd-low-friction-progress-planners.pdf",
+  "mock-gentle-planning-adhd": "gentle-planning-for-adhd.pdf",
+  "mock-adhd-daily-planner-canva": "adhd-daily-planner.pdf",
+  "mock-focus-sprint-checklist": "focus-sprint-checklist.pdf",
+  "mock-start-here-low-energy-guide": "start-here-7-day-low-energy-guide.pdf",
+  "mock-executive-function-toolkit": "time-tracking-dopamine-menus-executive-function-tools.pdf",
+  "mock-digitalhub-calm-blueprint": "digitalhub-calm-blueprint.pdf",
+  "mock-self-care-wellness-journal-90": "self-care-wellness-journal-90-day.pdf",
+  "mock-the-planner-girl-collection": "the-planner-girl-collection.pdf",
+  "mock-the-lifestyle-collection": "the-lifestyle-collection.pdf",
+  "mock-planner-girl-lifestyle-design": "planner-girl-lifestyle-design.pdf",
+  "mock-digitalhub-girl-planner": "digitalhub-girl-planner.pdf",
+  "mock-your-life-planner-girl": "your-life-planner-girl.pdf",
+  "mock-2027-calendar-templates": "2027-calendar-templates.pdf",
+  "mock-minimal-classic-2027": "minimal-classic-2027.pdf",
+  "mock-travel-planner-digital": "travel-planner-digital.pdf",
+  "mock-canva-bestseller-blueprint": "canva-bestseller-blueprint.pdf",
+  "mock-the-launch-playbook": "the-launch-playbook.pdf",
+  "mock-startup-operating-system": "startup-operating-system.pdf",
+  "mock-startup-execution-playbook": "startup-execution-playbook.pdf",
+  "mock-seven-figure-ai-engine": "the-seven-figure-ai-engine.pdf",
+  "mock-autonomous-commerce-blueprint": "autonomous-commerce-blueprint.pdf",
+  "mock-automated-product-engine": "automated-product-engine.pdf",
+  "mock-content-alchemy": "content-alchemy.pdf",
+  "mock-regency-ball-planner": "regency-ball-victorian-era-planner.pdf"
 };
 
 // Content types for different file extensions
