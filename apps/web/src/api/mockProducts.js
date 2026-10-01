@@ -13,7 +13,7 @@ export const mockProducts = [
       { url: "/product-images/low_energy_day_planner_mockup.jpeg", order: 1, type: "main" }
     ],
     additional_info: [
-      { id: "info1", order: 1, title: "What's Included", description: "1-page printable PDF planner." },
+      { id: "info1", order: 1, title: "What's Included", description: "Daily Intention, Energy Level Check in, Top 3 Gentle Priorities, Basic Routine, Hydrate, Nourish, Rest, Low Pressure Reflections." },
       { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter paper or use with a digital tablet note-taking app." }
     ],
     video_url: null,
