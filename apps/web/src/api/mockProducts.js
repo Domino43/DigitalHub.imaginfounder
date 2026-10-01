@@ -17,6 +17,7 @@ export const mockProducts = [
       { id: "info2", order: 2, title: "How to Use", description: "Print on US Letter paper or use with a digital tablet note-taking app." }
     ],
     video_url: null,
+    download_url: "/downloads/Low-Energy-Day-Planner.pdf",
     subcategory: "Daily",
     type: { value: "Planners" },
     custom_fields: [],
